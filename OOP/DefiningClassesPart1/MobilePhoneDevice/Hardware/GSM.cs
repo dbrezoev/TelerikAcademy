@@ -55,7 +55,7 @@ namespace MobilePhoneDevice.Hardware
             {
                 if (value < 0)
                 {
-                    throw new ArgumentException();
+                    throw new ArgumentException("Invalid price");
                 }
                 this.price = value;
             }
@@ -94,7 +94,7 @@ namespace MobilePhoneDevice.Hardware
             {
                 totalLengthInSeconds += call.Duration;
             }
-            float totalTime = (totalLengthInSeconds / 60.0f);// *pricePerMinute;
+            float totalTime = (totalLengthInSeconds / 60.0f);
             decimal totalCost = (decimal)totalTime * pricePerMinute;
             return totalCost;
         }

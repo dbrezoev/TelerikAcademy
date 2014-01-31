@@ -14,9 +14,9 @@ namespace MobilePhoneDevice
         {           
             GSM[] arr = new GSM[]{
                 new GSM("NOKIA","CHINA"),                
-                new GSM("SONY","JAPAN",100,"John",new Battery("toshiba"),new Display()),                
+                new GSM("SONY","JAPAN",100,"John",new Battery("toshiba"),new Display(300,new uint[]{3,6})),                
                 new GSM("Samsung","Korea",120m,"Pesho",new Battery("VARTA",4.50d,0.50d,BatteryType.NiMH),new Display()),
-                new GSM("Samsung","Korea",120m,"Pesho",new Battery("model"),new Display(2000,new uint[]{8,4}))
+                new GSM("SAMSUNG","Korea",120m,"Gosho",new Battery("model"),new Display(2000,new uint[]{8,4}))
             };
 
             foreach (GSM gsm in arr)
