@@ -11,8 +11,8 @@ namespace MobilePhoneDevice
     {
         static void Main()
         {
-            GSM g = new GSM("dfg", "gfd", -4, "gdf", new Battery("gfd"), new Display());
-            GSMTest.Test();
+            GSM g = new GSM("dfg", "gfd", 4, "gdf", new Battery("gfd"), new Display());
+            GSMTest.Test();            
             Console.WriteLine(new string('-',60));
             Console.WriteLine("SECOND TEST");
             Console.WriteLine(new string('-', 60));

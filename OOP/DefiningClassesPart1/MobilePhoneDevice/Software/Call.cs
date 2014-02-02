@@ -63,6 +63,10 @@ namespace MobilePhoneDevice.Software
             }
             set
             {
+                if (value<0)
+                {
+                    throw new ArgumentException("Duration cannot be less than 0 sec");
+                }
                 this.duration = value;
             }
         }

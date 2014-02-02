@@ -16,23 +16,23 @@ namespace MobilePhoneDevice
             gsm.AddCall(new Call(DateTime.Now,"0889888888",45));
             gsm.AddCall(new Call(DateTime.Now,"0889884388",60));
             gsm.AddCall(new Call(DateTime.Now,"0889321988",130));
-            gsm.AddCall(new Call(DateTime.Now,"0889884583",34));
-            foreach (Call call in gsm.CallHistory)
-            {
-                Console.WriteLine(call);
-            }
-
-            //print total cost of all calls
-            Console.WriteLine("{0:C2}",gsm.GetTotalCost(pricePerMinute));
-
-            int longestCallIndex = gsm.GetLongestCallIndex();
-            gsm.RemoveCall(longestCallIndex);
-
+            gsm.AddCall(new Call(DateTime.Now,"0889884583",34));            
             foreach (Call call in gsm.CallHistory)
             {
                 Console.WriteLine(call);
             }
             
+            //print total cost of all calls
+            Console.WriteLine("{0:C2}",gsm.GetTotalCost(pricePerMinute));
+
+            int longestCallIndex = gsm.GetLongestCallIndex();
+            gsm.RemoveCall(longestCallIndex);
+           
+            foreach (Call call in gsm.CallHistory)
+            {
+                Console.WriteLine(call);
+            }
+
             //clear all the call history
             gsm.ClearCallHistory();
             foreach (var item in gsm.CallHistory)

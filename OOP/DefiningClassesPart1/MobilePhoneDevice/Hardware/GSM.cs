@@ -69,14 +69,14 @@ namespace MobilePhoneDevice.Hardware
                 return new List<Call>(this.callHistory);
                 
             }
-            private set
+            set
             {
                 this.callHistory = value;
             }
         }
 
         public void AddCall(Call call)
-        {
+        {            
             this.callHistory.Add(call);
         }
         public void RemoveCall(int index)
