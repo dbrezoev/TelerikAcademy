@@ -1,0 +1,6 @@
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\OOP\DefiningClassesPart2\VersionAttribute\bin\Debug\VersionAttribute.exe.config
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\OOP\DefiningClassesPart2\VersionAttribute\bin\Debug\VersionAttribute.exe
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\OOP\DefiningClassesPart2\VersionAttribute\bin\Debug\VersionAttribute.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\OOP\DefiningClassesPart2\VersionAttribute\obj\Debug\VersionAttribute.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\OOP\DefiningClassesPart2\VersionAttribute\obj\Debug\VersionAttribute.exe
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\OOP\DefiningClassesPart2\VersionAttribute\obj\Debug\VersionAttribute.pdb
