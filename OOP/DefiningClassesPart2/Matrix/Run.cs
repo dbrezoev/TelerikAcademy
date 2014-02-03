@@ -12,7 +12,7 @@ class Run
         return Run.rand.NextDouble() * (max - min) + min;
     }
     static void Main(string[] args)
-    {
+    {              
         //fill two random matrix [2,2] (easy to calculate)
         Matrix<double> matrix = new Matrix<double>(2, 2);
         Matrix<double> matrix2 = new Matrix<double>(2, 2);

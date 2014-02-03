@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-public class Matrix<T> where T : IComparable<T>
+public class Matrix<T> where T : struct
 {
     private T[,] matrix;
     private int rows;
