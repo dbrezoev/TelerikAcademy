@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3DPoint", "3DPoint\3DPoint.csproj", "{2B8B4667-4F8A-449B-A877-5F03314A48D4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericList", "GenericList\GenericList.csproj", "{92E4C8FA-E5AD-41E7-8A10-B7F2E700D567}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericListTests", "GenericListTests\GenericListTests.csproj", "{81B53E09-B3EE-4451-B321-645B49D44B4A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +17,14 @@ Global
 		{2B8B4667-4F8A-449B-A877-5F03314A48D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B8B4667-4F8A-449B-A877-5F03314A48D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B8B4667-4F8A-449B-A877-5F03314A48D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92E4C8FA-E5AD-41E7-8A10-B7F2E700D567}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92E4C8FA-E5AD-41E7-8A10-B7F2E700D567}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92E4C8FA-E5AD-41E7-8A10-B7F2E700D567}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92E4C8FA-E5AD-41E7-8A10-B7F2E700D567}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81B53E09-B3EE-4451-B321-645B49D44B4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81B53E09-B3EE-4451-B321-645B49D44B4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81B53E09-B3EE-4451-B321-645B49D44B4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81B53E09-B3EE-4451-B321-645B49D44B4A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
