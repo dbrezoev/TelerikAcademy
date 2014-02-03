@@ -1,0 +1,5 @@
+C:\Users\User\Documents\Visual Studio 2012\Projects\SVN.git\trunk\OOP\DefiningClassesPart2\Matrix\bin\Debug\Matrix.exe.config
+C:\Users\User\Documents\Visual Studio 2012\Projects\SVN.git\trunk\OOP\DefiningClassesPart2\Matrix\bin\Debug\Matrix.exe
+C:\Users\User\Documents\Visual Studio 2012\Projects\SVN.git\trunk\OOP\DefiningClassesPart2\Matrix\bin\Debug\Matrix.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\SVN.git\trunk\OOP\DefiningClassesPart2\Matrix\obj\Debug\Matrix.exe
+C:\Users\User\Documents\Visual Studio 2012\Projects\SVN.git\trunk\OOP\DefiningClassesPart2\Matrix\obj\Debug\Matrix.pdb
