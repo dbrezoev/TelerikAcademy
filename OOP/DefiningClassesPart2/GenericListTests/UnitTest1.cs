@@ -91,9 +91,8 @@ namespace GenericListTests
             GenericList<string> generic = new GenericList<string>(2);
             generic.AddElement("Pesho");
             generic.AddElement("Gosho");
-            generic.AddElement("Kircho");
-            generic[0] = "Vlado";
-            Assert.AreEqual("Vlado", generic[0]);
+            generic.AddElement("Kircho");           
+            Assert.AreEqual("Kircho", generic[2]);
         }
         [TestMethod]
         public void MaxElement()
@@ -137,7 +136,7 @@ namespace GenericListTests
             GenericList<string> generic = new GenericList<string>(40);
             for (int i = 0; i < generic.Length; i++)
             {
-                generic[i] = "TEST";
+                generic.InsertAtIndex("Test",i);
             }
             generic.ClearArray();
             for (int i = 0; i < generic.Length; i++)

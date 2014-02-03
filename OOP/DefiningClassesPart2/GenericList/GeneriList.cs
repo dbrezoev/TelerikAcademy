@@ -184,15 +184,7 @@ public class GenericList<T> where T : IComparable<T>
                 throw new IndexOutOfRangeException("Invalid index");
             }
             return this.array[index];
-        }
-        set
-        {
-            if (!IsIndexValid(index))
-            {
-                throw new IndexOutOfRangeException("Invalid index");
-            }
-            this.array[index] = value;
-        }
+        }       
     }
     
 }

@@ -12,35 +12,16 @@ class Program
         generic.AddElement("Pesho");
         generic.AddElement("Gosho");
         generic.AddElement("Kircho");
+        Console.WriteLine(generic);
         string max = generic.Max();
         Console.WriteLine(max);
-        return;
-        //GenericList<string> generic = new GenericList<string>(2);
-        //generic.AddElement("Pesho");
-        //generic.AddElement("Gosho");
-        //Console.WriteLine(generic);
+
+        generic.InsertAtIndex("Vlado", 0);
+        generic.InsertAtIndex("Drago", 0);
+        Console.WriteLine(generic);
+        generic.ClearArray();
+        Console.WriteLine(generic);
         
-        //generic.InsertAtIndex("Gosho", 0);
-        //Console.WriteLine(generic);
-        
-        //generic.AddElement("Kircho");
-        //Console.WriteLine(generic);
-        
-        //Console.WriteLine(generic);
-        //generic.InsertAtIndex("Jivko", 0);
-        //Console.WriteLine(generic);
-        //generic.InsertAtIndex("Toshko", 1);
-        //Console.WriteLine(generic);
-        //generic.RemoveAtIndex(0);
-        //Console.WriteLine(generic);
-        //Console.WriteLine(generic.FindElement("Gosho"));
-        ////generic.ClearArray();
-        //Console.WriteLine(generic);
-       
-        //generic[5] = "Tihomir";
-        //Console.WriteLine(generic);
-        
-        //Console.WriteLine(generic[0]);
-        //Console.WriteLine(generic[generic.Length-1]);
+        //unit test one folder back
     }
 }
