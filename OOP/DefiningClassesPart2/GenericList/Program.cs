@@ -15,7 +15,7 @@ class Program
         Console.WriteLine(generic);
         string max = generic.Max();
         Console.WriteLine(max);
-
+        
         generic.InsertAtIndex("Vlado", 0);
         generic.InsertAtIndex("Drago", 0);
         Console.WriteLine(generic);

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 public class GenericList<T> where T : IComparable<T>
 {    
-    private T[] array;
+    public T[] array;
     private int usedPlace;
     private int length;
     //constructor
@@ -14,15 +14,7 @@ public class GenericList<T> where T : IComparable<T>
     {
         this.array = new T[capacity];
     }
-    //property
-    public T[] Array
-    {
-        get
-        {
-            T[] arr = (T[])this.array.Clone();
-            return arr;
-        }
-    }
+    
     public int Length
     {
         get
