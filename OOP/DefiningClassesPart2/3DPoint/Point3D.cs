@@ -2,7 +2,7 @@
 using System.Text;
 public struct Point3D
 {
-    public static Point3D startOfCoordSystem;
+    private static readonly Point3D startOfCoordSystem;
     public double X { get; set; }
     public double Y { get; set; }
     public double Z { get; set; }
