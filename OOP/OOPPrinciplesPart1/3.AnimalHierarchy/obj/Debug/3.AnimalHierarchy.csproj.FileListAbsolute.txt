@@ -1,0 +1,6 @@
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\OOP\OOPPrinciplesPart1\3.AnimalHierarchy\bin\Debug\3.AnimalHierarchy.exe.config
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\OOP\OOPPrinciplesPart1\3.AnimalHierarchy\obj\Debug\3.AnimalHierarchy.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\OOP\OOPPrinciplesPart1\3.AnimalHierarchy\bin\Debug\3.AnimalHierarchy.exe
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\OOP\OOPPrinciplesPart1\3.AnimalHierarchy\bin\Debug\3.AnimalHierarchy.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\OOP\OOPPrinciplesPart1\3.AnimalHierarchy\obj\Debug\3.AnimalHierarchy.exe
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\OOP\OOPPrinciplesPart1\3.AnimalHierarchy\obj\Debug\3.AnimalHierarchy.pdb

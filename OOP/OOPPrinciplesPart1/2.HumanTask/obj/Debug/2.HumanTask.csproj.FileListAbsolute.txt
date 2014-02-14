@@ -1,0 +1,6 @@
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\OOP\OOPPrinciplesPart1\2.HumanTask\bin\Debug\2.HumanTask.exe.config
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\OOP\OOPPrinciplesPart1\2.HumanTask\obj\Debug\2.HumanTask.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\OOP\OOPPrinciplesPart1\2.HumanTask\bin\Debug\2.HumanTask.exe
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\OOP\OOPPrinciplesPart1\2.HumanTask\bin\Debug\2.HumanTask.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\OOP\OOPPrinciplesPart1\2.HumanTask\obj\Debug\2.HumanTask.exe
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\OOP\OOPPrinciplesPart1\2.HumanTask\obj\Debug\2.HumanTask.pdb
