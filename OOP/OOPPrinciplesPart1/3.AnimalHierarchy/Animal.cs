@@ -4,11 +4,7 @@ public abstract class Animal:ISound
 {
     public string Name { get; private set; }
     public int Age { get; private set; }
-    public Sex Sex { get; set; }
-
-    public Animal(string name, int age):this(name,age,Sex.Male)
-    {
-    }
+    public Sex Sex { get; set; }    
 
     public Animal(string name, int age, Sex sex)
     {

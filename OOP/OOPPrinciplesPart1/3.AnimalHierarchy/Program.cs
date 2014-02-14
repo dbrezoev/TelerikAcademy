@@ -9,7 +9,7 @@ namespace _3.AnimalHierarchy
     class Program
     {
         static void Main(string[] args)
-        {
+        {           
             Animal[] animals = new Animal[10]
             {
                 new Tomcat("TOM",4),
