@@ -1,0 +1,6 @@
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\OOP\OOPPrinciplesPart1\TryHere\bin\Debug\TryHere.exe.config
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\OOP\OOPPrinciplesPart1\TryHere\bin\Debug\TryHere.exe
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\OOP\OOPPrinciplesPart1\TryHere\bin\Debug\TryHere.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\OOP\OOPPrinciplesPart1\TryHere\obj\Debug\TryHere.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\OOP\OOPPrinciplesPart1\TryHere\obj\Debug\TryHere.exe
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\OOP\OOPPrinciplesPart1\TryHere\obj\Debug\TryHere.pdb
