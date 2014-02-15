@@ -9,6 +9,6 @@ class Circle:Shape
     }
     public override double CalculateSurface()
     {
-        return Math.PI * (this.Width * this.Width);
+        return Math.PI * (this.Radius * this.Radius);
     }
 }
