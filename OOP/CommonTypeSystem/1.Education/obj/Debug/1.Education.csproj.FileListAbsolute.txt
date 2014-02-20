@@ -1,0 +1,6 @@
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\OOP\CommonTypeSystem\1.Education\bin\Debug\1.Education.exe.config
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\OOP\CommonTypeSystem\1.Education\obj\Debug\1.Education.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\OOP\CommonTypeSystem\1.Education\bin\Debug\1.Education.exe
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\OOP\CommonTypeSystem\1.Education\bin\Debug\1.Education.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\OOP\CommonTypeSystem\1.Education\obj\Debug\1.Education.exe
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\OOP\CommonTypeSystem\1.Education\obj\Debug\1.Education.pdb
