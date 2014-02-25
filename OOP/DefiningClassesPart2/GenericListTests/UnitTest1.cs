@@ -21,7 +21,7 @@ namespace GenericListTests
             generic.AddElement("Pesho");
             generic.AddElement("Gosho");
             generic.AddElement("Kircho");
-            Assert.AreEqual(4, generic.Array.Length);
+            Assert.AreEqual(4, generic.Count);
         }
         [TestMethod]
         public void AutoGrowTest2()
@@ -33,7 +33,7 @@ namespace GenericListTests
             generic.AddElement(3);
             generic.AddElement(4);
             generic.AddElement(5);
-            Assert.AreEqual(8, generic.Array.Length);
+            Assert.AreEqual(8, generic.Count);
         }
         [TestMethod]
         public void InsertTest()
@@ -91,8 +91,9 @@ namespace GenericListTests
             GenericList<string> generic = new GenericList<string>(2);
             generic.AddElement("Pesho");
             generic.AddElement("Gosho");
-            generic.AddElement("Kircho");           
-            Assert.AreEqual("Kircho", generic[2]);
+            generic.AddElement("Kircho");
+            generic[0] = "Vlado";
+            Assert.AreEqual("Vlado", generic[0]);
         }
         [TestMethod]
         public void MaxElement()
@@ -118,17 +119,17 @@ namespace GenericListTests
         [TestMethod]
         public void ClearTest()
         {
-            GenericList<int> generic = new GenericList<int>(40);
-            generic.AddElement(5);
-            generic.AddElement(900);
-            generic.InsertAtIndex(9, 17);
-            generic.AddElement(-1);
+            GenericList<int> generic = new GenericList<int>(10);
+            generic.AddElement(2);
+            generic.AddElement(3);
+            generic.AddElement(4);
+            generic.AddElement(0);
             generic.AddElement(0);
             generic.ClearArray();
             for (int i = 0; i < generic.Length; i++)
             {
-                Assert.AreEqual(generic[i], 0);
-            }            
+                Assert.AreEqual(0, generic[i]);
+            }
         }
         [TestMethod]
         public void ClearStringsTest()
@@ -136,12 +137,12 @@ namespace GenericListTests
             GenericList<string> generic = new GenericList<string>(40);
             for (int i = 0; i < generic.Length; i++)
             {
-                generic.InsertAtIndex("Test",i);
+                generic[i] = "TEST";
             }
             generic.ClearArray();
             for (int i = 0; i < generic.Length; i++)
             {
-                Assert.AreEqual(generic[i], null);
+                Assert.AreEqual(null, generic[i]);
             }
         }
     }
