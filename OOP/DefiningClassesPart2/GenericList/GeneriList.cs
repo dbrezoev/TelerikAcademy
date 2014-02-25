@@ -5,17 +5,25 @@ using System.Text;
 using System.Threading.Tasks;
 
 public class GenericList<T> where T : IComparable<T>
-{    
-    public T[] array;
+{
+    private T[] array;
     private int usedPlace;
-    private int length;
-    //constructor
-    public GenericList(int capacity)
+
+    //constructor    
+    public GenericList(int capacity = 16)
     {
         this.array = new T[capacity];
     }
-    
+
     public int Length
+    {
+        get
+        {
+            return this.usedPlace;
+        }
+    }
+
+    public int Count
     {
         get
         {
@@ -23,42 +31,53 @@ public class GenericList<T> where T : IComparable<T>
         }
     }
 
-    
+    public T this[int index]
+    {
+        get
+        {
+            if (!IsIndexValid(index))
+            {
+                throw new IndexOutOfRangeException("Invalid index");
+            }
+            return this.array[index];
+        }
+        set
+        {
+            if (!IsIndexValid(index))
+            {
+                throw new IndexOutOfRangeException("Invalid index");
+            }
+            this.array[index] = value;
+        }
+    }
     public void AddElement(T element)
     {
         if (this.usedPlace == this.array.Length)
         {
             AutoGrow();
-        }        
+        }
         this.array[this.usedPlace] = element;
         this.usedPlace++;
     }
 
-    private bool IsIndexValid(int index)
-    {
-        if (index < 0 || index >= this.array.Length)
-        {
-            return false;
-        }
-        return true;
-    }
+
     public T GetElement(int index)
     {
         if (!IsIndexValid(index))
         {
             throw new IndexOutOfRangeException("Trying to get element outside the array");
-        }        
+        }
         return this.array[index];
     }
 
 
     public void RemoveAtIndex(int index)
     {
-        if (index<0 || index>= this.usedPlace)
+        if (index < 0 || index >= this.usedPlace)
         {
             throw new IndexOutOfRangeException("Invalid index");
         }
-        for (int i = index; i < this.usedPlace-1; i++)
+        for (int i = index; i < this.usedPlace - 1; i++)
         {
             this.array[i] = this.array[i + 1];
         }
@@ -68,27 +87,27 @@ public class GenericList<T> where T : IComparable<T>
 
 
     public void InsertAtIndex(T element, int index)
-    {        
+    {
         if (this.array.Length == this.usedPlace)
-        {            
+        {
             AutoGrow();
         }
         if (!IsIndexValid(index))
         {
             throw new IndexOutOfRangeException("Trying to insert at wrong index");
         }
-        for (int i = this.array.Length-1; i >= index+1; i--)
+        for (int i = this.array.Length - 1; i >= index + 1; i--)
         {
             this.array[i] = this.array[i - 1];
         }
-        this.array[index] = element;        
+        this.array[index] = element;
         this.usedPlace++;
     }
 
 
     public void ClearArray()
     {
-        for (int i = 0; i < this.array.Length; i++)
+        for (int i = 0; i < this.usedPlace; i++)
         {
             this.array[i] = default(T);
         }
@@ -109,21 +128,12 @@ public class GenericList<T> where T : IComparable<T>
     }
 
 
-    private void AutoGrow()
-    {
-        T[] cloned = (T[])this.array.Clone();
-        this.array = new T[this.array.Length * 2];
-        for (int i = 0; i < cloned.Length; i++)
-        {
-            this.array[i] = cloned[i];
-        }        
-    }
     public T Max()
     {
         T max = this.array[0];
         for (int i = 0; i < this.usedPlace; i++)
         {
-            if (this.array[i].CompareTo(max)>=0)
+            if (this.array[i].CompareTo(max) >= 0)
             {
                 max = this.array[i];
             }
@@ -143,7 +153,7 @@ public class GenericList<T> where T : IComparable<T>
         }
         return min;
     }
-    
+
     public override string ToString()
     {
         StringBuilder sb = new StringBuilder();
@@ -161,22 +171,28 @@ public class GenericList<T> where T : IComparable<T>
             if (i != this.array.Length - 1)
             {
                 sb.Append(", ");
-            }           
+            }
         }
         sb.Append("]");
         return sb.ToString();
     }
 
-    public T this[int index]
+    private void AutoGrow()
     {
-        get
+        T[] cloned = (T[])this.array.Clone();
+        this.array = new T[this.array.Length * 2];
+        for (int i = 0; i < cloned.Length; i++)
         {
-            if (!IsIndexValid(index))
-            {
-                throw new IndexOutOfRangeException("Invalid index");
-            }
-            return this.array[index];
-        }       
+            this.array[i] = cloned[i];
+        }
     }
-    
+    private bool IsIndexValid(int index)
+    {
+        if (index < 0 || index >= this.usedPlace)
+        {
+            return false;
+        }
+        return true;
+    }
+
 }
