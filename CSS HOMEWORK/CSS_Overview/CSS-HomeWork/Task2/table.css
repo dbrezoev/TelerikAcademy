@@ -1,0 +1,25 @@
+﻿table {
+    border-collapse:collapse;
+    font-family:Calibri;
+    width:500px;    
+    text-align:left;   
+    vertical-align:inherit;    
+}
+table td {       
+    border:1px solid #bfbfbf;   
+    padding:5px;
+}
+thead th {
+    font-weight:normal;
+    border:1px solid #bfbfbf;
+    background-color:#3dac1d;
+    color:white;
+    padding-left:5px;
+    padding-bottom:5px;
+}
+tr:nth-of-type(2n) {
+    background-color:#d9d7d7;
+}
+table .flag{
+    width:20px;
+}

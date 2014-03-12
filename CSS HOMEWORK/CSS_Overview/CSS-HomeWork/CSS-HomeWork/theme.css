@@ -1,0 +1,32 @@
+﻿body {    
+    background-color:#5e5959;
+    width:300px;
+}
+body h1 {
+    color:#9a9797;
+    font-family:Calibri;
+}
+    body dl dt {
+        font-style:italic;
+        color:white;        
+        
+    }
+
+    body dd#noactive {
+        color:red;
+        font-weight:bold;
+    }
+    body dd {
+        color:#9a9797;   
+        padding-left:100px;             
+    }
+.info {
+    color:#c6c752;
+}
+    .info#circle:before {
+        content:url(https://github.com/thegodmode/CSS/blob/master/Overview/Exercise%201/dot.png?raw=true);
+        margin-right:5px;             
+    }
+#not_answered {
+color:#ff6a00;
+}

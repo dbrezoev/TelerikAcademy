@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSS-HomeWork", "CSS-HomeWork\CSS-HomeWork.csproj", "{16AF1A88-01D5-4AAA-AEA0-726B391B28EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task2", "Task2\Task2.csproj", "{5F9C4FDC-D728-48B7-BD94-9F684844DA63}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{16AF1A88-01D5-4AAA-AEA0-726B391B28EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16AF1A88-01D5-4AAA-AEA0-726B391B28EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16AF1A88-01D5-4AAA-AEA0-726B391B28EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16AF1A88-01D5-4AAA-AEA0-726B391B28EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F9C4FDC-D728-48B7-BD94-9F684844DA63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F9C4FDC-D728-48B7-BD94-9F684844DA63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F9C4FDC-D728-48B7-BD94-9F684844DA63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F9C4FDC-D728-48B7-BD94-9F684844DA63}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
