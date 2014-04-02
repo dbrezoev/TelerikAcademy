@@ -1,0 +1,33 @@
+body {
+    background-color:#A9A9A9;
+}
+    body header {
+        text-align:center;
+    }
+        body nav ul{
+            list-style-type:none;                        
+        }
+            body nav ul a {
+                color:white;
+                text-decoration:none;
+                font-weight:bolder;
+            }
+                body nav ul a:hover {
+                    text-decoration:underline;
+                }
+h1 {
+    color:#FAFAD2;
+}
+section h1 {
+    text-align:left;
+}
+article footer a {
+    text-decoration:none;
+    color:black;
+}
+    article footer a:hover {
+        text-decoration:dotted;
+    }
+body>footer {
+    text-align:center;
+}
