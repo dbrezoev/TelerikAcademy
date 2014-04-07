@@ -1,0 +1,6 @@
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\DataStructuresAndAlgorithms\Linear-Data-Structures\9.SequenceInQueue\bin\Debug\9.SequenceInQueue.exe.config
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\DataStructuresAndAlgorithms\Linear-Data-Structures\9.SequenceInQueue\bin\Debug\9.SequenceInQueue.exe
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\DataStructuresAndAlgorithms\Linear-Data-Structures\9.SequenceInQueue\bin\Debug\9.SequenceInQueue.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\DataStructuresAndAlgorithms\Linear-Data-Structures\9.SequenceInQueue\obj\Debug\9.SequenceInQueue.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\DataStructuresAndAlgorithms\Linear-Data-Structures\9.SequenceInQueue\obj\Debug\9.SequenceInQueue.exe
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\DataStructuresAndAlgorithms\Linear-Data-Structures\9.SequenceInQueue\obj\Debug\9.SequenceInQueue.pdb

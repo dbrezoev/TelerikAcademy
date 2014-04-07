@@ -1,0 +1,6 @@
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\DataStructuresAndAlgorithms\Linear-Data-Structures\7.AllNnumbersTo1000\bin\Debug\7.AllNnumbersTo1000.exe.config
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\DataStructuresAndAlgorithms\Linear-Data-Structures\7.AllNnumbersTo1000\bin\Debug\7.AllNnumbersTo1000.exe
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\DataStructuresAndAlgorithms\Linear-Data-Structures\7.AllNnumbersTo1000\bin\Debug\7.AllNnumbersTo1000.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\DataStructuresAndAlgorithms\Linear-Data-Structures\7.AllNnumbersTo1000\obj\Debug\7.AllNnumbersTo1000.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\DataStructuresAndAlgorithms\Linear-Data-Structures\7.AllNnumbersTo1000\obj\Debug\7.AllNnumbersTo1000.exe
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\DataStructuresAndAlgorithms\Linear-Data-Structures\7.AllNnumbersTo1000\obj\Debug\7.AllNnumbersTo1000.pdb

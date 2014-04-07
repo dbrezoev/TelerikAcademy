@@ -1,0 +1,6 @@
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\DataStructuresAndAlgorithms\Linear-Data-Structures\10.ShortestCountOfOperations\bin\Debug\10.ShortestCountOfOperations.exe.config
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\DataStructuresAndAlgorithms\Linear-Data-Structures\10.ShortestCountOfOperations\bin\Debug\10.ShortestCountOfOperations.exe
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\DataStructuresAndAlgorithms\Linear-Data-Structures\10.ShortestCountOfOperations\bin\Debug\10.ShortestCountOfOperations.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\DataStructuresAndAlgorithms\Linear-Data-Structures\10.ShortestCountOfOperations\obj\Debug\10.ShortestCountOfOperations.exe
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\DataStructuresAndAlgorithms\Linear-Data-Structures\10.ShortestCountOfOperations\obj\Debug\10.ShortestCountOfOperations.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\DataStructuresAndAlgorithms\Linear-Data-Structures\10.ShortestCountOfOperations\obj\Debug\10.ShortestCountOfOperations.csprojResolveAssemblyReference.cache

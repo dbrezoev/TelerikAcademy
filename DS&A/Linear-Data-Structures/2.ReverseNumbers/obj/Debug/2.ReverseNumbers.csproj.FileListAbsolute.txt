@@ -1,0 +1,6 @@
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\DataStructuresAndAlgorithms\Linear-Data-Structures\2.ReverseNumbers\bin\Debug\2.ReverseNumbers.exe.config
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\DataStructuresAndAlgorithms\Linear-Data-Structures\2.ReverseNumbers\bin\Debug\2.ReverseNumbers.exe
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\DataStructuresAndAlgorithms\Linear-Data-Structures\2.ReverseNumbers\bin\Debug\2.ReverseNumbers.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\DataStructuresAndAlgorithms\Linear-Data-Structures\2.ReverseNumbers\obj\Debug\2.ReverseNumbers.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\DataStructuresAndAlgorithms\Linear-Data-Structures\2.ReverseNumbers\obj\Debug\2.ReverseNumbers.exe
+C:\Users\User\Documents\Visual Studio 2012\Projects\HOMEWORKS\DataStructuresAndAlgorithms\Linear-Data-Structures\2.ReverseNumbers\obj\Debug\2.ReverseNumbers.pdb
