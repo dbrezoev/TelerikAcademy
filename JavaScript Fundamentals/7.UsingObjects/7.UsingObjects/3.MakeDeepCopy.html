@@ -18,8 +18,9 @@ The function should work for both primitive and reference types
 
             //Handle Date
             if (this.constructor=== Date) {
-                var copy = new Date();
-                copy.setDate(this.getTime());
+                var copy = new Date(this.getTime());
+
+                //copy.setDate(this.getTime());
                 return copy;
             }
 
@@ -54,15 +55,16 @@ The function should work for both primitive and reference types
                 
         var a = 5;
         var clonedPrimitive = a.copy();
-        jsConsole.writeLine(clonedPrimitive);
+        jsConsole.writeLine('Original primitive variable: '+clonedPrimitive);
         a = 90;
-        jsConsole.writeLine(a);
+        jsConsole.writeLine('Original variable changed value: '+a);
 
         //clonedPrimitive still 5
-        jsConsole.writeLine(clonedPrimitive);
+        jsConsole.writeLine('clonedPrimitive: ' + clonedPrimitive);
         
 
         jsConsole.writeLine('-----Handle objects-----');
+
         var nasko = {
             name: "nasko",
             age: 23,
@@ -79,31 +81,42 @@ The function should work for both primitive and reference types
         //clonedPerson`s name still remains
         jsConsole.writeLine(clonedPerson.name)
 
-
-
         jsConsole.writeLine('-----Handle arrays-----');
 
         var arr = [1, 2, 3, 4, 5];
         
         var clonedArr = arr.copy();
 
+        jsConsole.write('Original Array: ');
         jsConsole.writeLine(arr.join(', '));
+        jsConsole.write('Cloned Array: ');
         jsConsole.writeLine(clonedArr.join(', '));
         jsConsole.writeLine('----');
 
         //change first value of one array
-        arr[0] = 'pesho';
+        arr[0] = 'pesho';        
         
         //result in cloned array stays as before
+        jsConsole.write('Original Array: ');
         jsConsole.writeLine(arr.join(', '));
+        jsConsole.write('Cloned Array: ');
         jsConsole.writeLine(clonedArr.join(', '));
 
         jsConsole.writeLine('-----Handle dates-----');
         var now = new Date();
         var clonedDate = now.copy();
+        
+        //print their months
+        jsConsole.writeLine('now.getMonth(): '+now.getMonth());
+        jsConsole.writeLine('clonedDate.getMonth(): ' + clonedDate.getMonth());
 
-        jsConsole.writeLine(now);
-        jsConsole.writeLine(clonedDate);
+        //set different month to original date
+        jsConsole.writeLine('Set different month to the original Date and results are: ');
+        now.setMonth(11);
+        jsConsole.writeLine('now.getMonth(): ' + now.getMonth());
+
+        //cloned date remains unchanged
+        jsConsole.writeLine('clonedDate.getMonth(): ' + clonedDate.getMonth());
                        
 	</script>
 </body>

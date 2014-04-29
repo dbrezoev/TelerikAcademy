@@ -3,3 +3,8 @@ C:\Users\User\Documents\Visual Studio 2012\Projects\WEB\JavaScript\7.UsingObject
 C:\Users\User\Documents\Visual Studio 2012\Projects\WEB\JavaScript\7.UsingObjects\7.UsingObjects\obj\Debug\7.UsingObjects.csprojResolveAssemblyReference.cache
 C:\Users\User\Documents\Visual Studio 2012\Projects\WEB\JavaScript\7.UsingObjects\7.UsingObjects\obj\Debug\7.UsingObjects.dll
 C:\Users\User\Documents\Visual Studio 2012\Projects\WEB\JavaScript\7.UsingObjects\7.UsingObjects\obj\Debug\7.UsingObjects.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JavaScript Fundamentals\7.UsingObjects\7.UsingObjects\bin\7.UsingObjects.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JavaScript Fundamentals\7.UsingObjects\7.UsingObjects\bin\7.UsingObjects.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JavaScript Fundamentals\7.UsingObjects\7.UsingObjects\obj\Debug\7.UsingObjects.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JavaScript Fundamentals\7.UsingObjects\7.UsingObjects\obj\Debug\7.UsingObjects.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JavaScript Fundamentals\7.UsingObjects\7.UsingObjects\obj\Debug\7.UsingObjects.pdb
