@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />  
+    <!--Write script that asks for a digit and depending on the input shows the name of that digit (in English)
+         using a switch statement.
+-->     
+</head>
+<body>    
+    <label for="input">Input number:</label>
+    <input type="text" id="input" />
+    <a href="#" onclick="giveName()">See its name</a>
+    <div id="js-console">
+        
+    </div>        
+    <script src="script/js-console.js"></script>
+    <script>
+        function giveName() {
+            var number = jsConsole.readInteger('#input');
+            var name;
+            switch (number) {
+                case 1:
+                    name = 'one'; break;
+                case 2:
+                    name = 'two'; break;
+                case 3:
+                    name = 'three'; break;
+                case 4:
+                    name = 'four'; break;
+                case 5:
+                    name = 'five'; break;
+                case 6:
+                    name = 'six'; break;
+                case 7:
+                    name = 'seven'; break;
+                case 8:
+                    name = 'eight'; break;
+                case 9:
+                    name = 'nine'; break;
+                default:
+                    name = 'Invalid digit'; break;
+            }
+            jsConsole.writeLine(name);
+        }
+	</script>
+</body>
+</html>

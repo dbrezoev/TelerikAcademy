@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />  
+    <!--Write a script that finds the maximal increasing sequence in an array. Example: {3, 2, 3, 4, 2, 2, 4}  {2, 3, 4}.
+-->     
+</head>
+<body>    
+    <label for="arr">Input array separated with coma:</label>
+    <input type="text" id="arr" />
+    <a href="#" onclick="find()">Execute</a>
+    <div id="js-console">
+        
+    </div>        
+    <script src="script/js-console.js"></script>
+    <script>
+        function find() {            
+            var input = jsConsole.read('#arr');
+            var arr = input.split(',');
+
+            for (var i = 0; i < arr.length; i++) {
+                arr[i] = parseFloat(arr[i]);
+                //jsConsole.writeLine(arr[i]);
+            }
+            var maxCount = 1;
+            var count = 1;
+            var lastElement = 0;
+            for (var i = 0; i < arr.length-1; i++) {
+                
+                if (arr[i] + 1 == arr[i + 1]) {
+                    count++;
+                    
+                    if (count>maxCount) {
+                        maxCount = count;
+                        lastElement = arr[i + 1];
+                    }
+                }
+                else {
+                                        
+                    count = 1;
+                }
+            }
+            var firstNumber = lastElement - maxCount + 1;
+            for (var i = 0; i < maxCount; i++) {
+                jsConsole.writeLine(firstNumber);                
+                firstNumber++;
+            }
+           
+        }
+	</script>
+</body>
+</html>

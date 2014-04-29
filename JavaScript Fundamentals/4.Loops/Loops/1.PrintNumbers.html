@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />  
+    <!--Write a script that prints all the numbers from 1 to N
+-->     
+</head>
+<body>    
+    <label for="input">Input number N:</label>
+    <input type="text" id="input" />
+    <a href="#" onclick="printNumbers()">Execute</a>
+    <div id="js-console">
+        
+    </div>        
+    <script src="script/js-console.js"></script>
+    <script>
+        function printNumbers() {
+            var limit = jsConsole.readInteger('#input');
+            for (var i = 1; i <= limit; i++) {
+                jsConsole.writeLine(i);
+            }
+        }
+	</script>
+</body>
+</html>

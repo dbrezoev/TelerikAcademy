@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />  
+    <!--Write a program that finds the index of given element
+         in a sorted array of integers by using the binary search algorithm (find it in Wikipedia)
+-->     
+</head>
+<body>    
+    <label for="arr">Input array separated with coma:</label>
+    <input type="text" id="arr" />
+
+    <label for="arr">Input value we are searching:</label>
+    <input type="text" id="value" />
+    <a href="#" onclick="find()">Execute</a>
+    <div id="js-console">
+        
+    </div>        
+    <script src="script/js-console.js"></script>
+    <script>
+        function binSearch(array, value) {
+            var low = 0;
+            var high = array.length - 1;
+            var midPoint = 0;
+
+            while (low<=high) {
+
+                midPoint = low + (high - low) / 2;
+                midPoint = parseInt(midPoint);
+                if (value==array[midPoint]) {
+                    return midPoint;
+                }
+                else if (value < array[midPoint]) {
+                    high = midPoint - 1;
+                }
+                else {
+                    low = midPoint + 1;
+                }
+            }
+
+            return -1;
+        }
+        function find(){
+            var searchingValue = jsConsole.read('#value');
+            var input = jsConsole.read('#arr');
+            var arr = input.split(',');
+            for (var i = 0; i < arr.length; i++) {
+                arr[i] = parseFloat(arr[i]);
+            }
+            jsConsole.write('Index: ');
+            jsConsole.writeLine(binSearch(arr, searchingValue));
+        }
+	</script>
+</body>
+</html>

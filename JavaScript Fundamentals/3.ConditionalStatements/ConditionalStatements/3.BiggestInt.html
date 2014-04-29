@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />  
+    <!--Write a script that finds the biggest of three integers using nested if statements
+-->     
+</head>
+<body>    
+    <label for="input">Input first number:</label>
+    <input type="text" id="first" />
+    <label for="input">Input second number:</label>
+    <input type="text" id="second" />
+    <label for="input">Input third number:</label>
+    <input type="text" id="third" />
+    <a href="#" onclick="execute()">Execute</a>
+    <div id="js-console">
+        
+    </div>        
+    <script src="script/js-console.js"></script>
+    <script>
+        function execute() {
+            var first = jsConsole.readFloat('#first');
+            var second = jsConsole.readFloat('#second');
+            var third = jsConsole.readFloat('#third');
+           
+            if (first>=second) {
+                if (first >= third) {
+                    jsConsole.writeLine('The biggest is ' + first);
+                }
+                else {
+                    jsConsole.writeLine('The biggest is '+third);
+                }
+            }
+            else {
+                if (second>third) {
+                    jsConsole.writeLine('The biggest is ' + second);
+                }
+                else{
+                    jsConsole.writeLine('The biggest is ' + third);
+                }
+            }           
+        }
+	</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />  
+    <!--Write an expression that checks for given integer if its third digit (right-to-left) is 7. E. g. 1732  true-->     
+</head>
+<body>    
+    <label for="input">Input number:</label>
+    <input type="text" id="input" />
+    <a href="#" onclick="check()">Check Third Digit</a>
+    <div id="js-console">
+        
+    </div>        
+    <script src="script/js-console.js"></script>
+    <script>        
+        function check() {
+            var number = jsConsole.readInteger('#input');
+            
+            if (number.toString()[0]=='-') {
+                number *= -1;
+            }            
+            var a = parseInt(number / 100);
+            if (a % 10 == 7) {
+                jsConsole.writeLine('Yes, the third digit is 7.');
+            }
+            else {
+                jsConsole.writeLine('No the third digit is not 7');
+            }
+        }
+	</script>
+</body>
+</html>

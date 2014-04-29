@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />  
+    <!--Write a script that finds the maximal sequence of equal elements in an array.
+-->     
+</head>
+<body>    
+    <label for="arr">Input array separated with coma:</label>
+    <input type="text" id="arr" />
+    <a href="#" onclick="find()">Execute</a>
+    <div id="js-console">
+        
+    </div>        
+    <script src="script/js-console.js"></script>
+    <script>
+        function find() {
+            var input = jsConsole.read('#arr');           
+            var arr = input.split(',');
+
+            var max = 1;
+            var count = 1;
+            var element;
+            for (var i = 0; i < arr.length-1; i++) {
+                if (arr[i] == arr[i + 1]) {
+                    count++;                    
+                }
+                else {
+                    if (count >= max) {
+                        max = count;
+                        element = arr[i];
+                    }
+                    count = 1;
+                }
+            }
+
+            if (count >= max) {
+                max = count;
+                element = arr[i];
+            }
+
+            jsConsole.writeLine('Element: '+element);
+            jsConsole.writeLine('Seen '+max+' times.');
+
+
+        }
+	</script>
+</body>
+</html>

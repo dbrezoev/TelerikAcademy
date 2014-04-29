@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />  
+    <!--Write a function that finds all the occurrences of word in a text
+The search can case sensitive or case insensitive
+Use function overloading
+-->     
+</head>
+<body>    
+    <label for="input">Input text:</label>
+    <textarea id="input"></textarea>
+    <label for="input">Input word:</label>
+    <input type="text" id="word" />
+    <a href="#" onclick="execute()">Find</a>
+    <div id="js-console">
+        
+    </div>        
+    <script src="script/js-console.js"></script>
+    <script>
+
+        function execute() {
+            var text = jsConsole.read('#input');
+            var word = jsConsole.read('#word');
+
+            var res = countWord(text, word, true);
+            alert(res)
+        }
+
+        function countWord(text, word, caseSensitive) {
+            var argsCount = arguments.length;
+            var count = 0;
+
+            switch (argsCount) {
+                case 2:
+                    count = countWordsCaseInsensitive(); break;
+                case 3:
+
+                    count = caseSensitive ? countWordsCaseSensitive() : countWordsCaseInsensitive(); break;
+                default:
+
+            }
+            return count;
+
+            function countWordsCaseInsensitive() {
+
+                var regex = new RegExp('\\b' + word + '\\b', 'gi');
+                var arr = text.match(regex);
+                return arr.length;
+            }
+
+            function countWordsCaseSensitive() {
+                var regex = new RegExp('\\b' + word + '\\b', 'g');
+                var arr = text.match(regex);
+                return arr.length;
+            }
+        }
+
+        //following code working with substring
+
+        //function countWord(text, word, caseSensitive) {
+        //    var argsCount = arguments.length;
+        //    var count = 0;
+        //    switch (argsCount) {
+        //        case 2:
+        //            count = countWordCaseInsensitive();
+        //            break;
+        //        case 3:
+        //            count = caseSensitive ? countWordCaseSensitive() : countWordCaseInsensitive();
+        //            break;
+        //        default: break;
+
+        //    }
+
+        //    return count;
+
+        //    function countWordCaseInsensitive() {
+        //        var count = 0;
+        //        var index = 0;
+        //        text = text.toLowerCase();
+        //        var searchWord = word.toLowerCase();
+        //        index = text.indexOf(searchWord.toLowerCase());
+        //        while (index!=-1) {
+        //            count++;
+        //            index = text.indexOf(searchWord.toLowerCase(), index + searchWord.length);
+        //        }
+
+        //        return count;
+        //    }
+
+        //    function countWordCaseSensitive() {
+        //        var count = 0;
+        //        var index = 0;
+
+        //        index = text.indexOf(word);
+        //        while (index != -1) {
+        //            count++;
+        //            index = text.indexOf(word,index + word.length);
+        //        }
+
+        //        return count;
+        //    }
+        //}                   
+	</script>
+</body>
+</html>

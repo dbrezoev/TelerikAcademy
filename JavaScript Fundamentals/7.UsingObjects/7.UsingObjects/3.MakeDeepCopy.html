@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />  
+    <!--Write a function that makes a deep copy of an object
+The function should work for both primitive and reference types
+-->     
+</head>
+<body>        
+    <div id="js-console">
+                
+    </div>        
+    <script src="script/js-console.js"></script>
+    <script>            
+
+        Object.prototype.copy = function () {
+
+            //Handle Date
+            if (this.constructor=== Date) {
+                var copy = new Date();
+                copy.setDate(this.getTime());
+                return copy;
+            }
+
+            //Handle Array
+            if (this.constructor === Array) {
+                var copy = [];                
+                for (var i = 0; i < this.length; i++) {
+                    copy.push(this[i])
+                }                
+                return copy;
+            }
+
+            //Handle Object
+            if (this.constructor === Object) {
+                var copy = {};
+                for (var atr in this) {
+                    copy[atr] = this[atr]
+                }
+                return copy;
+            }
+
+            if (this == null) {
+                return this;
+            }
+            if (this.constructor !== Object) {
+                return this;
+            }
+
+            
+        }
+        jsConsole.writeLine('-----Handle primitive types-----');
+                
+        var a = 5;
+        var clonedPrimitive = a.copy();
+        jsConsole.writeLine(clonedPrimitive);
+        a = 90;
+        jsConsole.writeLine(a);
+
+        //clonedPrimitive still 5
+        jsConsole.writeLine(clonedPrimitive);
+        
+
+        jsConsole.writeLine('-----Handle objects-----');
+        var nasko = {
+            name: "nasko",
+            age: 23,
+            hasHead:true,
+            sayHello: function sh() {
+                jsConsole.writeLine(this.name + ' says hello!');
+            }
+        }
+        var clonedPerson = nasko.copy();
+
+        //change name of the first person
+        nasko.name = 'pesho';
+
+        //clonedPerson`s name still remains
+        jsConsole.writeLine(clonedPerson.name)
+
+
+
+        jsConsole.writeLine('-----Handle arrays-----');
+
+        var arr = [1, 2, 3, 4, 5];
+        
+        var clonedArr = arr.copy();
+
+        jsConsole.writeLine(arr.join(', '));
+        jsConsole.writeLine(clonedArr.join(', '));
+        jsConsole.writeLine('----');
+
+        //change first value of one array
+        arr[0] = 'pesho';
+        
+        //result in cloned array stays as before
+        jsConsole.writeLine(arr.join(', '));
+        jsConsole.writeLine(clonedArr.join(', '));
+
+        jsConsole.writeLine('-----Handle dates-----');
+        var now = new Date();
+        var clonedDate = now.copy();
+
+        jsConsole.writeLine(now);
+        jsConsole.writeLine(clonedDate);
+                       
+	</script>
+</body>
+</html>

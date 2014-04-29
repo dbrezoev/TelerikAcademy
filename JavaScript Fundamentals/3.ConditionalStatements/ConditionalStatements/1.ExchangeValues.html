@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />  
+    <!--Write an if statement that examines two integer variables and exchanges their values 
+        if the first one is greater than the second one.
+-->     
+</head>
+<body>    
+    <label for="input">Input first number:</label>
+    <input type="text" id="first" />
+    <label for="input">Input second number:</label>
+    <input type="text" id="second" />
+    <a href="#" onclick="swapNumbers()">Swap?</a>
+    <div id="js-console">
+        
+    </div>        
+    <script src="script/js-console.js"></script>
+    <script>                        
+        function swapNumbers() {
+            var first = jsConsole.readInteger('#first');
+            var second = jsConsole.readInteger('#second');
+            var bufer = 0;
+            if (first < second) {                
+                bufer=first;
+                first = second;
+                second = bufer;
+            }
+            jsConsole.writeLine(first);
+            jsConsole.writeLine(second);
+        }
+	</script>
+</body>
+</html>

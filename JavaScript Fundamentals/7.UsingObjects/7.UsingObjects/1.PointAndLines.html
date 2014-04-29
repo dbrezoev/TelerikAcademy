@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />  
+    <!--Write functions for working with shapes in  standard Planar coordinate system
+Points are represented by coordinates P(X, Y)
+Lines are represented by two points, marking their beginning and ending
+L(P1(X1,Y1),P2(X2,Y2))
+Calculate the distance between two points
+Check if three segment lines can form a triangle
+-->     
+</head>
+<body>        
+    <div id="js-console">
+                
+    </div>        
+    <script src="script/js-console.js"></script>
+    <script>
+
+        function Point(x, y) {
+
+            this.x = x;
+            this.y = y;
+
+            this.toString = function toStr() {
+                return 'Point(' + this.x + ',' + this.y + ')';
+            }
+
+            this.calculateDistance = function (p) {
+
+                return Math.sqrt((this.x - p.x) * (this.x - p.x) + (this.y - p.y) * (this.y - p.y));
+            }
+
+            this.clone = function cl() {
+                return new Point(this.x, this.y);
+            }
+        }
+
+        function Line(p1, p2) {
+
+            this.start = p1.clone();
+            this.end = p2.clone();
+
+            this.toString = function toStr() {
+                return 'Line: Start - Point(' + p1.x + ',' + p1.y + ')' + '; End - Point(' + p2.x + ',' + p2.y + ')';
+            }
+
+            this.getLength = function getLen() {
+                return this.start.calculateDistance(this.end);
+            }
+
+        }
+
+        function linesFormTriangle(line1, line2, line2) {
+
+            if (line1.length + line2.length > line3.length &&
+                line2.length + line3.length > line1.length &&
+                line1.length + line3.length > line2.length) {
+
+                return true;
+            }
+
+            return false;
+
+        }
+        //creating two points
+        var point = new Point(2, 3);
+        var point2 = new Point(2, 14);        
+
+        jsConsole.writeLine('Distance between ' + point.toString() + ' and ' + point2.toString());
+        var result = point.calculateDistance(point2);
+        jsConsole.writeLine(result);
+
+        var line = new Line(point, point2);
+        jsConsole.writeLine(line);
+        var len = line.getLength;
+        jsConsole.writeLine(line.getLength());
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />  
+    <!--Write a script that compares two char arrays lexicographically (letter by letter).
+-->     
+</head>
+<body>    
+    <label for="first">Input first:</label>
+    <input type="text" id="first" />
+    <label for="second">Input second:</label>
+    <input type="text" id="second" />
+    <a href="#" onclick="compare()">Execute</a>
+    <div id="js-console">
+        
+    </div>        
+    <script src="script/js-console.js"></script>
+    <script>
+        function compare() {
+            var arr1 = jsConsole.read('#first');
+            var arr2 = jsConsole.read('#second');
+
+            var firstWins = 'First array is lexicographically before the other!';
+            var secondWins = 'Second array is lexicographically before the other!';
+            var equalString = 'The two arrays are equal!';
+
+            var first = true;
+            var equal = true;
+
+            var maxLength = Math.max(arr1.length, arr2.length);
+            for (var i = 0; i < maxLength; i++) {
+
+                if (arr1.length - 1 < i) {
+                    equal = false;
+                    jsConsole.writeLine(firstWins);
+                    break;
+                }
+                else if (arr2.length - 1 < i) {
+                    equal = false;
+                    jsConsole.writeLine(secondWins);
+                    break;
+                }
+                else {                   
+                    if (arr1[i] < arr2[i]) {
+                        equal = false;
+                        jsConsole.writeLine(firstWins);
+                        break;
+                    }
+                    else if (arr1[i] > arr2[i]) {
+                        equal = false;
+                        jsConsole.writeLine(secondWins);
+                        break;
+                    }
+                }
+            }
+            if (equal==true) {
+                jsConsole.writeLine(equalString);
+            }
+        }        
+	</script>
+</body>
+</html>

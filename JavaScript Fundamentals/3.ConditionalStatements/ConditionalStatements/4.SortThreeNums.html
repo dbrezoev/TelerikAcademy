@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />  
+    <!--Sort 3 real values in descending order using nested if statements.-->     
+</head>
+<body>    
+    <label for="input">Input first number:</label>
+    <input type="text" id="first" />
+    <label for="input">Input second number:</label>
+    <input type="text" id="second" />
+    <label for="input">Input third number:</label>
+    <input type="text" id="third" />
+    <a href="#" onclick="sort()">Sort</a>
+    <div id="js-console">
+        
+    </div>        
+    <script src="script/js-console.js"></script>
+    <script>
+        function sort() {
+            var a = jsConsole.readFloat('#first');
+            var b = jsConsole.readFloat('#second');
+            var c = jsConsole.readFloat('#third');
+
+            if (a < b) {
+                if (a < c) {
+                    if (b < c) {
+                        jsConsole.writeLine(c+' '+b+' '+a);
+                    }
+                    else {
+                        jsConsole.writeLine(b + ' ' + c + ' ' + a);
+                    }
+                }
+                else {
+                    if (b < a) {
+                        jsConsole.writeLine(a + ' ' + b + ' ' + c);
+                    }
+                    else {
+                        jsConsole.writeLine(b + ' ' + a + ' ' + c);
+                    }
+                }
+            }
+            else {
+                if (b < c) {
+                    if (a < c) {
+                        jsConsole.writeLine(c + ' ' + a + ' ' + b);
+                    }
+                    else {
+                        jsConsole.writeLine(a + ' ' + c + ' ' + b);
+                    }
+                }
+                else {
+                    if (b < a) {
+                        jsConsole.writeLine(a + ' ' + b + ' ' + c);
+                    }
+                    else {
+                        jsConsole.writeLine(b + ' ' + a + ' ' + c);
+                    }
+                }
+            }
+        }
+	</script>
+</body>
+</html>

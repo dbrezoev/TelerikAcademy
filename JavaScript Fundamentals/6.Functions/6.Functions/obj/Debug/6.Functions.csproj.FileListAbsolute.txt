@@ -1,0 +1,5 @@
+C:\Users\User\Documents\Visual Studio 2012\Projects\WEB\JavaScript\6.Functions\6.Functions\bin\6.Functions.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\WEB\JavaScript\6.Functions\6.Functions\bin\6.Functions.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\WEB\JavaScript\6.Functions\6.Functions\obj\Debug\6.Functions.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\Visual Studio 2012\Projects\WEB\JavaScript\6.Functions\6.Functions\obj\Debug\6.Functions.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\WEB\JavaScript\6.Functions\6.Functions\obj\Debug\6.Functions.pdb

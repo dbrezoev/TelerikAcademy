@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />  
+    <!--Write a boolean expression for finding if the bit 3 (counting from 0) of a given integer is 1 or 0.
+-->     
+</head>
+<body>    
+    <label for="input">Input number:</label>
+    <input type="text" id="input" />
+    <a href="#" onclick="check()">Check Third Bit</a>
+    <div id="js-console">
+        
+    </div>        
+    <script src="script/js-console.js"></script>
+    <script>
+        function check() {
+            var number = jsConsole.readInteger('#input');
+            var position = 3; 
+            var mask = 1 << position;
+            var numberAndMask = number & mask;
+            var bit = numberAndMask >> position;            
+            jsConsole.writeLine('The searching bit is ' + bit);
+            jsConsole.writeLine('Here is the number in binary system ' + number.toString(2));
+        }
+	</script>
+</body>
+</html>

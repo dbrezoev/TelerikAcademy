@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />  
+    <!--Write a script that converts a number in the range [0...999] to a text corresponding to its English pronunciation. -->     
+</head>
+<body>    
+    <label for="input">Input number:</label>
+    <input type="text" id="input" />
+    <a href="#" onclick="checkNumberName()">Execute</a>
+    <div id="js-console">
+        
+    </div>        
+    <script src="script/js-console.js"></script>
+    <script>
+        function getOnes(ones) {
+            switch (ones) {
+                case 1:
+                    name = 'one '; break;
+                case 2:
+                    name = 'two '; break;
+                case 3:
+                    name = 'three '; break;
+                case 4:
+                    name = 'four '; break;
+                case 5:
+                    name = 'five '; break;
+                case 6:
+                    name = 'six '; break;
+                case 7:
+                    name = 'seven '; break;
+                case 8:
+                    name = 'eight '; break;
+                case 9:
+                    name = 'nine '; break;
+                default:
+                    name = 'Invalid digit (Ones) '; break;
+            }
+            return name;
+        }
+        function getTens(tens) {
+            switch (tens) {
+                case 1:
+                    name = 'eleven '; break;
+                case 2:
+                    name = 'twelve '; break;
+                case 3:
+                    name = 'thirteen '; break;
+                case 4:
+                    name = 'fourteen '; break;
+                case 5:
+                    name = 'fifteen '; break;
+                case 6:
+                    name = 'sixteen '; break;
+                case 7:
+                    name = 'seventeen '; break;
+                case 8:
+                    name = 'eighteen '; break;
+                case 9:
+                    name = 'nineteen '; break;
+                default:
+                    name = 'Invalid digit (tens)'; break;
+            }
+            return name;
+        }
+
+        function getTensRounded(tens) {
+            switch (tens) {
+                case 1:
+                    name = 'ten '; break;
+                case 2:
+                    name = 'twenty '; break;
+                case 3:
+                    name = 'thirty '; break;
+                case 4:
+                    name = 'fourty '; break;
+                case 5:
+                    name = 'fifty '; break;
+                case 6:
+                    name = 'sixty '; break;
+                case 7:
+                    name = 'seventy '; break;
+                case 8:
+                    name = 'eighty '; break;
+                case 9:
+                    name = 'ninety '; break;
+                default:
+                    name = 'Invalid digit (rounded)'; break;                   
+            }
+            return name;
+        }
+        
+
+        function checkNumberName() {
+            var number = jsConsole.readInteger('#input');
+
+            if (number.toString().length == 1) {
+                jsConsole.writeLine(getOnes(number));// from 1 to 9
+            }
+            else if(number.toString().length==2){
+                var ones = parseInt(number) % 10;                
+                var tens = parseInt(number / 10) % 10;
+
+                if (tens==1 && ones!=0) {
+                    var result=getTens(ones); //11-19
+                    jsConsole.writeLine(result);
+                }
+                if (ones==0) {
+                    var result=getTensRounded(tens);   //20,30,40,50,60,70,80,90
+                    jsConsole.writeLine(result);
+                }
+                if (tens!=1 && ones!=0) { // 23,35,89, etc...
+                   
+                    jsConsole.writeLine(getTensRounded(tens)+getOnes(ones));
+                }
+            }
+            else if (number.toString().length==3) {
+                var ones = parseInt(number) % 10;
+                var tens = parseInt(number / 10) % 10;
+                var hundreds = parseInt(number / 100);
+                
+                //jsConsole.writeLine(ones);
+                //jsConsole.writeLine(tens);
+                //jsConsole.writeLine(hundreds);
+
+                if (ones == 0 && tens != 0) {
+
+                    jsConsole.writeLine(getOnes(hundreds) + 'hundred and ' + getTensRounded(tens));//120, 540, 890... etc
+                    
+                }
+                else if (ones==0 && tens==0) {
+                    jsConsole.writeLine(getOnes(hundreds) + 'hundred ');//100,200,300 etc...
+                }
+                else if (ones!=0 && tens==0) {
+                    jsConsole.writeLine(getOnes(hundreds) +'hundred and '+ getOnes(ones));  //102, 809, 503 etc...
+                }                
+                else if (ones!=0 && tens!=0) {
+                    jsConsole.writeLine(getOnes(hundreds) + 'hundred ' + getTensRounded(tens) + getOnes(ones));
+                }
+                else if (tens == 1) {
+                    jsConsole.writeLine(getOnes(hundreds) + 'hundred and ' + getTens(ones)); //312, 415,819 etc...
+                }
+
+            }
+            
+        }
+	</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />  
+    <!--Write a function that checks if the element at given position in given array of integers is bigger than its two neighbors
+         (when such exist).
+-->     
+</head>
+<body>    
+    <label for="input">Input numbers separated by coma:</label>
+    <input type="text" id="input" />   
+    <a href="#" onclick="checkNumber()">Check</a>
+    <div id="js-console">
+        
+    </div>        
+    <script src="script/js-console.js"></script>
+    <script>
+        function checkNumber() {
+            var numbers = jsConsole.read('#input');
+            var arr = numbers.split(',');
+            for (var i = 0; i < arr.length; i++) {
+                arr[i] = parseInt(arr[i]);
+                if (i == 0 || i == arr.length - 1) {
+                    continue;
+                }
+                else {
+                    if (arr[i] > arr[i - 1] && arr[i] > arr[i + 1]) {
+                        jsConsole.writeLine(i);
+                        break;
+                    }
+                }
+            }
+        }
+	</script>
+</body>
+</html>

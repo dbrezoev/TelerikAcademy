@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />  
+    <!--Write a function that removes all elements with a given value
+Attach it to the array class
+Read about prototype and how to attach methods
+-->     
+</head>
+<body>        
+    <div id="js-console">
+                
+    </div>        
+    <script src="script/js-console.js"></script>
+    <script>
+        var arr = [1, 2, 4, 5, 11, 45, 765, 1, 67, 1, '1', 10, 1];
+
+        Array.prototype.remove = function (element) {
+            for (var i = 0; i < this.length; i++) {
+
+                if (this[i] === element) {
+                    this[i] = undefined;
+                }
+            }
+            var result = [];
+
+            for (var i = 0; i < this.length; i++) {
+                if (this[i] != undefined) {
+                    result.push(this[i]);
+                }
+            }
+            this.length = result.length;
+            for (var i = 0; i < result.length; i++) {
+                this[i] = result[i];
+            }
+            
+            return this;
+        }
+        arr.remove(1);
+        jsConsole.writeLine(arr.join(','));
+
+	</script>
+</body>
+</html>

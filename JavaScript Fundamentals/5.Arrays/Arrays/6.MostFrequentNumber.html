@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />  
+    <!--Sorting an array means to arrange its elements in increasing order. Write a script to sort an array.
+         Use the "selection sort" algorithm: Find the smallest element, move it at the first position, 
+        find the smallest from the rest, move it at the second position, etc.Hint: Use a second array
+-->     
+</head>
+<body>    
+    <label for="arr">Input array separated with coma:</label>
+    <input type="text" id="arr" />
+    <a href="#" onclick="find()">Execute</a>
+    <div id="js-console">
+        
+    </div>        
+    <script src="script/js-console.js"></script>
+    <script>
+        function getSelectionSort(arr) {
+            var n = arr.length;
+
+            var min, temp = 0;
+
+            for (var i = 0; i < n - 1; i++) {
+                min = i;
+                for (var k = i + 1; k < n; k++) {
+
+                    if (arr[k] < arr[min]) {
+                        min = k;
+                    }
+                }
+                temp = arr[i];
+                arr[i] = arr[min];
+                arr[min] = temp;
+            }
+        }
+        function find() {
+            var input = jsConsole.read('#arr');
+            var arr = input.split(',');
+
+            for (var i = 0; i < arr.length; i++) {
+                arr[i] = parseFloat(arr[i]);
+                //jsConsole.writeLine(arr[i]);
+            }
+
+            getSelectionSort(arr);
+            var currentElement = 0;
+            var maxCount = 1;
+            var tempCount = 1;
+            var element = currentElement;
+            for (var i = 0; i < arr.length - 1; i++) {
+                currentElement = arr[i];
+                if (currentElement == arr[i + 1]) {
+                    tempCount++;
+                    element = currentElement;
+                    if (tempCount > maxCount) {
+                        maxCount = tempCount;
+                    }
+                }
+                else {
+                    tempCount = 1;
+                }
+            }
+            jsConsole.writeLine('Element: ' + element + ' -> ' + maxCount + ' times');
+
+        }
+	</script>
+</body>
+</html>

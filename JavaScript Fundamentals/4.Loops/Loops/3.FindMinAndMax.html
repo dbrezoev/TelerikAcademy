@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />  
+    <!--Write a script that finds the max and min number from a sequence of numbers
+-->     
+</head>
+<body>    
+    <label for="input">Input numbers separeted with comas:</label>
+    <input type="text" id="input" />
+    <a href="#" onclick="find()">Execute</a>
+    <div id="js-console">
+        
+    </div>        
+    <script src="script/js-console.js"></script>
+    <script>        
+        function find() {
+            var input = jsConsole.read('#input');
+            var arr = input.split(',');
+
+            for (var i = 0; i < arr.length; i++) {
+                arr[i] = parseInt(arr[i]);
+            }
+
+            var max = arr[0];
+            var min = arr[0];
+            
+            for (var i = 0, len = arr.length; i < len; i++) {
+                var a=arr[i];
+                if (a<min) {
+                    min = arr[i];
+                }
+                var b = arr[i];                
+                if (b>max) {
+                    max = arr[i];
+                }
+            }
+
+            jsConsole.writeLine('Min: '+min);
+            jsConsole.writeLine('Max: '+max);
+
+        }
+	</script>
+</body>
+</html>

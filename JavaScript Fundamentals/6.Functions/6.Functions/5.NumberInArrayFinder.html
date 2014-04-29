@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />  
+    <!--Write a function that counts how many times given number appears in given array.
+         Write a test function to check if the function is working correctly.
+-->     
+</head>
+<body>    
+    <label for="input">Input numbers separated by coma:</label>
+    <input type="text" id="input" />
+    <label for="input">Input number to count:</label>
+    <input type="text" id="number" />
+    <a href="#" onclick="checkNumber()">Check</a>
+    <div id="js-console">
+        
+    </div>        
+    <script src="script/js-console.js"></script>
+    <script>
+        function findNumber(array, number) {
+            var count = 0;
+            for (var i = 0; i < array.length; i++) {
+                if (array[i] == number) {
+                    count++;
+                }
+            }
+            return count;
+        }
+
+        function isWorkingCorrectly() {
+            var correct = true;
+            var searchingNumber = 5;
+            var array = [5, 1, 3, 5, 6, 7, 3, 4, 5];
+            var expected = 3;
+
+            if (findNumber(array, searchingNumber) != expected) {
+                correct = false;
+            }
+
+            return correct;
+        }
+        function checkNumber() {
+
+            jsConsole.write('Is function working properly: ');
+            jsConsole.writeLine(isWorkingCorrectly());
+            var searchingNumber = jsConsole.read('#number');
+            var numbers = jsConsole.read('#input');
+            var arr = numbers.split(',');
+
+            var count = findNumber(arr, searchingNumber);
+
+            jsConsole.writeLine(count);
+
+        }
+	</script>
+</body>
+</html>

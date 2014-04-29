@@ -1,0 +1,10 @@
+C:\Users\User\Documents\Visual Studio 2012\Projects\WEB\JavaScript\OperatorsAndExpressions\OperatorsAndExpressions\OperatorsAndExpressions\bin\OperatorsAndExpressions.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\WEB\JavaScript\OperatorsAndExpressions\OperatorsAndExpressions\OperatorsAndExpressions\bin\OperatorsAndExpressions.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\WEB\JavaScript\OperatorsAndExpressions\OperatorsAndExpressions\OperatorsAndExpressions\obj\Debug\OperatorsAndExpressions.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\Visual Studio 2012\Projects\WEB\JavaScript\OperatorsAndExpressions\OperatorsAndExpressions\OperatorsAndExpressions\obj\Debug\OperatorsAndExpressions.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\WEB\JavaScript\OperatorsAndExpressions\OperatorsAndExpressions\OperatorsAndExpressions\obj\Debug\OperatorsAndExpressions.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\WEB\JavaScript\2.OperatorsAndExpressions\OperatorsAndExpressions\OperatorsAndExpressions\bin\OperatorsAndExpressions.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\WEB\JavaScript\2.OperatorsAndExpressions\OperatorsAndExpressions\OperatorsAndExpressions\bin\OperatorsAndExpressions.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\WEB\JavaScript\2.OperatorsAndExpressions\OperatorsAndExpressions\OperatorsAndExpressions\obj\Debug\OperatorsAndExpressions.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\Visual Studio 2012\Projects\WEB\JavaScript\2.OperatorsAndExpressions\OperatorsAndExpressions\OperatorsAndExpressions\obj\Debug\OperatorsAndExpressions.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\WEB\JavaScript\2.OperatorsAndExpressions\OperatorsAndExpressions\OperatorsAndExpressions\obj\Debug\OperatorsAndExpressions.pdb
