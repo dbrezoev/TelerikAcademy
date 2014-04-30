@@ -1,0 +1,4 @@
+C:\Users\User\Documents\Visual Studio 2012\Projects\WEB\JavaScript\1.Data-type-and-variables\DataTypesAndVariables\DataTypesAndVariables\bin\DataTypesAndVariables.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\WEB\JavaScript\1.Data-type-and-variables\DataTypesAndVariables\DataTypesAndVariables\bin\DataTypesAndVariables.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\WEB\JavaScript\1.Data-type-and-variables\DataTypesAndVariables\DataTypesAndVariables\obj\Debug\DataTypesAndVariables.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\WEB\JavaScript\1.Data-type-and-variables\DataTypesAndVariables\DataTypesAndVariables\obj\Debug\DataTypesAndVariables.pdb

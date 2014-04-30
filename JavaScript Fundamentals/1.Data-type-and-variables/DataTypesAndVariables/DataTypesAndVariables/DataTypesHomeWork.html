@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <!---
+        Assign all the possible JavaScript literals to different variables.
+
+        --->
+</head>
+<body>
+    <div id="js-console">
+                
+    </div>
+    <script src="script/js-console.js"></script>
+    <script>
+        //TASK1
+        //Assign all the possible JavaScript literals to different variables.
+
+        //boolean
+        jsConsole.writeLine('Boolean literals: ');
+        var found = true;
+        var checked = false;
+        jsConsole.writeLine(found?'found = true':'found = false');
+        jsConsole.writeLine(checked ? 'checked = true' : 'checked = false');
+
+        //floating-point 
+        jsConsole.writeLine('Floating-point literals: ');
+        var a = 0.45;
+        var b = -1.65;
+        var c = 6.66666666;
+        jsConsole.writeLine(a)
+        jsConsole.writeLine(b)
+        jsConsole.writeLine(c)
+
+        //integers
+        jsConsole.writeLine('Integer literals: ');
+        var int1 = 3;
+        var int2 = -165;
+        var int3 = 0;
+        jsConsole.writeLine(int1)
+        jsConsole.writeLine(int2)
+        jsConsole.writeLine(int3)
+
+        //string literals
+        var str = 'Hello there!';
+
+        //object literals
+        var person = {
+            name: 'Pesho',
+            age: 30,
+            toString: function toStr(){
+                return 'Name: ' + this.name + ' Age :' + this.age;
+            }
+        }
+
+        //function literal 
+        var func = function SayHello() {
+            alert('Hello there!');
+        }
+
+
+        //Task 2
+        //Create a string variable with quoted text in it. For example: "How you doin'?", Joey said.
+
+        var quote = '"How you doin\'?", Joey said.';
+        jsConsole.writeLine(quote)
+
+        //TASK 3 
+        //Try typeof to all variables you created
+
+        var arr = [found,checked,a,b,c,int1,int2,int3,str,person,func,quote,];
+        for (var i in arr) {
+
+            jsConsole.writeLine(typeof(arr[i]));
+        }
+
+        //Task 4
+        //Create null, undefined variables and try typeof on them.
+        var nullVar = null;
+        var undefVar = undefined;
+        jsConsole.writeLine(typeof(nullVar));
+        jsConsole.writeLine(typeof(undefVar));
+    </script>
+</body>
+</html>
