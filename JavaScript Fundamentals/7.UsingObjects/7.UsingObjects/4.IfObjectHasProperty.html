@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />  
+    <!--Write a function that checks if a given object contains a given property
+-->     
+</head>
+<body>        
+    <div id="js-console">
+                
+    </div>        
+    <script src="script/js-console.js"></script>
+    <script>
+        function hasProperty(obj, prop) {
+            if (obj.hasOwnProperty(prop)) {
+                return true;
+            }
+
+            return false;
+        }
+
+        var nasko = {
+            name: "nasko",
+            age: 23,
+            hasHead: true,
+            sayHello: function sh() {
+                jsConsole.writeLine(this.name + ' says hello!');
+            }
+        }
+        
+        jsConsole.writeLine(hasProperty(nasko,'sayHello'));        
+	</script>
+</body>
+</html>

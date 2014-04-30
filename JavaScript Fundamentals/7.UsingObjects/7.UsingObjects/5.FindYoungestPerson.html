@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />  
+    <!--Write a function that finds the youngest person in a given array of persons and prints his/hers full name
+Each person have properties firstname, lastname and age
+-->     
+</head>
+<body>        
+    <div id="js-console">
+                
+    </div>        
+    <script src="script/js-console.js"></script>
+    <script>
+
+        //smth like constructor
+        function buildPerson(firstName, lastName, Age){
+            return {
+                firstName: firstName,
+                lastName:lastName,                
+                Age: Age,
+                toString: function toStr() {
+                    return 'First Name: ' + this.firstName + ' Last Name: ' + this.lastName + ' Aged: ' + this.Age;
+                }
+
+
+            }
+        }
+
+        //array of persons
+        var persons = [
+        {firstName: 'Gosho', lastName: 'Geshev', Age: 32},
+        { firstName: 'Pesho', lastName: 'Dimov', Age: 18 },
+        { firstName: 'Nasio', lastName: 'Nasev', Age: 19 },
+        { firstName: 'Tosho', lastName: 'Toshev', Age: 20 }];
+        var maxAged = Number.MAX_VALUE;
+
+        var currentPerson = buildPerson(null,null,null);
+        
+        //extract youngest guy
+        for (var i = 0; i < persons.length; i++) {
+            if (persons[i].Age < maxAged) {
+                maxAged = persons[i].Age;
+                currentPerson.firstName = persons[i].firstName;
+                currentPerson.lastName = persons[i].lastName;
+                currentPerson.Age = persons[i].Age;
+            }
+        }
+
+        jsConsole.writeLine(currentPerson);
+	</script>
+</body>
+</html>

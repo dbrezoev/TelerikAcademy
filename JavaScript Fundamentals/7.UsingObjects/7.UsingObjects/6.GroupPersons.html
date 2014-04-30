@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />  
+    <!--Write a function that groups an array of persons by age, first or last name. The function must return an associative array, with keys - the groups, and values -arrays with persons in this groups
+Use function overloading (i.e. just one function)
+-->     
+</head>
+<body>        
+    <div id="js-console">
+                
+    </div>        
+    <script src="script/js-console.js"></script>
+    <script>
+
+        //smth like constructor
+        function Person(firstName, lastName, age) {
+            return {
+                firstName: firstName,
+                lastName: lastName,
+                age: age,
+                toString: function toStr() {
+                    return 'First Name: ' + this.firstName + ' Last Name: ' + this.lastName + ' Aged: ' + this.age;
+                }
+
+
+            }
+        }
+
+        function group(arr, condition) {
+                        
+            var result = {};
+
+            switch (condition) {
+                case 'firstName':
+                    for (var i = 0; i < arr.length; i++) {
+                        if (!result[arr[i].firstName]) {
+                            result[arr[i].firstName] = [];
+                            result[arr[i].firstName].push(arr[i]);
+                        }
+                        else {
+                            result[arr[i].firstName].push(arr[i]);
+                        }
+
+                    }                    
+                    break;
+                case 'lastName':
+                    for (var i = 0; i < arr.length; i++) {
+                        if (!result[arr[i].lastName]) {
+                            result[arr[i].lastName] = [];
+                            result[arr[i].lastName].push(arr[i]);
+                        }
+                        else {
+                            result[arr[i].lastName].push(arr[i]);
+                        }
+
+                    }
+                    break;
+                case 'age':
+                    for (var i = 0; i < arr.length; i++) {
+                        if (!result[arr[i].age]) {
+                            result[arr[i].age] = [];
+                            result[arr[i].age].push(arr[i]);
+                        }
+                        else {
+                            result[arr[i].age].push(arr[i]);
+                        }
+
+                    }
+                    break;
+                default:
+
+            }
+
+            return result;
+
+        }
+        function printResult(obj) {
+            for (var i in obj) {
+
+                jsConsole.write(i + ' -->');
+                jsConsole.writeLine(obj[i].join('|'))
+                jsConsole.writeLine('--------')
+            }
+        }
+        //array of persons
+        var persons = [];
+        persons.push(new Person('Gosho', 'Geshev', 32));
+        persons.push(new Person('Pesho', 'Dimov', 18));
+        persons.push(new Person('Trifon', 'Trifonov', 18));
+        persons.push(new Person('Gosho', 'DRESHKOV', 20));
+        persons.push(new Person('Nasio', 'Nasev', 19));
+        persons.push(new Person('Tosho', 'Toshev', 20));
+        persons.push(new Person('Tosho', 'PESHKOV', 20));
+        persons.push(new Person('Gosho', 'PESHKOV', 20));
+       
+               
+        var groupedByfirstName = group(persons, 'firstName');
+        var groupedBylastName = group(persons, 'lastName');
+        var groupedByAge = group(persons, 'age');
+        
+        printResult(groupedByfirstName);
+        printResult(groupedBylastName);
+        printResult(groupedByAge);
+        
+        
+	</script>
+</body>
+</html>
