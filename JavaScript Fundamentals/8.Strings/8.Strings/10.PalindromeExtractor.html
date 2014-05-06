@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <!---
+      Write a program that extracts from a given text all palindromes, e.g.
+         "ABBA", "lamal", "exe".
+        --->
+</head>
+<body>
+    <div id="js-console">                
+    </div>
+    <script src="script/js-console.js"></script>
+    <script>
+
+        function checkSymetric(word,caseSensitive) {
+            if (arguments.length===2) {
+                if (caseSensitive===false) {
+                    word = word.toLowerCase();
+                }
+            }
+            
+            for (var i = 0; i < word.length; i++) {
+
+                if (word[i] !==word[word.length - i - 1]) {
+
+                    return false;
+                }
+            }
+            return true;
+        }
+        var text = 'Exe different sentence word abba order with in lamal palindroms ';       
+        var wordsArr = text.replace(/[ ]|[,]/g, ' ').split(' ');
+        for (var i = 0; i < wordsArr.length; i++) {
+            if (wordsArr[i]!=='' && checkSymetric(wordsArr[i])) {
+                console.log('Palindrome: '+wordsArr[i]);
+            }
+        }
+        
+    </script>
+</body>
+</html>

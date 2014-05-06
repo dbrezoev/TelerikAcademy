@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <!---
+     Write a function that formats a string using placeholders:
+        var str = stringFormat("Hello {0}!","Peter");
+        //str = "Hello Peter!";
+        The function should work with up to 30 placeholders and all types
+        --->
+</head>
+<body>
+    <div id="js-console">                
+    </div>
+    <script src="script/js-console.js"></script>
+    <script>
+        function stringFormat(mainText, placeHolder1, placeHolder2) {
+
+            var result = mainText;
+
+            for (var i = 1; i <= arguments.length; i++) {
+                var regex = new RegExp('\\{' + (i - 1) + '\\}', 'g');
+                result = result.replace(regex, arguments[i]);
+            }
+
+            return result;
+        }
+        var name = 'pesho';
+        var age = 20;
+        
+
+        var text = stringFormat('Hello I am {0} and I am {1} years old.',name,age);
+        console.log(text)
+        jsConsole.writeLine(text);
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <!---Write a function that replaces non breaking white-spaces in a text with &nbsp;
+
+--->
+</head>
+<body>
+    <div id="js-console">
+                
+    </div>
+    <script src="script/js-console.js"></script>
+    <script>
+        function replaceWhitespace(text) {
+            var regex = new RegExp('[ ]','g');
+            var result = text.replace(regex, '&nbsp;');
+            //var result = text.split(' ').join('&nbsp;');
+
+            return result;
+        }
+        var text = 'Hello, I write the most useless sentence ever.';
+        alert(replaceWhitespace(text));
+        
+        
+    </script>
+</body>
+</html>

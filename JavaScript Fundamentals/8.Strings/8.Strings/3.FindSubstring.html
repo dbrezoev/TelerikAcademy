@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <!---Write a JavaScript function that finds how many times a substring is contained in a given text (perform case insensitive search).
+		Example: The target substring is "in". The text is as follows:
+--->
+</head>
+<body>
+    <div id="js-console">
+                
+    </div>
+    <script src="script/js-console.js"></script>
+    <script>
+        
+        function countWord(text, word, caseSensitive) {
+            var argsCount = arguments.length;
+            var count = 0;
+            switch (argsCount) {
+                case 2:
+                    count = countWordCaseInsensitive();
+                    break;
+                case 3:
+                    count = caseSensitive ? countWordCaseSensitive() : countWordCaseInsensitive();
+                    break;
+                default: break;
+
+            }
+
+            return count;
+
+            function countWordCaseInsensitive() {
+                var count = 0;
+                var index = 0;
+                text = text.toLowerCase();
+                var searchWord = word.toLowerCase();
+                index = text.indexOf(searchWord.toLowerCase());
+                while (index!=-1) {
+                    count++;
+                    index = text.indexOf(searchWord.toLowerCase(), index + searchWord.length);
+                }
+
+                return count;
+            }
+
+            function countWordCaseSensitive() {
+                var count = 0;
+                var index = 0;
+
+                index = text.indexOf(word);
+                while (index != -1) {
+                    count++;
+                    index = text.indexOf(word,index + word.length);
+                }
+
+                return count;
+            }
+        }
+
+        var string = 'We are living in an yellow submarine. We don\'t have anything else. Inside the submarine is very tight. So we are drinking all the day. We will move out of it in 5 days.';
+        var count = countWord(string,'in',true);
+        jsConsole.writeLine(count);
+    </script>
+</body>
+</html>

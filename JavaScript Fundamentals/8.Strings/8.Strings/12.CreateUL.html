@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <!---
+    Write a function that creates a HTML UL using a template for every
+         HTML LI. The source of the list should an array of elements.
+         Replace all placeholders marked with –{…}–   with the
+         value of the corresponding property of the object. -->
+</head>
+<body>
+    <div id="js-console">                
+    </div>
+    <div data-type ="template" id="list-item">
+        <strong>-{name}-</strong><span>-{age}-</span><span><strong>-{team}-</strong></span>
+    </div>
+    <script src="script/js-console.js"></script>
+    <script>
+        function generate(people, template) {
+
+            var result = '<ul>';
+            var matches = template.match(/-{\w+}-/g);
+            var props = [];
+            for (var i = 0; i < matches.length; i++) {
+                var property = matches[i].substr(2).replace('}-','');
+                props.push(property);
+            }
+
+            for (var i = 0; i < people.length; i++) {
+                var li = '<li>';
+                var currTemplate = template;
+                for (var k = 0; k < props.length; k++) {
+                    var currentRegex = new RegExp('-{'+props[k]+'}-','g');
+                    currTemplate = currTemplate.replace(currentRegex, people[i][props[k]]);                    
+                }
+                li += currTemplate;
+                li += '</li>';
+                result += li;
+            }
+            
+            result += '</ul>';
+            return result;
+        }
+        var people = [
+            {
+                name: "Tosho",
+                age: 27,
+                team:'melon'
+            },
+            {
+                name: "Pesho",
+                age: 18,
+                team:'strawberry'
+            },
+            {
+                name: "Gosho",
+                age: 20,
+                team:'apple'
+            }
+        ];
+        var tmpl = document.getElementById('list-item').innerHTML;
+        var peopleList = generate(people, tmpl);
+        console.log(peopleList);
+        jsConsole.writeLine(peopleList);
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <!---
+       Write a script that parses an URL address given in the format: [protocol]://[server]/[resource]
+        and extracts from it the [protocol], [server] and [resource] elements. Return the elements in a JSON object.
+        For example from the URL http://www.devbg.org/forum/index.php the following information should be extracted:
+
+        {protocol: "http", server: "www.devbg.org", 
+ resource: "/forum/index.php"}
+        --->
+</head>
+<body>
+    <div id="js-console">                
+    </div>
+    <script src="script/js-console.js"></script>
+    <script>             
+        var object = {};
+
+        var url = 'http://www.devbg.org/forum/index.php';
+        var arr = url.match(/([w]{3,})([.]\w+)([.]org)/i);
+        for (var i = 0; i < arr.length; i++) {
+           
+            jsConsole.writeLine(arr[i])
+        }
+        //var regexProtocol = new RegExp('\w*?[:]');
+        //object.protocol = url.match(/\w*?(?=[:])/); //using regex lookahead , but cannot pass regex to match() as a predifined variable
+
+        //object.server = url.match(/[w]{3,}.+?[.]\w*?(?=[/])/);
+        
+        //object.resource = url.replace(/\w*?(?=[:])/g, '').replace(/[w]{3,}.+?[.]\w*?(?=[/])/g, '').substr(3);
+        
+        //for (var prop in object) {
+        //    jsConsole.writeLine(prop + ' - ' + object[prop]);
+        //}
+
+        
+    </script>
+</body>
+</html>

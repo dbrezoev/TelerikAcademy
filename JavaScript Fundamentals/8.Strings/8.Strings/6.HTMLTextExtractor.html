@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <!---Write a function that extracts the content of a html page given as text. The function should return anything that is in a tag, without the tags:
+
+        --->
+</head>
+<body>
+    <div id="js-console">
+                
+    </div>
+    <script src="script/js-console.js"></script>
+    <script>
+        function extractText(html) {
+            //var regex = new RegExp('[<]\w*?[>]|[<][/]\w*?[>]');            
+            //var result = html.split(regex).join(' ');
+
+            var result = html.split(/[<]\w*?[>]|[<][/]\w*?[>]/).join('');
+            return result;
+        }
+        var text = '<html><head><title>Sample site</title></head><body><div>text<div>more text</div>and more...</div>in body</body></html>';
+        alert(extractText(text))
+    </script>
+</body>
+</html>

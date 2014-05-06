@@ -1,0 +1,5 @@
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JavaScript Fundamentals\8.Strings\8.Strings\bin\8.Strings.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JavaScript Fundamentals\8.Strings\8.Strings\bin\8.Strings.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JavaScript Fundamentals\8.Strings\8.Strings\obj\Debug\8.Strings.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JavaScript Fundamentals\8.Strings\8.Strings\obj\Debug\8.Strings.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JavaScript Fundamentals\8.Strings\8.Strings\obj\Debug\8.Strings.pdb

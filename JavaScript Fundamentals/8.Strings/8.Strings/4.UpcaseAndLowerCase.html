@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <!---
+        You are given a text. Write a function that changes the text in all regions:
+<upcase>text</upcase> to uppercase.
+<lowcase>text</lowcase> to lowercase
+<mixcase>text</mixcase> to mix casing(random)
+        --->
+</head>
+<body>
+    <div id="js-console">
+                
+    </div>
+    <script src="script/js-console.js"></script>
+    <script>                
+        var text = 'We are <mixcase>living</mixcase> in a <lowcase><upcase>yellow submarine</upcase></lowcase>. We <mixcase>don\'t</mixcase> have <lowcase>anything</lowcase> <upcase>else</upcase>.';
+        
+        var result = '';
+        var tag = '';
+        var appendTag = false;
+        var recordText = true;
+        var recordUpper = false;
+        var recordLower = false;
+        var recordMixed = false;
+
+        for (var i = 0; i < text.length; i++) {
+
+            var currentChar = text[i];
+
+            if (currentChar === '<') {
+                appendTag = true;
+                recordText = false;
+                recordLower = false;
+                recordUpper = false;
+            }
+            else if (currentChar === '>') {
+                tag += currentChar;
+                appendTag = false;
+                recordText = true;
+            }            
+            
+            if (appendTag) {
+                tag += currentChar;
+            }
+            if (tag == '<upcase>') {
+                recordText = true;
+                recordUpper = true;
+                tag = '';
+            }
+            else if (tag == '<lowcase>') {
+                recordText = true;
+                recordLower = true;
+                tag = '';
+            }
+            else if (tag=='<mixcase>') {
+                recordText = true;
+                recordMixed = true;
+                tag = '';
+            }
+            else if (tag=='</upcase>' || tag == '</lowcase>' || tag == '</mixcase>') {
+                recordLower = false;
+                recordMixed = false;
+                recordUpper = false;
+                recordText = true;
+            }                        
+
+            if (recordText) {
+                if (currentChar ==='>') {
+                    tag = '';
+                    continue;
+                }
+                if (recordUpper) {
+                    result += currentChar.toUpperCase();
+                }
+                else if (recordLower) {
+                    result += currentChar.toLowerCase();
+                }
+                else if (recordMixed) {
+                    var rand = Math.floor(Math.random() * 2) + 1;
+                    if (rand == 1) {
+                        result += currentChar.toUpperCase();
+                    }
+                    else {
+                        result += currentChar.toLowerCase();
+                    }
+                }
+                else {
+                    result += currentChar;
+                }
+                
+            }
+        }
+
+        jsConsole.writeLine(result)
+
+
+        //another solution
+
+        //function transformHtml(html) {
+        //    return html.replace(/<mixcase>(.*?)<\/mixcase>/g, function (group) { return generateRandomCaseString(group); })
+        //    .replace(/<upcase>(.*?)<\/upcase>/g, function (group) { return group.toUpperCase(); })
+        //    .replace(/<lowcase>(.*?)<\/lowcase>/g, function (group) { return group.toLowerCase(); })
+        //    .replace(/<(.*?)>/g, "");
+        //}
+
+        //function generateRandomCaseString(str) {
+        //    var generated = "";
+        //    var randomNumber;
+
+        //    for (var ch in str) {
+        //        randomNumber = Math.floor(Math.random() * 2); 
+
+        //        if (randomNumber == 1) generated += str[ch].toUpperCase(); 
+        //        else generated += str[ch].toLowerCase();
+        //    }
+
+        //    return generated;
+        //}
+
+        //var text = "We are <mixcase><lowcase><upcase>living</upcase></lowcase></mixcase> in a <mixcase>yellow <mixcase>submarine</mixcase></mixcase>. We <mixcase>don't</mixcase> have <lowcase><upcase>any</upcase>thing</lowcase> else.";
+        //console.log(transformHtml(text));
+        
+    </script>
+</body>
+</html>
