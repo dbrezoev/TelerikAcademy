@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Labyrinth Escape</title>
+</head>
+<body>
+    <script>
+        function Solve(params) {
+            var MN = params[0].split(' ');
+            var M = MN[0]| 0;
+            var N = MN[1] | 0;
+            var start = params[1].split(' ');
+            var startRow = start[0] | 0;
+            var startCol = start[1]| 0;
+
+            var matrix = [];
+            var count = 1;
+            for (var row = 0; row < M; row++) {
+                var directions = params[row+2];
+                matrix[row] = new Array(N);
+                for (var col = 0; col < N; col++) {
+                    matrix[row][col] = directions[col];                    
+                    matrix[row][col] += count;
+                    count++;
+                }
+            }            
+
+            var currentPosition = matrix[startRow][startCol];            
+            var result = currentPosition.toString().substr(1) | 0;
+            matrix[startRow][startCol] = true;
+            var currentRow = startRow;
+            var currentCol = startCol;
+            var status = '';
+            var cellsCount = 1;
+            while (true) {
+                
+                switch (currentPosition[0]) {
+                    case 'l':
+                        currentCol--;
+                        break;
+                    case 'r':
+                        currentCol++;
+                        break;
+                    case 'u':
+                        currentRow--;
+                        break;
+                    case 'd':
+                        currentRow++;
+                        break;
+                    default:
+
+                }
+                               
+                if(currentCol<0 || currentCol>=N || currentRow<0 || currentRow >= M){
+                    status = 'out';
+                    break;
+                }
+                else if (matrix[currentRow][currentCol] === true) {
+                    status = 'lost';
+                    break;
+                }
+                cellsCount++;
+
+                currentPosition = matrix[currentRow][currentCol];
+                matrix[currentRow][currentCol] = true;
+                result += currentPosition.toString().substr(1)| 0;
+                
+            }
+
+            if (status == 'out') {
+                return status + ' ' + result;
+            }
+            else {
+                return status + ' ' + cellsCount;
+            }
+            
+        }
+          
+    </script>
+</body>
+</html>
