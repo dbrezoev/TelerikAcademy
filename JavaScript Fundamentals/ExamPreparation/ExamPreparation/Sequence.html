@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Sequence</title>
+</head>
+<body>
+    <script>
+        function Solve(params) {
+            var N = params[0];
+
+            var arr = [];
+            for (var i = 1; i <= N; i++) {
+                arr.push(params[i] | 0);
+            }
+
+            var answer = 0;
+
+            for (var i = 0; i < arr.length - 1; i++) {
+                if (arr[i + 1] < arr[i]) {
+                    answer++;
+                }
+            }
+
+            return answer + 1;
+        }
+    </script>
+</body>
+</html>

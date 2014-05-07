@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Joro the Naughty</title>
+</head>
+<body>
+    <script>
+        function Solve(params) {
+
+            function inRange(pos, range) {
+                return 0 <= pos && pos < range;
+            }
+
+            //parse input
+            var firstArr = params[0].split(' ');
+            var N = firstArr[0]|0;
+            var M = firstArr[1]|0;
+            var J = firstArr[2] | 0;
+
+            //initialize matrix
+            var matrix = [];
+            for (var i = 0; i < N; i++) {
+                matrix[i] = new Array(M);
+            }
+            
+            //fill matrix
+            var i = 1;
+            for (var row = 0; row < N; row++) {
+                for (var col = 0; col < M; col++) {
+                    matrix[row][col] = i;
+                    i++;
+
+                }
+            }
+
+            //same matrix but boolean for visited cells
+            var visitedMatrix = [];
+            for (var i = 0; i < N; i++) {
+                visitedMatrix[i] = new Array(M);
+            }
+            for (var row = 0; row < visitedMatrix.length; row++) {
+                for (var col = 0; col < visitedMatrix[row].length; col++) {
+                    visitedMatrix[row][col] = false;
+                }
+            }
+
+            var start = params[1].split(' ');
+            var positionRow = start[0] | 0;
+            var positionCol = start[1] | 0;
+
+            var rowMoves = [];
+            var colMoves = [];
+
+            for (var i = 0; i < J; i++) {
+                var moves = params[i + 2].split(' ');
+                rowMoves.push(moves[0] | 0);
+                colMoves.push(moves[1] | 0);                
+            }
+
+            var result = matrix[positionRow][positionCol];
+
+            var index = 0;
+            var escaped = false;
+            while (true) {
+
+                positionRow += rowMoves[index];
+                positionCol += colMoves[index];
+                
+                if (!inRange(positionRow,N)||!inRange(positionCol,M)) {
+                    return 'escaped ' + result;
+                }
+                else if (visitedMatrix[positionRow][positionCol] === true) {
+                    return 'caught ' + result;
+                }
+                visitedMatrix[positionRow][positionCol] = true;
+                result += matrix[positionRow][positionCol];
+                index++;
+                if (index===rowMoves.length) {
+                    index = 0;
+                }                
+                
+                
+            }
+
+            //for (var i = 0; i < visitedMatrix.length; i++) {
+            //    for (var j = 0; j < visitedMatrix[i].length; j++) {
+            //        console.log('matrix[' + i + ',' + j + '] = ' + visitedMatrix[i][j])
+            //    }
+            //    console.log('')
+            //}
+            
+            //if (escaped === true) {
+            //    return 'escaped ' + result;
+            //}
+            //else {
+            //    return 'caught ' + result;
+            //}           
+        }
+
+        //for test
+
+        var test = [];
+        test[0] = '6 7 3';
+        test[1] = '0 0';
+        test[2] = '2 2';
+        test[3] = '-2 2';
+        test[4] = '3 -1';
+        
+        var result = Solve(test);
+        console.log(result);
+        
+    </script>
+</body>
+</html>

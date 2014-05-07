@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Clojure Parser</title>
+</head>
+<body>
+    <script>
+        function Solve(params) {
+
+            var exception = 'Division by zero! At Line:';
+
+            var functions = {};
+
+            var result;
+            
+            for (var row = 0; row < params.length; row++) {
+
+                var currentRow = params[row].substring(1, params[row].length - 1);
+
+                //looking for nested expression
+                var innerExpression = currentRow.match(/[(].+?[)]/);
+                if (innerExpression !== null) {
+
+                    //clean expression means without brackets
+                    var cleanExpression = innerExpression.toString().substring(1,innerExpression.toString().length-1);
+                    var result = doTheMath(cleanExpression);
+                    if (result === false) {
+                        var number = row + 1;
+                        result = (exception + number);
+                        break;
+                    }
+                    else {
+                        currentRow = currentRow.replace(innerExpression, result);                        
+                    }
+                }
+
+                result = doTheMath(currentRow);
+                if (result === false) {
+                    var number = row + 1;
+
+                    result = (exception + number);                    
+                }
+            }
+
+            function doTheMath(expression) {
+
+                var elements = expression.toString().split(/\s+/).filter(function nonEmpty(element) {
+
+                    if (element !== '') {
+
+                        return element;
+                    }
+                });
+                var result;
+                switch (elements[0]) {
+                    case '+': result = add(elements);
+                        break;
+                    case '-': result = subtract(elements);
+                        break;
+                    case '*': result = multiply(elements);
+                        break;
+                    case '/': result = divide(elements);
+                        break;
+                    case 'def': define(elements);
+                        break;
+                    default:
+
+                }
+
+                return result;
+            }
+
+            function add(elements) {
+                var result = 0;
+                for (var i = 1; i < elements.length; i++) {
+                    if (isNaN(elements[i])) {
+                        result += functions[elements[i]] | 0;
+                    }
+                    else {
+                        result += elements[i] | 0;
+                    }
+                }
+
+                return result;
+            }
+
+            function subtract(elements) {
+                var result;
+                if (isNaN(elements[1])) {
+                    result = functions[elements[1]] | 0;
+                }
+                else {
+                    result = elements[1] | 0;
+                }
+                
+                for (var i = 2; i < elements.length; i++) {
+                    if (isNaN(elements[i])) {
+                        result -= functions[elements[i]] | 0;
+                    }
+                    else {
+                        result -= elements[i] | 0;
+                    }
+                }
+
+                return result;
+            }
+
+            function multiply(elements) {
+                var result = 1;
+
+                for (var i = 1; i < elements.length; i++) {
+                    if (isNaN(elements[i])) {
+                        result *= functions[elements[i]] | 0;
+                    }
+                    else {
+                        result *= elements[i] | 0;
+                    }
+                }
+
+                return result;
+            }
+
+            function divide(elements) {
+                var result;
+                if (isNaN(elements[1])) {
+                    result = functions[elements[1]] | 0;
+                }
+                else {
+                    result = elements[1]| 0;
+                }               
+                for (var i = 2; i < elements.length; i++) {
+                    if (elements[i] == 0) {
+
+                        return false;
+                    }
+                    else if(isNaN(elements[i])){
+                        result /=functions[elements[i]] | 0;
+                    }
+                    else {
+                        result /= elements[i] | 0;
+                    }
+
+                    result = result | 0;
+                }
+                return result;
+            }
+
+            function define(elements) {
+                if (isNaN(elements[2])) {
+                    functions[elements[1]] = functions[elements[2]] | 0;
+                }
+                else {
+                    functions[elements[1]] = elements[2];
+                }                
+            }
+
+            return result;
+        }
+
+        //test input
+
+        //var params = [];
+        //params.push('(def kir4o 100)');
+        //params.push('(def cafeFunc (+ kir4o kir4o 3))');
+        //params.push('(def tabFunc (* cafeFunc 7))');
+        //params.push('(def tabfunc (- kir4o 5 4 3 2 1))');
+        //params.push('(/ tabFunc  tabfunc)');                
+        //console.log(Solve(params));
+
+    </script>
+</body>
+</html>
