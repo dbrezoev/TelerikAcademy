@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Max Sum</title>
+</head>
+<body>
+    <script>
+        function Solve(params){
+            var n = params[0];
+            var arr = [];
+            for (var i = 1; i <= n; i++) {
+                arr.push(params[i] | 0);
+            }
+            var currentSum = arr[0];
+            var startIndex = 0;
+            var tempStartIndex = 0;
+            var endIndex = 0;
+            var maxSum = arr[0];
+
+            for (var i = 1; i < arr.length; i++) {
+
+                if (currentSum < 0) {
+                    currentSum = arr[i];
+                    tempStartIndex = i;
+                }
+                else {
+                    currentSum += arr[i];
+                }
+                if (currentSum > maxSum) {
+                    maxSum = currentSum;
+                    startIndex = tempStartIndex
+                    endIndex = i;
+                }
+            }
+
+            var result = 0;
+            for (var i = startIndex; i <= endIndex; i++) {
+                result += arr[i];
+            }
+
+            return result;
+        }
+
+        var params = [];
+        params.push('9');
+        params.push('-9');
+        params.push('-8');
+        params.push('-8');
+        params.push('-7');
+        params.push('-6');
+        params.push('-5');
+        params.push('-1');
+        params.push('-7');
+        params.push('-6');
+        console.log(Solve(params));
+    </script>
+</body>
+</html>
