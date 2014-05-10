@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Listy</title>
+</head>
+<body>
+    <script>
+        function Solve(params) {
+
+            function modifyArray(arr) {
+                var resultArray = [];
+                for (var i = 0; i < arr.length; i++) {
+                    var currentElement = arr[i];
+                    if (isNaN(currentElement) && obj[currentElement] instanceof Array) {
+                        for (var k = 0; k < obj[currentElement].length; k++) {
+                            resultArray.push(obj[currentElement][k] | 0)
+                        }
+                    }
+                    else if (isNaN(currentElement) && !(obj[currentElement] instanceof Array)) {
+                        resultArray.push(obj[currentElement] | 0);
+                    }
+                    else {
+                        resultArray.push(currentElement | 0);
+                    }
+                }
+                
+                return resultArray;
+            }
+
+            var obj = {};
+            var result;
+
+            for (var i = 0; i < params.length; i++) {
+                var currentLine = params[i];
+                var arrBeginIndex = currentLine.indexOf('[');
+                var elements = currentLine.substring(0, arrBeginIndex).match(/\w+/g);
+                var arr = currentLine.substring(arrBeginIndex+1, currentLine.length - 1)
+                    .replace(/[,]/g, ' ').split(/\s+/).filter(function nonEmpty(element) {
+                        if (element !== '') {
+
+                            return element;
+                        }
+                    });
+
+                var modifiedArr = modifyArray(arr);
+
+                result = calculate(elements,modifiedArr);                                
+            }
+
+            function calculate(elements,arr) {
+                var result;
+
+                function calcBrackets(operation) {
+                    var resultFromBrackets;
+                    if (operation === 'sum') {
+                        resultFromBrackets = 0;
+                        for (var i = 0; i < arr.length; i++) {
+                            resultFromBrackets += arr[i];
+                        }
+
+                        return resultFromBrackets;
+                    }
+                    else if (operation === 'min') {
+                        resultFromBrackets = Number.MAX_VALUE;
+                        return  Math.min.apply(null,arr);
+                    }
+                    else if (operation === 'max') {
+                        resultFromBrackets = Number.MIN_VALUE;
+                        return Math.max.apply(null,arr);
+                    }
+                    else if (operation === 'avg') {
+                        resultFromBrackets = 0;
+                        for (var i = 0; i < arr.length; i++) {
+                            resultFromBrackets += arr[i];
+                        }
+
+                        return resultFromBrackets / arr.length | 0;
+                    }
+                }
+                if (elements == null ) {
+                    result = arr[0];
+                }
+                else if (elements.length === 3) {
+                    var operation = elements[2];
+                    obj[elements[1]] = calcBrackets(operation);
+                }
+                else if (elements.length === 2) {
+                    obj[elements[1]] = arr;
+                }
+                else if (elements.length === 1) {
+                    var operation = elements[0];
+                    result = calcBrackets(operation);
+                }                
+
+                return result;
+            }
+                  
+            return result;
+        }        
+
+        var params = [
+        'def newFunc     [      123,432    , 4]',
+        'def blaBLA sum[newFunc]',
+        'def BLAbla min[newFunc]',
+        'avg[BLAbla,blaBLA]',
+];        
+        var res = Solve(params);
+        console.log(res);        
+    </script>
+</body>
+</html>

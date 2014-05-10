@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Greedy Dwarf</title>
+    <!--
+        http://bgcoder.com/Contests/Practice/Index/52#1 -->
+</head>
+<body>
+    <script type="text/javascript">
+        
+        function Solve(params) {
+
+            var path = params[0].split(',');
+            
+            var n = params[1] | 0;
+
+            var results = [];
+
+            var finalResult = -999999;
+            
+            for (var i = 0; i < n; i++) {
+                var pattern = params[i + 2].split(', ');               
+                var booleanArr = [];
+                var curRes = traverse(path, pattern);               
+                if (finalResult < curRes) {
+                    finalResult = curRes;
+                }
+            }
+
+            function traverse(path, pattern) {
+                var currentPosition = 0;
+                var result = 0;
+                var index = 0;
+                while (booleanArr[currentPosition] !== true && 
+                        currentPosition < path.length &&
+                        currentPosition >= 0) {
+                    result += path[currentPosition]|0;
+                    booleanArr[currentPosition] = true;
+                    currentPosition += pattern[index]|0;
+                    index++;
+                    if (index === pattern.length) {
+                        index = 0;
+                    }
+                }
+                
+                return result;
+            }                       
+                     
+            return finalResult;
+        }
+
+        //test input
+
+        //var params = [];
+        //params[0] = '1, 3, -6, 7, 4, 1, 12';
+        //params[1]='3';
+        //params[2]='1, 2, -3';
+        //params[3] = '1, 3, -2';
+        //params[4] = '1, -1';
+        
+        //console.log(Solve(params));
+    </script>
+</body>
+</html>
