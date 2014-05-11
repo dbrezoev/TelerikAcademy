@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Joro the rabbit</title>
+    <!--
+        http://bgcoder.com/Contests/Practice/Index/54#1
+        -->
+</head>
+<body>
+    <script>
+        function Solve(params) {
+            var arr = params[0].split(', ');
+            
+            for (var i = 0; i < arr.length; i++) {
+                arr[i] = arr[i] | 0;
+            }
+
+            var stepsCount = Number.MIN_VALUE;
+            for (var i = 0; i < arr.length; i++) {                              
+                
+                for (var step = 1; step < arr.length; step++) {
+                    var currentStepsCount = 1;
+                    var index = i;
+                    var next = index + step;
+                    if (next >= arr.length) {
+                        next -= arr.length;
+                    }
+                    while (arr[index] < arr[next]) {
+                        currentStepsCount++;
+                        index = next;
+                        next = index + step;                                                
+                        if (next>=arr.length) {
+                            next -= arr.length;
+                        }                                                             
+                    }
+                    if (currentStepsCount > stepsCount) {
+                        stepsCount = currentStepsCount;
+                    }
+                }
+            }
+
+            return stepsCount;
+        }
+        var params = [];
+        params[0] = '1, -2, -3, 4, -5, 6, -7, -8';
+        console.log(Solve(params))
+        
+    </script>
+</body>
+</html>
