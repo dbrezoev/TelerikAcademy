@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Console Justification</title>
+    <!--
+        http://bgcoder.com/Contests/Practice/Index/52#2
+        -->
+</head>
+<body>
+    <script>
+        function Solve(params) {
+            String.prototype.insert = function insert(index, symbol) {
+                if (index >= this.length) {
+                    return this;
+                }
+                var leftSide = this.substring(0, index);
+                var rightSide = this.substr(index);
+
+                return [leftSide, symbol, rightSide].join('');
+            }
+            var N = params[0];
+            var width = params[1];
+            
+            var resultText = '';
+            var words = [];
+
+            for (var i = 0; i < N; i++) {
+                var currentLine = params[i + 2];
+                var currentWords = currentLine.split(/\s+/).filter(function nonEmpty(element) {
+                    if (element !== ' ') {
+                        return element;
+                    }
+                });
+
+                addElementsToArray(currentWords);
+            }
+
+            fillRow(width);
+
+            return resultText;
+
+            function addElementsToArray(currentArr) {
+                for (var i = 0; i < currentArr.length; i++) {
+                    words.push(currentArr[i]);
+                }
+            }
+
+            function fillRow(width) {
+                var rowLength = 0;
+                var line = '';
+                for (var i = 0; i < words.length; i++) {
+                    if (line.length === width) {
+                        line = handleLine(line);
+                        resultText += line;
+
+                        resultText += '\n';
+                        line = '';
+                    }
+                    if (line.length + words[i].length > width) {
+                        line = handleLine(line);
+                        resultText += line;
+                        resultText += '\n';
+                        line = '';
+                    }
+
+                    if (line.length + words[i].length <= width) {                        
+                        line += words[i];
+                    }
+                    if (line.length + 1 <= width) {
+                        line += ' ';                        
+                    }
+                   
+                    
+                }                
+                resultText += line;
+            }
+
+            function handleLine(line) {               
+                
+                var wordsCount = getWordsCount(line);
+                if (wordsCount > 1) {
+                    line = line.trim();
+                    var index = line.indexOf(' ');
+                    while (line.length < width) {
+                        line = line.insert(index + 1, ' ');
+                        index = line.indexOf(' ', index + 2);
+                        if (index === -1) {
+                            index = line.indexOf(' ');
+                        }
+                    }
+                }
+                else {
+                    line = line.trim();
+                }
+               
+                return line;
+            }
+
+            function getWordsCount(line) {
+                var wordsCount = line.split(/\s+/).filter(function nonEmpty(element) {
+                    if (element !== '') {
+                        return element;
+                    }
+                });
+
+                return wordsCount.length;
+            }
+        }
+        var params = [];
+        params[0] = 10;
+        params[1] = 18;
+        params[2] = 'Beer beer beer Im going for';
+        params[3] = '   a';
+        params[4] = 'beer';
+        params[5] = 'Beer beer beer Im gonna';
+        params[6] = 'drink some beer';
+        params[7] = 'I love drinkiiiiiiiiing';
+        params[8] = 'beer';
+        params[9] = 'lovely';
+        params[10] = 'lovely';
+        params[11] = 'beer';
+        console.log(Solve(params))        
+    </script>
+</body>
+</html>
