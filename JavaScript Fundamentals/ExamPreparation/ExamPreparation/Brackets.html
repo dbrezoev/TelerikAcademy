@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>c# brackets</title>
+</head>
+<body>
+    <script>
+        function Solve(params) {
+            String.prototype.removeSpaces = function removeSpaces() {
+                return this.replace(/[ ]{2,}/g, ' ');
+            }
+           
+            function appendIndent(indentCount) {
+                for (var i = 0; i < indentCount; i++) {
+                    finalResult += indentString;
+                }
+            }                        
+
+            function handleLine(line) {
+                var currentLine = '';
+                var endLine = false;
+
+                for (var i = 0; i < line.length; i++) {
+                    var currentChar = line[i];
+
+                    if (currentChar === '{') {                       
+                        appendIndent(indentCount);                       
+                        finalResult += currentChar;
+                        finalResult += '\n';
+                        indentCount += 1;
+                        currentLine = '';                        
+                        endLine = false;
+                        continue;
+                    }
+                    else if (currentChar === '}') {
+                        indentCount -= 1;                        
+                        appendIndent(indentCount);                       
+                        finalResult += currentChar;
+                        finalResult += '\n';                        
+                        currentLine = '';                       
+                        endLine = false;
+                        continue;
+                    }
+                    else {
+                        currentLine += currentChar;
+                    }
+
+                    //check if line is ready
+                    if ((currentChar !== '{' || currentChar !== '}') && i === line.length-1) {
+                        endLine = true;
+                    }
+                    if (i+1 < line.length) {
+                        if (line[i + 1] === '{' || line[i+1] === '}') {
+                            endLine = true;
+                        }
+                    }
+
+                    if (endLine) {
+                        for (var k = 0; k < indentCount; k++) {
+                            finalResult += indentString;
+                        }
+
+                        finalResult += currentLine.trim();
+                        finalResult += '\n';                        
+                    }
+                    if (i === line.length - 1) {
+                        break;
+                    }
+                }
+            }
+
+            //read input
+            var N = params[0] | 0;
+            var indentString = params[1];
+
+            var finalResult = '';
+            var indentCount = 0;
+
+            for (var i = 0; i < N; i++) {
+                var currentLine = params[i + 2].removeSpaces().trim();
+
+                handleLine(currentLine);
+            }
+
+            return finalResult;
+        }
+
+        var params = [];
+        params[0] = 5;
+        params[1] = '....';
+        params[2] = 'using System;    namespace Stars';
+        params[3] = '{class Program{';
+        params[4] = 'static    string[] separators';
+        params[5] = '= new string[] { " " };}';
+        params[6] = '}';
+       
+        console.log(Solve(params));                
+    </script>
+</body>
+</html>
