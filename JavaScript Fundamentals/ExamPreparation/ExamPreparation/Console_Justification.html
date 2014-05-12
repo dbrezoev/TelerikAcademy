@@ -9,6 +9,8 @@
 <body>
     <script>
         function Solve(params) {
+
+            //implement string.insert
             String.prototype.insert = function insert(index, symbol) {
                 if (index >= this.length) {
                     return this;
@@ -18,26 +20,29 @@
 
                 return [leftSide, symbol, rightSide].join('');
             }
+
             var N = params[0];
-            var width = params[1];
-            
+            var width = params[1];                        
             var resultText = '';
             var words = [];
 
             for (var i = 0; i < N; i++) {
                 var currentLine = params[i + 2];
+
+                //extract all words from a line
                 var currentWords = currentLine.split(/\s+/).filter(function nonEmpty(element) {
                     if (element !== ' ') {
                         return element;
                     }
                 });
 
+                //push all words to an array
                 addElementsToArray(currentWords);
             }
 
             fillRow(width);
 
-            return resultText;
+            return resultText.trim();
 
             function addElementsToArray(currentArr) {
                 for (var i = 0; i < currentArr.length; i++) {
@@ -46,46 +51,48 @@
             }
 
             function fillRow(width) {
-                var rowLength = 0;
                 var line = '';
+
                 for (var i = 0; i < words.length; i++) {
-                    if (line.length === width) {
-                        line = handleLine(line);
-                        resultText += line;
 
-                        resultText += '\n';
-                        line = '';
-                    }
-                    if (line.length + words[i].length > width) {
+                    //if line is full or no space for next word - handle line (e.g. insert whitespaces if needed)
+                    if (line.length === width || 
+                        line.length + words[i].length > width) {
                         line = handleLine(line);
+                        
+                        //when line is ready append it to final result text
                         resultText += line;
                         resultText += '\n';
                         line = '';
                     }
-
+                    
+                    //if there is room for a word, append it (same for whitespace)
                     if (line.length + words[i].length <= width) {                        
                         line += words[i];
                     }
                     if (line.length + 1 <= width) {
                         line += ' ';                        
-                    }
-                   
-                    
-                }                
-                resultText += line;
+                    }                                       
+                }
+
+                line = handleLine(line);
+                resultText += line.trim();                
             }
 
             function handleLine(line) {               
                 
                 var wordsCount = getWordsCount(line);
+
                 if (wordsCount > 1) {
                     line = line.trim();
                     var index = line.indexOf(' ');
+                    var step = 2;
                     while (line.length < width) {
                         line = line.insert(index + 1, ' ');
-                        index = line.indexOf(' ', index + 2);
+                        index = line.indexOf(' ', index + step);
                         if (index === -1) {
                             index = line.indexOf(' ');
+                            step++;
                         }
                     }
                 }
@@ -106,20 +113,8 @@
                 return wordsCount.length;
             }
         }
-        var params = [];
-        params[0] = 10;
-        params[1] = 18;
-        params[2] = 'Beer beer beer Im going for';
-        params[3] = '   a';
-        params[4] = 'beer';
-        params[5] = 'Beer beer beer Im gonna';
-        params[6] = 'drink some beer';
-        params[7] = 'I love drinkiiiiiiiiing';
-        params[8] = 'beer';
-        params[9] = 'lovely';
-        params[10] = 'lovely';
-        params[11] = 'beer';
-        console.log(Solve(params))        
+        var params = [];        
+        console.log(Solve(params));
     </script>
 </body>
 </html>
