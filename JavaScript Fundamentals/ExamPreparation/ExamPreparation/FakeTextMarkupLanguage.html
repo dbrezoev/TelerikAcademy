@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>FTML</title>
+</head>
+<body>
+    <script>
+        function Solve(params) {
+            var n = params[0];
+            var result = '';           
+
+            function reverse(text){
+                var res = '';
+                if (text.match(/\n/g) == null) {
+                    for (var i = text.length - 1; i >= 0; i--) {
+                        res += text[i];
+                    }
+                    return res;
+                }
+                else {
+                    var separateLines = text.split(/\n/);
+                    var wordsInLine = [];
+
+                    for (var i = separateLines.length-1; i >=0; i--) {
+                        var currentLine = separateLines[i];
+                        for (var k = currentLine.length-1; k >= 0; k--) {
+                            res += currentLine[k];
+                        }
+                        wordsInLine.push(res);
+                        res = '';
+                    }
+                    return wordsInLine.join('\n');
+                }
+                
+                
+            }
+
+            function toggle(text) {
+                var res = '';
+                for (var i = 0; i < text.length; i++) {
+                    if (text[i] === text[i].toLowerCase()) {
+                        res += text[i].toUpperCase();
+                    }
+                    else {
+                        res += text[i].toLowerCase();
+                    }
+                }
+
+                return res;
+            }           
+
+            for (var i = 0; i < n; i++) {
+                var currentLine = params[i + 1];
+                result += currentLine;
+                result += '\n';               
+            }
+                var partOfLine = '';
+                var reg = result.match(/([<]\w+[>])([^<]*)([<][/]\w+[>])/);
+                while (reg != null) {
+                    var openTag = reg[1];
+                    switch (openTag) {
+                        case '<rev>':
+                            partOfLine = reverse(reg[2]);
+                            break;
+                        case '<upper>':
+                            partOfLine = (reg[2]).toUpperCase();
+                            break;
+                        case '<lower>':
+                            partOfLine = (reg[2]).toLowerCase();
+                            break;
+                        case '<del>':
+                            partOfLine = '';
+                            break;
+                        case '<toggle>':
+                            partOfLine = toggle(reg[2]);
+                            break;
+                        default:
+                            break;
+                    }
+                    result = result.replace(reg[0], partOfLine);
+                    reg = result.match(/([<]\w+[>])([^<]*)([<][/]\w+[>])/);
+                    
+                    partOfLine = '';
+                }                                                
+            
+            return result;
+        }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+        var params = [];
+        params[0] = 1;
+        params[1] = 'some plain text and a <rev>rev going to a new line</rev> with also an <upper>uppercaseon a new line</upper> and a <toggle>tOGGLECASEon a new line</toggle> plus a <lower>lower with <upper>upper</upper> nested</lower> and a <del>del on a new line</del> which you don\'t see cause it\'s deleted';        
+        console.log(Solve(params));
+    </script>
+
+</body>
+</html>
