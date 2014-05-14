@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>PHP Variables</title>
+</head>
+<body>
+    <script>
+        function Solve(params) {
+            function removeComments(line) {
+                var result = line
+                    .replace(/[//][*].*[*][/]/g, '')
+                        .replace(/.*[*][/]/g, '')
+                    .replace(/[//][*].*/g, '')
+                    .replace(/[/][/].*/g, '')
+                    .replace(/[#].*/g, '');
+                return result;
+            }
+            var i = 1;
+            var wholeText = ' ';
+            var regexVariables = new RegExp('.{1}[$]\w+','g');
+            var inMultilineComment = false;
+            while (params[i] !== '?>') {
+                
+                if (params[i] === '/*') {
+                    inMultilineComment = true;                    
+                }
+                else if (params[i] === '*/') {
+                    inMultilineComment = false;
+                    i++;
+                    continue;
+                }
+                if (inMultilineComment) {
+                    i++;
+                    continue;
+                }
+                var lineWithoutComments = removeComments(params[i]);
+                wholeText += lineWithoutComments;
+
+                i += 1;
+            }
+            var variables = wholeText.match(/.{1}[$]\w+/g);
+            var result = {};
+            for (var i = 0; i < variables.length; i++) {
+                var currentVar = variables[i];
+                if (currentVar[0] === '\\') {
+                    continue;
+                }
+                var startIndex = currentVar.indexOf('$');
+                var name = currentVar.substr(startIndex);
+                if (!result[name]) {
+                    result[name] = 1;
+                }
+            }
+            var finalResult = [];
+            for (var prop in result) {
+                if (prop!=undefined) {
+                    finalResult.push(prop.substr(1));
+                }
+                
+            }
+            var a = '';
+            a += finalResult.length;
+            a += '\n';
+            //console.log(finalResult.length)
+            for (var i = 0; i < finalResult.sort().length; i++) {
+                //console.log(finalResult[i]);
+                a += finalResult[i].trim();
+                a += '\n';
+            }            
+            return a;
+        }
+        var params = [];
+
+        //params[0] = '<?php';
+        //params[1] = "  $browser = $_SERVER['HTTP_USER_AGENT']   ";
+        //params[2] = '  $arr =    array();';
+        //params[3] = '  $arr[$zero]    = $browser;';
+        //params[4] = '    var_dump($arr);';
+        //params[5] = '?>';
+
+        //params[0] = '/*';
+        //params[1] = "/*";
+        //params[2] = 'inception';
+        //params[3] = '*/';
+        //params[4] = '$googleit = "123"; /* just comment $vvv */';
+        //params[5] = '/*';
+        //params[6] = '$varvar = "123";';
+        //params[7] = '*/';
+        //params[8] = '# strange comment $strange_var';
+        //params[9] = '// $everything$_ends$here:';
+        //params[10] = '?>';
+
+        params[0] = '<?php';
+        params[1] = "/* this is just an strings test */";
+        params[2] = '$strrrr = "{$I_AM_A_VAR} {$WTF} {$STFU}";';
+        params[3] = '$strrrr = "{$I_AM_A_VAR} {$WTF} {$STFU}";';
+        params[4] = '$strrrr = "{$the_first_one_who_reads_this_write_me_to}  {$and_I_will_give_you_a_reward}";';
+        params[5] = '$this_is_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_';
+        params[6] = 'very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very';
+        params[7] = '_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_ver';
+        params[8] = '_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_ver';
+        params[9] = '$string_var = ';
+        params[10] = '// Huh, this was very hard test, right?';
+        params[11] = '?>';
+console.log(Solve(params));
+    </script>
+</body>
+</html>
