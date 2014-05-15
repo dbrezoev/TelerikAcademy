@@ -10,13 +10,23 @@
     <script>
         function Solve(params) {
 
-            //implement string.insert
-            String.prototype.insert = function insert(index, symbol) {
-                if (index >= this.length) {
-                    return this;
+            //implement string.insert   
+            //String.prototype.insert = function insert(index, symbol) {
+            //    if (index >= this.length) {
+            //        return this;
+            //    }
+            //    var leftSide = this.substring(0, index);
+            //    var rightSide = this.substr(index);
+
+            //    return [leftSide, symbol, rightSide].join('');
+            //}
+
+            function insert(text,index, symbol) {
+                if (index >= text.length) {
+                    return text;
                 }
-                var leftSide = this.substring(0, index);
-                var rightSide = this.substr(index);
+                var leftSide = text.substring(0, index);
+                var rightSide = text.substr(index);
 
                 return [leftSide, symbol, rightSide].join('');
             }
@@ -30,7 +40,7 @@
                 var currentLine = params[i + 2];
 
                 //extract all words from a line
-                var currentWords = currentLine.split(/\s+/).filter(function nonEmpty(element) {
+                var currentWords = currentLine.split(' ').filter(function nonEmpty(element) {
                     if (element !== ' ') {
                         return element;
                     }
@@ -52,14 +62,16 @@
 
             function fillRow(width) {
                 var line = '';
-
+                
+                var wordsInLine = 0;
                 for (var i = 0; i < words.length; i++) {
 
                     //if line is full or no space for next word - handle line (e.g. insert whitespaces if needed)
                     if (line.length === width || 
                         line.length + words[i].length > width) {
-                        line = handleLine(line);
+                        line = handleLine(line, wordsInLine);
                         
+                        wordsInLine = 0;
                         //when line is ready append it to final result text
                         resultText += line;
                         resultText += '\n';
@@ -69,26 +81,25 @@
                     //if there is room for a word, append it (same for whitespace)
                     if (line.length + words[i].length <= width) {                        
                         line += words[i];
+                       
+                        wordsInLine += 1;
                     }
                     if (line.length + 1 <= width) {
                         line += ' ';                        
                     }                                       
                 }
 
-                line = handleLine(line);
+                line = handleLine(line, wordsInLine);
                 resultText += line.trim();                
             }
 
-            function handleLine(line) {               
-                
-                var wordsCount = getWordsCount(line);
-
-                if (wordsCount > 1) {
+            function handleLine(line, wordsInLine) {
+                if (wordsInLine > 1) {
                     line = line.trim();
                     var index = line.indexOf(' ');
                     var step = 2;
                     while (line.length < width) {
-                        line = line.insert(index + 1, ' ');
+                        line = insert(line, index + 1, ' ');
                         index = line.indexOf(' ', index + step);
                         if (index === -1) {
                             index = line.indexOf(' ');
@@ -101,19 +112,21 @@
                 }
                
                 return line;
-            }
-
-            function getWordsCount(line) {
-                var wordsCount = line.split(/\s+/).filter(function nonEmpty(element) {
-                    if (element !== '') {
-                        return element;
-                    }
-                });
-
-                return wordsCount.length;
-            }
+            }           
         }
-        var params = [];        
+        var params = [];
+        params[0] = 10;
+        params[1] = 18;
+        params[2] = 'Beer beer beer Im going for';
+        params[3] = '   a';
+        params[4] = 'beer';
+        params[5] = 'Beer beer beer Im gonna';
+        params[6] = 'drink some beer';
+        params[7] = 'I love drinkiiiiiiiiing';
+        params[8] = 'beer';
+        params[9] = 'lovely';
+        params[10] = 'lovely';
+        params[11] = 'beer';
         console.log(Solve(params));
     </script>
 </body>
