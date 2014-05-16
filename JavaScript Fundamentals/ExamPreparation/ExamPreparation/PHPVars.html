@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+     <script>
+         function Solve(params) {
+
+             //symbol for variables in php
+             function isValidSymbol(symbol) {
+                 if (symbol.length !== 1) {
+                     return false;
+                 }
+                 if (symbol === ' ') {
+                     return false;
+                 }
+                 if (symbol === '_') {
+                     return true;
+                 }
+
+                 var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+
+                 for (var i = 0; i < letters.length; i++) {
+
+                     if (symbol.toLowerCase() === letters[i]) {
+                         return true;
+                     }
+                 }
+                 if (!isNaN(symbol)) {
+                     return true;
+                 }
+
+                 return false;
+             }
+
+             var NEW_LINE = '\n';
+             var phpCode = '';
+             var i = 1;
+             while (params[i] !== '?>') {
+
+                 phpCode += params[i] + NEW_LINE;
+                 i++;
+             }
+
+             var variables = [];
+
+             var inMultiLineComment = false;
+             var inSingleLineComment = false;
+             var inSingleQuote = false;
+             var inDoubleQuote = false;
+             var inVariable = false;
+
+             var currentVariable = '';
+
+             for (var i = 0; i < phpCode.length; i++) {
+                 var currentSymbol = phpCode[i];
+                 
+                 if (inSingleLineComment) {
+                     if (currentSymbol === NEW_LINE) {
+                         inSingleLineComment = false;
+                         continue;
+                     }
+                     else {
+                         continue;
+                     }
+                 }
+                 if (inMultiLineComment) {
+                     if (currentSymbol === '*' && i + 1 < phpCode.length && phpCode[i + 1] === '/') {
+                         inMultiLineComment = false;
+                         i++;
+                         continue;
+                     }
+                     else {
+                         continue;
+                     }
+                 }
+                 if (inSingleQuote) {
+                     if (currentSymbol === "'") {
+                         inSingleQuote = false;
+                         continue; 
+                     }                    
+                 }
+                 if (inDoubleQuote) {
+                     if (currentSymbol === '"') {
+                         inDoubleQuote = false;
+                         continue;
+                     }                     
+                 }
+                 if (inVariable) {
+                     if (isValidSymbol(currentSymbol)) {
+                         currentVariable += currentSymbol;
+                     }
+                     else {
+                         //add variable if it is unique
+                         if (variables.indexOf(currentVariable) == -1) {
+                             variables.push(currentVariable);
+                         }
+                         inVariable = false;
+                         currentVariable = '';
+                         //continue;
+                     }
+                 }
+
+                 if (!inSingleQuote && !inDoubleQuote) {
+                     if (currentSymbol === '$') {
+                         inVariable = true;
+                         continue;
+                     }
+                     if (currentSymbol === '/' && i + 1 < phpCode.length && phpCode[i + 1] === '/') {
+                         i++;
+                         inSingleLineComment = true;
+                         continue;
+                     }
+                     if (currentSymbol === '/' && i + 1 < phpCode.length && phpCode[i + 1] === '*') {
+                         i++;
+                         inMultiLineComment = true;
+                         continue;
+                     }
+                     if (currentSymbol === '#') {
+                         inSingleLineComment = true;
+                         continue;
+                     }
+                 }
+                 else {
+                     if (currentSymbol === "\\") {
+                         i++;
+                         continue;
+                     }
+                     
+                 }
+
+                 //set states to true if:
+                 if (currentSymbol === '"') {
+                     inDoubleQuote = true;
+                     continue;
+                 }
+                 if (currentSymbol === "'") {
+                     inSingleQuote = true;
+                     continue;
+                 }
+                 if (currentSymbol === '$') {
+                     inVariable = true;
+                     continue;
+                 }
+
+             }
+             var finalResult = '';
+             finalResult += variables.length + NEW_LINE;
+             variables.sort();
+             for (var i = 0; i < variables.length; i++) {
+                 finalResult += variables[i].trim() + NEW_LINE;
+             }
+
+             return finalResult.trim();
+         }
+         var params = [];         
+
+         //params[0] = '<?php';
+         //params[1] = "/* This is $var1 in comments */";
+         //params[2] = '$var3 = "Some string \$var4 with var escaped.";';
+         //params[3] = 'echo $var5; echo("$foo,$bar");';
+         //params[4] = '// Another comment with variable $var2';
+         //params[5] = '?>';
+
+         console.log(Solve(params));
+         
+    </script>
+</body>
+</html>
