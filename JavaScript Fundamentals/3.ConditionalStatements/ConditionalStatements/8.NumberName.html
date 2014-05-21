@@ -119,6 +119,7 @@
                 var ones = parseInt(number) % 10;
                 var tens = parseInt(number / 10) % 10;
                 var hundreds = parseInt(number / 100);
+				
                 
                 //jsConsole.writeLine(ones);
                 //jsConsole.writeLine(tens);
@@ -135,7 +136,7 @@
                 else if (ones!=0 && tens==0) {
                     jsConsole.writeLine(getOnes(hundreds) +'hundred and '+ getOnes(ones));  //102, 809, 503 etc...
                 }                
-                else if (ones!=0 && tens!=0) {
+                else if (ones!=0 && tens!=0 && tens!=1) {
                     jsConsole.writeLine(getOnes(hundreds) + 'hundred ' + getTensRounded(tens) + getOnes(ones));
                 }
                 else if (tens == 1) {
