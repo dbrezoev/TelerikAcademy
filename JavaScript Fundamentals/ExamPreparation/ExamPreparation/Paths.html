@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        function Solve(params) {
+            var rowsAndCols = params[0].split(' ');
+            var R = rowsAndCols[0] | 0;
+            var C = rowsAndCols[1] | 0;
+
+            var matrix = [];
+            var count = 0;
+            for (var rows = 0; rows < R; rows++) {
+                var directions = params[rows + 1].split(' ');
+                matrix[rows] = new Array(C);
+                for (var cols = 0; cols < C; cols++) {
+                    matrix[rows][cols] = directions[cols];
+                }
+            }
+
+            for (var rows = 0; rows < R; rows++) {
+                var startNumber = Math.pow(2, rows);
+                matrix[rows][0] += startNumber;
+                for (var cols = 1; cols < C; cols++) {
+                    matrix[rows][cols] += ++startNumber;
+                }
+            }
+            //matrix is ready
+            
+            var startRow = 0;
+            var startCol = 0;
+            var currentPosition = matrix[startRow][startCol];
+            var directionsInPos = currentPosition.substr(0, 2);
+            var number = currentPosition.substr(2)|0;
+            
+            var sum = number;
+            //alert(sum);
+
+            //mark it as visited
+            matrix[startRow][startCol] = true;
+
+            var currentRow = startRow;
+            var currentCol = startCol;
+
+            var rowIndex = 0;
+            var colIndex = 0;
+            var lastPosition = matrix[0][0];
+            while (true) {
+                switch (directionsInPos) {
+                    case 'dr':
+                        currentRow++;
+                        currentCol++;
+                        break;
+                    case 'dl':
+                        currentRow++;
+                        currentCol--;
+                        break;
+                    case 'ur':
+                        currentRow--;
+                        currentCol++;
+                        break;
+                    case 'ul':
+                        currentRow--;
+                        currentCol--;
+                        break;
+                    default:
+                }
+
+                if (currentCol < 0 || currentCol >= C || currentRow < 0 || currentRow >= R) {
+                    return 'successed with ' + sum;
+                    break;
+                }
+                else if (matrix[currentRow][currentCol] === true) {
+                    return 'failed at (' + currentRow  + ', ' + currentCol  + ')';
+                    break;
+                }
+
+                currentPosition = matrix[currentRow][currentCol];
+               
+                matrix[currentRow][currentCol] = true;
+
+                sum += currentPosition.substr(2) | 0;
+                directionsInPos = currentPosition.substr(0, 2);
+            }
+
+            //return directionsInPos;
+        }
+
+        var params = [
+       '3 5',
+  'dr dl dr ur ul',
+  'dr dr ul ur ur',
+  'dl dr ur dl ur'
+
+        ];
+        console.log(Solve(params));
+    </script>
+</body>
+</html>
