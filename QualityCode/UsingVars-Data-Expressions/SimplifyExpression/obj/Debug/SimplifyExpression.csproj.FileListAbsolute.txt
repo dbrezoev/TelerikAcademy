@@ -1,0 +1,6 @@
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\QualityCode\UsingVars-Data-Expressions\SimplifyExpression\bin\Debug\SimplifyExpression.exe.config
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\QualityCode\UsingVars-Data-Expressions\SimplifyExpression\obj\Debug\SimplifyExpression.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\QualityCode\UsingVars-Data-Expressions\SimplifyExpression\bin\Debug\SimplifyExpression.exe
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\QualityCode\UsingVars-Data-Expressions\SimplifyExpression\bin\Debug\SimplifyExpression.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\QualityCode\UsingVars-Data-Expressions\SimplifyExpression\obj\Debug\SimplifyExpression.exe
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\QualityCode\UsingVars-Data-Expressions\SimplifyExpression\obj\Debug\SimplifyExpression.pdb

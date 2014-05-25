@@ -1,0 +1,6 @@
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\QualityCode\UsingVars-Data-Expressions\02.RefactorCode\bin\Debug\02.RefactorCode.exe.config
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\QualityCode\UsingVars-Data-Expressions\02.RefactorCode\bin\Debug\02.RefactorCode.exe
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\QualityCode\UsingVars-Data-Expressions\02.RefactorCode\bin\Debug\02.RefactorCode.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\QualityCode\UsingVars-Data-Expressions\02.RefactorCode\obj\Debug\02.RefactorCode.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\QualityCode\UsingVars-Data-Expressions\02.RefactorCode\obj\Debug\02.RefactorCode.exe
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\QualityCode\UsingVars-Data-Expressions\02.RefactorCode\obj\Debug\02.RefactorCode.pdb
