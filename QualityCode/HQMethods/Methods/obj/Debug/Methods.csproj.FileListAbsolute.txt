@@ -1,0 +1,5 @@
+C:\Users\User\Desktop\HOMEWORKS\current\Methods\bin\Debug\Methods.exe
+C:\Users\User\Desktop\HOMEWORKS\current\Methods\bin\Debug\Methods.pdb
+C:\Users\User\Desktop\HOMEWORKS\current\Methods\obj\Debug\Methods.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\HOMEWORKS\current\Methods\obj\Debug\Methods.exe
+C:\Users\User\Desktop\HOMEWORKS\current\Methods\obj\Debug\Methods.pdb
