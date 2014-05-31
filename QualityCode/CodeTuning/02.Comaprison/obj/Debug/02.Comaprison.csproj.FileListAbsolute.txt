@@ -1,0 +1,6 @@
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\QualityCode\CodeTuning\02.Comaprison\bin\Debug\02.Comaprison.exe.config
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\QualityCode\CodeTuning\02.Comaprison\bin\Debug\02.Comaprison.exe
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\QualityCode\CodeTuning\02.Comaprison\bin\Debug\02.Comaprison.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\QualityCode\CodeTuning\02.Comaprison\obj\Debug\02.Comaprison.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\QualityCode\CodeTuning\02.Comaprison\obj\Debug\02.Comaprison.exe
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\QualityCode\CodeTuning\02.Comaprison\obj\Debug\02.Comaprison.pdb

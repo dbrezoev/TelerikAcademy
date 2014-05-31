@@ -1,0 +1,5 @@
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\QualityCode\CodeTuning\03.CompareFunctions\bin\Debug\03.CompareFunctions.exe.config
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\QualityCode\CodeTuning\03.CompareFunctions\bin\Debug\03.CompareFunctions.exe
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\QualityCode\CodeTuning\03.CompareFunctions\bin\Debug\03.CompareFunctions.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\QualityCode\CodeTuning\03.CompareFunctions\obj\Debug\03.CompareFunctions.exe
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\QualityCode\CodeTuning\03.CompareFunctions\obj\Debug\03.CompareFunctions.pdb
