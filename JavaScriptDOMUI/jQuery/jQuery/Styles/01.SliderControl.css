@@ -1,0 +1,18 @@
+﻿body {
+    background-color:gray;
+}
+#content {
+    display:inline-block;
+    left:200px;
+    top:60px;
+    position:absolute;    
+}
+#arrows {
+    position:absolute;
+    left:450px;
+    top:460px;
+}
+img.pic {
+    width:800px;
+    height:400px;
+}

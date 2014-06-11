@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.DivFactory", "01.DivFactory\01.DivFactory.csproj", "{D9F954F1-126E-479B-9A19-CC31C2593F41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.CircleOfDivs", "02.CircleOfDivs\02.CircleOfDivs.csproj", "{B82BFE4F-181F-4734-830B-390184FEED4A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InputTypesManipulation", "InputTypesManipulation\InputTypesManipulation.csproj", "{40853448-94C1-43D6-86F9-61B766AACDE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4.TagCloud", "4.TagCloud\4.TagCloud.csproj", "{E748EEDE-178A-485D-8613-7D923ACFFD52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05.TreeView", "05.TreeView\05.TreeView.csproj", "{90A80FAD-DABF-4173-AFFB-B0FF2B4920EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework-using-jQuery", "Homework-using-jQuery\Homework-using-jQuery.csproj", "{F786179A-EA5A-437F-A616-58F9CD1C3A0E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D9F954F1-126E-479B-9A19-CC31C2593F41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9F954F1-126E-479B-9A19-CC31C2593F41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9F954F1-126E-479B-9A19-CC31C2593F41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9F954F1-126E-479B-9A19-CC31C2593F41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B82BFE4F-181F-4734-830B-390184FEED4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B82BFE4F-181F-4734-830B-390184FEED4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B82BFE4F-181F-4734-830B-390184FEED4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B82BFE4F-181F-4734-830B-390184FEED4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40853448-94C1-43D6-86F9-61B766AACDE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40853448-94C1-43D6-86F9-61B766AACDE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40853448-94C1-43D6-86F9-61B766AACDE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40853448-94C1-43D6-86F9-61B766AACDE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E748EEDE-178A-485D-8613-7D923ACFFD52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E748EEDE-178A-485D-8613-7D923ACFFD52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E748EEDE-178A-485D-8613-7D923ACFFD52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E748EEDE-178A-485D-8613-7D923ACFFD52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90A80FAD-DABF-4173-AFFB-B0FF2B4920EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90A80FAD-DABF-4173-AFFB-B0FF2B4920EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90A80FAD-DABF-4173-AFFB-B0FF2B4920EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90A80FAD-DABF-4173-AFFB-B0FF2B4920EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F786179A-EA5A-437F-A616-58F9CD1C3A0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F786179A-EA5A-437F-A616-58F9CD1C3A0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F786179A-EA5A-437F-A616-58F9CD1C3A0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F786179A-EA5A-437F-A616-58F9CD1C3A0E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

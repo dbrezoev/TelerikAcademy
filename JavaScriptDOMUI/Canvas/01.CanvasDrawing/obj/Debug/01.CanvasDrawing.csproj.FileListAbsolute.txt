@@ -1,0 +1,6 @@
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JavaScriptDOMUI\Canvas\01.CanvasDrawing\bin\01.CanvasDrawing.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JavaScriptDOMUI\Canvas\01.CanvasDrawing\bin\01.CanvasDrawing.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JavaScriptDOMUI\Canvas\01.CanvasDrawing\obj\Debug\01.CanvasDrawing.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JavaScriptDOMUI\Canvas\01.CanvasDrawing\obj\Debug\01.CanvasDrawing.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JavaScriptDOMUI\Canvas\01.CanvasDrawing\obj\Debug\01.CanvasDrawing.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JavaScriptDOMUI\Canvas\01.CanvasDrawing\bin\01.CanvasDrawing.dll.config

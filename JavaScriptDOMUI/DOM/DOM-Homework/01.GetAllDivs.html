@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        div {
+            border: 1px solid black;
+        }
+
+            div > div {
+                text-decoration: underline;
+            }
+    </style>
+</head>
+<body>
+    <div class="first">
+        <p>in first div </p>
+        <div class="second">
+            second div
+            <div class="third">
+                third div
+                <div class="fourth"> fourth</div>
+            </div>
+        </div>
+    </div>
+    <script src="scripts/01.GetAllDivs.js"></script>
+</body>
+</html>
