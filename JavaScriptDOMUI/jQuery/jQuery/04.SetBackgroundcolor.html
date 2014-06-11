@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/jquery-2.1.1.min.js"></script>
+</head>
+<body>
+    <div id="content">
+        <p>Set background color: </p>
+        <input type="color" id="color-pick" />
+    </div>
+    <script>
+        $('#color-pick').change(function () {
+            var color = $(this).val();
+            $(document.body).css({ 'background-color': color });
+        });
+    </script>
+</body>
+</html>

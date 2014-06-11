@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+    </style>
+    <script src="Scripts/jquery-2.1.1.min.js"></script>
+</head>
+<body>
+    <div id="container"></div>
+    <!--<script src="js/05.GridView.js"></script>-->
+    <script>
+        function GridView(parent) {
+            this.parent = $(parent);
+            this.rows = [];
+            this.table = $('<table>');
+            this.header = [];            
+        }
+        GridView.prototype = {
+            addHeader:function(name){
+                for (var i = 0; i < name.length; i++) {
+                    this.header.push(name[i]);
+                }
+            },
+            addRow: function (name) {
+                var arr = [];
+                for (var i = 0; i < name.length; i++) {
+                    arr.push(name[i]);
+                }
+                this.rows.push(arr);
+            },
+            render: function () {
+                function removeChildren(element) {
+                    
+                }
+                if (this.header !== null) {
+                    var thead = $('<thead>');
+                    var tHeadTableRow = $('<tr>');
+                    for (var i = 0; i < this.header.length; i++) {
+                        var th = $('<th>').html(this.header[i]);
+                        tHeadTableRow.append(th);
+                    }
+                    console.log(tHeadTableRow)
+                    thead.append(tHeadTableRow);
+                    this.table.append(thead);
+                }
+
+                var tbody = $('<tbody>');
+                for (var i = 0; i < this.rows.length; i++) {
+                    var tRow = $('<tr>');
+                    console.log(this.rows[0])
+                    for (var k = 0; k < this.rows[i].length; k++) {
+                        var td = $('<td>').html(this.rows[i][k]);
+                        tRow.append(td);
+                    }
+                    tbody.append(tRow);
+                }
+                this.table.append(tbody);
+                this.parent.append(this.table);
+            },
+        }
+
+        function Row(name) {
+            this.name = name;
+            this.rows = [];
+        }
+        Row.prototype = {
+            addRow: function(){
+            },
+            render: function(){
+                
+            },
+        }
+
+        var gridView = new GridView('#container');
+        gridView.addHeader(['FirstName', 'LastName', 'Grade'])        
+        gridView.addRow(['Pesho', 'Peshev', 5]);
+       
+        gridView.render();
+        gridView.addRow(['Gosho', 'Goshev', 4]);
+        gridView.render();
+    </script>
+</body>
+</html>
