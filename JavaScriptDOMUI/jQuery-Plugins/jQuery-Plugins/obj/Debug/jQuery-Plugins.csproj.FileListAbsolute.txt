@@ -1,0 +1,6 @@
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JavaScriptDOMUI\jQuery-Plugins\jQuery-Plugins\bin\jQuery-Plugins.dll.config
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JavaScriptDOMUI\jQuery-Plugins\jQuery-Plugins\bin\jQuery-Plugins.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JavaScriptDOMUI\jQuery-Plugins\jQuery-Plugins\bin\jQuery-Plugins.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JavaScriptDOMUI\jQuery-Plugins\jQuery-Plugins\obj\Debug\jQuery-Plugins.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JavaScriptDOMUI\jQuery-Plugins\jQuery-Plugins\obj\Debug\jQuery-Plugins.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JavaScriptDOMUI\jQuery-Plugins\jQuery-Plugins\obj\Debug\jQuery-Plugins.pdb

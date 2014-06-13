@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+     <style>
+         ul {
+             margin:0;
+             padding:0;
+             list-style-type:none;
+             width:140px;
+             border:1px solid black;
+         }
+         li {
+             margin:0;
+             border:1px solid black;
+         }
+         div #chosen{
+             border:1px solid black;
+             width:140px;
+             background-color:skyblue;    
+             background:url(imgs/small-down-arrow.png);
+             background-repeat:no-repeat;
+             background-position:right;
+         }
+         .current {
+             background-color:pink;
+         }
+         
+     </style>
+</head>
+<body>
+    <select id="dropdown">
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+        <option value="4">Four</option>
+        <option value="5">Five</option>
+    </select>       
+    <script src="Scripts/jquery-2.1.1.min.js"></script> 
+    <!--<script src="Scripts/01.DropdownMenu.js"></script>-->
+    <script src="Scripts/01.DropDownMenuSelect.js"></script>
+    <script>                       
+        $('#dropdown').dropdownSelect();
+    </script>
+</body>
+</html>
