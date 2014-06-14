@@ -1,0 +1,6 @@
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JavaScriptDOMUI\Handlebars\Tasks\bin\Tasks.dll.config
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JavaScriptDOMUI\Handlebars\Tasks\bin\Tasks.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JavaScriptDOMUI\Handlebars\Tasks\bin\Tasks.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JavaScriptDOMUI\Handlebars\Tasks\obj\Debug\Tasks.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JavaScriptDOMUI\Handlebars\Tasks\obj\Debug\Tasks.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JavaScriptDOMUI\Handlebars\Tasks\obj\Debug\Tasks.pdb

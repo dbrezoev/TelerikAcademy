@@ -1,0 +1,11 @@
+﻿table, td, tr, th {
+    border-collapse:collapse;
+    border:1px solid black;
+    padding:5px;
+}
+tr:nth-child(2n) {
+            background: lightgray;
+        }
+th {
+    background-color:gray;
+}
