@@ -1,0 +1,7 @@
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\QualityCode\WalkInMatrix\MatrixWalk.Tests\bin\Debug\MatrixWalk.Tests.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\QualityCode\WalkInMatrix\MatrixWalk.Tests\bin\Debug\MatrixWalk.Tests.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\QualityCode\WalkInMatrix\MatrixWalk.Tests\bin\Debug\WalkInMatrix.exe
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\QualityCode\WalkInMatrix\MatrixWalk.Tests\bin\Debug\WalkInMatrix.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\QualityCode\WalkInMatrix\MatrixWalk.Tests\obj\Debug\MatrixWalk.Tests.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\QualityCode\WalkInMatrix\MatrixWalk.Tests\obj\Debug\MatrixWalk.Tests.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\QualityCode\WalkInMatrix\MatrixWalk.Tests\obj\Debug\MatrixWalk.Tests.pdb
