@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        div {
+            width:200px;
+            height:200px;
+            background-color:skyblue;
+            margin:10px;            
+        }
+        h1 {
+            border:1px solid black;
+        }
+    </style>
+    <script src="Scripts/01.DomModule.js"></script>
+</head>
+<body>
+    <h1>Title</h1>
+    <script>       
+
+        DomModule.bufferAdd('body', 'div');
+        DomModule.bufferAdd('body', 'div');
+        DomModule.bufferAdd('div', 'span');
+        DomModule.bufferAdd('body', 'div');
+        DomModule.bufferAdd('div', 'span');
+        DomModule.bufferAdd('div', 'span');
+        //DomModule.addElement('body', 'div');
+        //DomModule.addElement('body', 'div');
+        //DomModule.addElement('div', 'span');
+        //DomModule.attachEvent('div', 'click', function () {
+        //    alert('div clicked');
+        //});
+        
+        //setTimeout(function () {
+        //    DomModule.removeElement('div');
+        //}, 3000)
+            //DomModule.removeElement('div');
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Console Module</title>
+    <script src="Scripts/03.ConsoleModule.js"></script>
+</head>
+<body>
+    <script>
+        var name = 'pesho';
+        var country = 'BG';
+        var degrees = 40;
+
+        consoleModule.writeLine('Hello, I am {0} from {1}', name, country);
+
+        consoleModule.writeLine('Hello, I am {0} from {1}', 'Gosho', 'Telerik');
+
+        consoleModule.writeError('Bad things happened!');
+
+        consoleModule.writeWarn('Too hot! {0} degrees', degrees);
+    </script>
+</body>
+</html>

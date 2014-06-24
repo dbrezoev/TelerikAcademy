@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Moving Shapes</title>
+    <style>
+        .circle {
+            border-radius: 100px;
+            border: 1px solid black;
+            width: 200px;
+            height: 200px;
+            display: inline-block;
+            position: absolute;
+            top: 150px;
+            left: 200px;
+        }
+
+        .rectangle {
+            width: 400px;
+            border: 1px solid black;
+            height: 220px;
+            display: inline-block;
+            position: absolute;
+            top: 150px;
+            left: 550px;
+        }
+    </style>
+    
+</head>
+<body>
+    <a href="#" id="add-in-circle" >Add div in the circle</a>
+    <a href="#" id="add-in-rectangle">Add div in the rectangle</a>
+    <div class="circle"></div>
+    <div class="rectangle"></div>
+    <script src="Scripts/02.DivModule.js"></script>
+    <script>
+        var rect = document.getElementById('add-in-rectangle');
+        rect.addEventListener('click', function () {
+            movingShapes.add('rect');
+        }, false);
+
+        var circle = document.getElementById('add-in-circle');
+        circle.addEventListener('click', function () {
+            movingShapes.add('ellipse');
+        })
+
+    </script>
+</body>
+</html>

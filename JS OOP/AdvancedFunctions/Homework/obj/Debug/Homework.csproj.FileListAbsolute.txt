@@ -1,0 +1,6 @@
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JS OOP\AdvancedFunctions\Homework\bin\Homework.dll.config
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JS OOP\AdvancedFunctions\Homework\bin\Homework.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JS OOP\AdvancedFunctions\Homework\bin\Homework.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JS OOP\AdvancedFunctions\Homework\obj\Debug\Homework.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JS OOP\AdvancedFunctions\Homework\obj\Debug\Homework.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JS OOP\AdvancedFunctions\Homework\obj\Debug\Homework.pdb
