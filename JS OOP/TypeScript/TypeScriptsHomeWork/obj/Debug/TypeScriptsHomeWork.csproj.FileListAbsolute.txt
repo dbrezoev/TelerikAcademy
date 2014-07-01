@@ -1,0 +1,6 @@
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JS OOP\TypeScript\TypeScriptsHomeWork\obj\Debug\TypeScriptsHomeWork.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JS OOP\TypeScript\TypeScriptsHomeWork\bin\TypeScriptsHomeWork.dll.config
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JS OOP\TypeScript\TypeScriptsHomeWork\bin\TypeScriptsHomeWork.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JS OOP\TypeScript\TypeScriptsHomeWork\bin\TypeScriptsHomeWork.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JS OOP\TypeScript\TypeScriptsHomeWork\obj\Debug\TypeScriptsHomeWork.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JS OOP\TypeScript\TypeScriptsHomeWork\obj\Debug\TypeScriptsHomeWork.pdb
