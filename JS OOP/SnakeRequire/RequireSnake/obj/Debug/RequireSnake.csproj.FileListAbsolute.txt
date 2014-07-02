@@ -1,0 +1,6 @@
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JS OOP\SnakeRequire\RequireSnake\bin\RequireSnake.dll.config
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JS OOP\SnakeRequire\RequireSnake\bin\RequireSnake.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JS OOP\SnakeRequire\RequireSnake\bin\RequireSnake.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JS OOP\SnakeRequire\RequireSnake\obj\Debug\RequireSnake.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JS OOP\SnakeRequire\RequireSnake\obj\Debug\RequireSnake.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JS OOP\SnakeRequire\RequireSnake\obj\Debug\RequireSnake.pdb
