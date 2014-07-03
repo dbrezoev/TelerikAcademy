@@ -5,8 +5,20 @@
     padding:0;
     text-align:center;
 }
+#container{
+    display:inline-block;
+}
 canvas{
     margin:0;
     border: 1px solid black;
     background-color:#7db9e8;
+    display:inline-block;
+}
+#top{
+    position:absolute;
+    display:inline-block;
+    margin-left:20px;
+    padding:5px;
+    color:#091c4f;
+    text-align:left;
 }
