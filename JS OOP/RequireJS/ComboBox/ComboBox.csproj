@@ -81,6 +81,7 @@
     <Content Include="Scripts\libs\r.js" />
     <Content Include="Scripts\libs\require.js" />
     <Content Include="Scripts\Modules\Data.js" />
+    <Content Include="Scripts\Modules\Template.js" />
     <Content Include="Web.config" />
     <Content Include="Scripts\libs\jquery-2.1.1.min.map" />
   </ItemGroup>
