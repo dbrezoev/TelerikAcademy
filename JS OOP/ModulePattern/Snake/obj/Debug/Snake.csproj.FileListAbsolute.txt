@@ -1,0 +1,6 @@
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JS OOP\ModulePattern\Snake\bin\Snake.dll.config
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JS OOP\ModulePattern\Snake\bin\Snake.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JS OOP\ModulePattern\Snake\bin\Snake.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JS OOP\ModulePattern\Snake\obj\Debug\Snake.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JS OOP\ModulePattern\Snake\obj\Debug\Snake.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JS OOP\ModulePattern\Snake\obj\Debug\Snake.pdb
