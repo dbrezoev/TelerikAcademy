@@ -21,7 +21,10 @@ var Game = (function () {
         RIGHT_ARROW,
         LEFT_ARROW,
         DOWN_ARROW,
-        UP_ARROW;
+        UP_ARROW,
+        gameRun,
+        topPlayers,
+        playersArray;
 
     canvas = document.getElementById('the-canvas');
     renderer = Renderer.getCanvas(canvas);
@@ -30,10 +33,9 @@ var Game = (function () {
     INITIAL_SNAKE_X = 100;
     INITIAL_SNAKE_Y = 100;
     SNAKE_STEP = 1;
-    SNAKE_SIZE = 15;
+    SNAKE_SIZE = 10;
     SNAKE_SPEED = 70;
     snake = new GameObjects.Snake(INITIAL_SNAKE_X, INITIAL_SNAKE_Y, SNAKE_SIZE, SNAKE_STEP);
-    console.log(snake)
     foodX = getRandomNumber(0, canvas.width);
     foodY = getRandomNumber(0, canvas.height);
     FOOD_SIZE = SNAKE_SIZE / 2;
@@ -45,6 +47,8 @@ var Game = (function () {
     UP_ARROW = 38;
     DOWN_ARROW = 40;
     RIGHT_ARROW = 39;
+    topPlayers = document.getElementById('top');
+    playersArray = [];
 
     function handleUserControl() {
         document.onkeydown = function (event) {
@@ -81,10 +85,10 @@ var Game = (function () {
     function detectCollision() {
         var headX = snake.tailParts[0].x;
         var headY = snake.tailParts[0].y;
-        if (headX < 0 || headX > canvas.width) {
+        if (headX < 0 || headX >= canvas.width) {
             snake.isAlive = false;
         }
-        if (headY < 0 || headY > canvas.height) {
+        if (headY < 0 || headY >= canvas.height) {
             snake.isAlive = false;
         }
         for (var i = 1; i < snake.tailParts.length; i++) {
@@ -106,15 +110,66 @@ var Game = (function () {
         food.isAlive = true;
     }
 
-    function animationFrame() {
+    function recordPoints() {
+        var name,
+            i,
+            currentRow,
+                row;
 
-        renderer.clear();
-        renderer.draw(snake);
-        snake.move();
-        renderer.draw(food);
-        handleUserControl();
-        controlGame();
-        detectCollision();
+        name = prompt('Please provide your nickname');
+        if (name === null) {
+            name = 'unknown';
+        }        
+        if (localStorage.getItem(name) === null) {
+            localStorage.setItem(name, points);           
+        }
+        else {
+            
+            if (points > localStorage.getItem(name)) {
+                localStorage.setItem(name, points);
+            }
+        }
+
+        for (i = 0; i < localStorage.length; i++) {
+            playersArray.push({
+                name: localStorage.key(i),
+                points: localStorage.getItem(localStorage.key(i)) | 0,
+            })
+        }
+
+        playersArray.sort(function (a, b) {
+            return b.points - a.points;
+        })
+        console.log(playersArray)
+        for (i = 0; i < 10 || playersArray.length; i++) {
+            currentRow = i + 1;
+            row = currentRow + '. ' + playersArray[i].name + ' ' + playersArray[i].points + 'pts' + '<br>';
+            topPlayers.innerHTML += row;
+        }
+    }
+
+    function stopGame() {
+        clearInterval(gameRun);
+        renderer.drawGameOver(canvas);
+
+        setTimeout(function () {
+            recordPoints();
+        },2000)
+        
+    }
+    function animationFrame() {
+        if (snake.isAlive) {
+            renderer.clear();
+            renderer.draw(snake);
+            snake.move();
+            renderer.draw(food);
+            handleUserControl();
+            controlGame();
+            detectCollision();
+        }
+        else {            
+            stopGame();
+        }
     }
     function getRandomNumber(min, max) {
         return Math.floor(Math.random() * (max - min) + min);
@@ -125,7 +180,7 @@ var Game = (function () {
 
     Game.prototype = {
         start: function () {
-            var gameRun = setInterval(animationFrame, SNAKE_SPEED);
+             gameRun = setInterval(animationFrame, SNAKE_SPEED);
         },
         stop: function () {
             clearInterval(animationFrame);

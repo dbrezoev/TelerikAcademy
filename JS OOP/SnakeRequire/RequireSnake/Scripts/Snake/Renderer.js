@@ -1,17 +1,6 @@
 ﻿define(['Snake/Game','Snake/GameObjects'], function (Game ,GameObjects) {
     var Renderer = (function () {
-        function drawGameOver(canvas) {
-            var ctx,
-                finalPoints;
-            ctx = canvas.getContext('2d');
-            finalPoints = document.getElementById('score').innerHTML;
-            ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-            ctx.font = "40px Georgia";
-            ctx.fillText("Game over!", canvas.width / 2 - 40, canvas.height / 2);
-            ctx.font = "40px Georgia";
-            ctx.fillText("Your score: " + finalPoints, canvas.width / 2 - 140, canvas.height / 2 + 50);
-        }
-
+        
         function drawPart(canvas, part, color) {
             var ctx,
                 color;
@@ -31,10 +20,6 @@
                     currentPart = snake.tailParts[i];
                     drawPart(canvas, currentPart, 'green');
                 }
-            }
-            else {               
-                Game.stop();
-                drawGameOver(canvas);
             }
         }
 
@@ -62,6 +47,17 @@
                 else if (obj instanceof GameObjects.Food) {
                     drawFood(this.canvas, obj);
                 }
+            },
+            drawGameOver: function(){
+                var ctx,
+                finalPoints;
+                ctx = this.canvas.getContext('2d');
+                finalPoints = document.getElementById('score').innerHTML;
+                ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+                ctx.font = "40px Georgia";
+                ctx.fillText("Game over!", this.canvas.width / 2 - 40, this.canvas.height / 2);
+                ctx.font = "40px Georgia";
+                ctx.fillText("Your " + finalPoints, this.canvas.width / 2 - 140, this.canvas.height / 2 + 50);
             },
             clear: function () {
                 var ctx,
