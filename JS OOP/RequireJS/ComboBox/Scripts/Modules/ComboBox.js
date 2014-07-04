@@ -1,4 +1,4 @@
-﻿define(['jquery'], function ($) {
+﻿define(['jquery'], function () {
     
     $.fn.ComboBox = function(){
         var $this = this;
@@ -8,14 +8,15 @@
         $that.find('.person-item').first().show();
 
         var visible = false;
-        $that.find('.person-item').on('click', function () {
+        $that.on('click','img', function () {
             var $this = $(this);
+            console.log(this);
             
             if (visible) {
                 $that.find('.person-item').hide();
-                $this.show();
+                $this.parents('.person-item').show();
                 visible = false;
-            }
+            }                
             else {
                 $('.hidden').show();
                 visible = true;

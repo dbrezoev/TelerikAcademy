@@ -1,4 +1,5 @@
-﻿(function () {
+﻿
+(function () {
     'use strict';
 
     require.config({
@@ -8,7 +9,7 @@
         }
     });
 
-    require(['jquery', 'Modules/Data', 'Modules/ComboBox', 'handlebars'], function ($, data, ComboBox) {
+    require([ 'Modules/Data', 'Modules/ComboBox', 'handlebars','jquery'], function (data, ComboBox) {
 
         var people = data;
         var source = $('#source').html();       
@@ -16,8 +17,8 @@
         var result = template({
             people:people
         });
-        $('#result').html(result);
-
+        $('#result').html(result);        
         $('#result').ComboBox();
+        
     });
 }());
