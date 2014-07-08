@@ -1,0 +1,6 @@
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JS OOP\ExamJSOOP\ExamJSOOP\bin\ExamJSOOP.dll.config
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JS OOP\ExamJSOOP\ExamJSOOP\bin\ExamJSOOP.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JS OOP\ExamJSOOP\ExamJSOOP\bin\ExamJSOOP.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JS OOP\ExamJSOOP\ExamJSOOP\obj\Debug\ExamJSOOP.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JS OOP\ExamJSOOP\ExamJSOOP\obj\Debug\ExamJSOOP.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JS OOP\ExamJSOOP\ExamJSOOP\obj\Debug\ExamJSOOP.csprojResolveAssemblyReference.cache
