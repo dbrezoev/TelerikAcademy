@@ -17,13 +17,13 @@
     function drawRect(x, y, width, height) {
         ctx.moveTo(x, y);
         ctx.strokeRect(x, y, width, height);
-    }
-
+    } 
+   
     return {
         draw :{
             circle: drawCircle,
             line: drawLine,
-            rect: drawRect,
+            rect: drawRect,           
         }
     }
 }());
