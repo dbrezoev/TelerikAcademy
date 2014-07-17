@@ -1,0 +1,6 @@
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JS Applications\Underscore\UsingRequireJS\bin\UsingRequireJS.dll.config
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JS Applications\Underscore\UsingRequireJS\bin\UsingRequireJS.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JS Applications\Underscore\UsingRequireJS\bin\UsingRequireJS.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JS Applications\Underscore\UsingRequireJS\obj\Debug\UsingRequireJS.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JS Applications\Underscore\UsingRequireJS\obj\Debug\UsingRequireJS.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JS Applications\Underscore\UsingRequireJS\obj\Debug\UsingRequireJS.pdb
