@@ -1,0 +1,6 @@
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JS Applications\WebStorages\SimpleWebGame\bin\SimpleWebGame.dll.config
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JS Applications\WebStorages\SimpleWebGame\bin\SimpleWebGame.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JS Applications\WebStorages\SimpleWebGame\bin\SimpleWebGame.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JS Applications\WebStorages\SimpleWebGame\obj\Debug\SimpleWebGame.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JS Applications\WebStorages\SimpleWebGame\obj\Debug\SimpleWebGame.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JS Applications\WebStorages\SimpleWebGame\obj\Debug\SimpleWebGame.pdb
