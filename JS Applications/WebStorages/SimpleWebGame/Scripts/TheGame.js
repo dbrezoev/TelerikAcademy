@@ -1,30 +1,33 @@
 ﻿/// <reference path="jquery-2.1.1.min.js" />
 (function () {
     'use strict';
+    var MAX_DIGITS,
+        sheep,
+        rams,
+        rounds,
+        secretNumber,
+        inputValue,
+        getUserNameMessage,
+        players;
 
-    var MAX_DIGITS = 4;
-    var sheep = 0;
-    var rams = 0;
-    var rounds = 0;
-    var secretNumber = generateSecretNumber();
-    console.log(secretNumber);
-    var inputValue;
-    var getUserNameMessage = 'Please provide your nickname.';
-    var players = [];
+    MAX_DIGITS = 4;
+    sheep = 0;
+    rams = 0;
+    rounds = 0;
+    secretNumber = generateSecretNumber();    
+    inputValue;
+    getUserNameMessage = 'Please provide your nickname.';
+    players = [];
 
     $('#submit').on('click', function () {
-        $('#rules').fadeOut(200);
+        var userNumber;
+
         inputValue = $('#user-input').val().toString();
 
         if (!validateValue(inputValue)) {
-            $('#content').append($('<p>').html('Wrong input'));
-            var link = $('<a>').attr({href: '#', id: 'rules-link'}).html(' See rules');
-            $('#content p').append(link);
-            $('#rules-link').on('click', function () {
-                alert(4)
-            })
+            $('#content').append($('<p>').html('Wrong input'));                       
         } else {
-            var userNumber = inputValue.toString();            
+            userNumber = inputValue.toString();            
             checkSheepAndRams(inputValue);
             $('#content').append($('<p>').html(inputValue + ' You have ' + sheep + ' SHEEP and ' + rams + ' RAMS!'));
 
@@ -47,9 +50,14 @@
     });
 
     function generateSecretNumber() {
-        var digits = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-        var secretNumber = '';
-        var i = 0;
+        var digits,
+            secretNumber,
+            i,
+            index;
+
+        digits = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+        secretNumber = '';
+        i = 0;
 
         while (secretNumber.toString().length !== MAX_DIGITS) {
             var index = Math.floor(Math.random() * (9 - 0 + 1) + 0);
@@ -63,6 +71,7 @@
                 digits[index] = 'x'; //marked as used
                 i--;
             }
+
             i++;
         }
                 
@@ -70,6 +79,10 @@
     }
 
     function validateValue(value) {
+        var i,
+            currentNumber,
+            prop;
+
         if (value.length !== MAX_DIGITS) {
             return false;
         }
@@ -84,15 +97,15 @@
 
         //check for duplicated numbers in user input
         var count = {};
-        for (var i = 0; i < value.length; i++) {
-            var currentNumber = value[i];
+        for (i = 0; i < value.length; i++) {
+            currentNumber = value[i];
             if (!count[currentNumber]) {
                 count[currentNumber] = 0;
             }
             count[currentNumber]++;
         }
 
-        for (var prop in count) {
+        for (prop in count) {
             if(count[prop] != 1){
                 return false;
             }
@@ -102,10 +115,15 @@
     }
 
     function checkSheepAndRams(number) {
-        var secretNumberCopy = secretNumber;
-        var userInputCopy = number;
+        var secretNumberCopy,
+            userInputCopy,
+            i,
+            k;
 
-        for (var i = 0; i < secretNumberCopy.length; i++) {
+        secretNumberCopy = secretNumber;
+        userInputCopy = number;
+
+        for (i = 0; i < secretNumberCopy.length; i++) {
             if (userInputCopy[i] === secretNumberCopy[i]) {
                 rams++;
                 userInputCopy[i] = '*';
@@ -113,8 +131,8 @@
             }
         }
 
-        for (var i = 0; i < userInputCopy.length; i++) {
-            for (var k = 0; k < secretNumberCopy.length; k++) {
+        for ( i = 0; i < userInputCopy.length; i++) {
+            for (k = 0; k < secretNumberCopy.length; k++) {
                 if (secretNumberCopy[k] === userInputCopy[i]) {
                     sheep++;
                     userInputCopy[i] = '*';
@@ -127,8 +145,10 @@
     }
 
     function saveHighscore(rounds) {
+        var userName;
+
         rounds = rounds | 0;
-        var userName = prompt(getUserNameMessage);
+        userName = prompt(getUserNameMessage);
         if (userName === undefined || userName === null) {
             return;
         }
@@ -143,7 +163,9 @@
     }
 
     function renderHighscoreTable() {
-        for (var i = 0; i < localStorage.length; i++) {
+        var i;
+
+        for (i = 0; i < localStorage.length; i++) {
             players.push({
                 name: localStorage.key(i),
                 rounds: localStorage[localStorage.key(i)]
@@ -152,7 +174,7 @@
 
         players = sort(players);
 
-        for (var i = 0; i < players.length; i++) {
+        for (i = 0; i < players.length; i++) {
             $('#highscore').append($('<p>').html(i+1 + '. ' + players[i].name + ' ' + players[i].rounds + ' rounds.'))
         }
     }
