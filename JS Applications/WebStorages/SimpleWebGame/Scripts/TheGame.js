@@ -151,8 +151,6 @@ console.log(secretNumber);
                 }
             }
         }
-
-        sheep -= rams;
     }
 
     function saveHighscore(rounds) {
