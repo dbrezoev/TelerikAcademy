@@ -147,7 +147,7 @@ console.log(secretNumber);
                 if (secretNumberArr[k] === userInputArr[i]) {
                     sheep++;
                     userInputArr[i] = '*';
-                    secretNumberArr[i] = '@';
+                    secretNumberArr[k] = '@';
                 }
             }
         }
