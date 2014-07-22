@@ -14,7 +14,8 @@
     sheep = 0;
     rams = 0;
     rounds = 0;
-    secretNumber = generateSecretNumber();    
+    secretNumber = generateSecretNumber();  
+console.log(secretNumber);	
     inputValue;
     getUserNameMessage = 'Please provide your nickname.';
     players = [];
@@ -43,10 +44,16 @@
         }  
     });
 
+    var clicked = false;
     $('#gave-up').on('click', function () {
-        saveHighscore(rounds);
-        $('#content').append($('<p>').html('You gave up after ' + rounds + 'rounds. The secret number is [' + secretNumber + '].'));
-        renderHighscoreTable();
+        if (clicked === false) {
+            $('#content').append($('<p>').html('You gave up after ' + rounds + 'rounds. The secret number is [' + secretNumber + '].'));
+            renderHighscoreTable();
+        }
+        else {
+            return
+        }
+        clicked = true;
     });
 
     function generateSecretNumber() {
@@ -115,28 +122,32 @@
     }
 
     function checkSheepAndRams(number) {
-        var secretNumberCopy,
-            userInputCopy,
+        var secretNumberArr = [],
+            userInputArr = [],
             i,
             k;
+		for(var i = 0; i < secretNumber.length; i++){
+			secretNumberArr.push(secretNumber[i]);
+		}
+		
+		for(var i = 0; i < number.length; i++){
+			userInputArr.push(number[i]);
+		}        
 
-        secretNumberCopy = secretNumber;
-        userInputCopy = number;
-
-        for (i = 0; i < secretNumberCopy.length; i++) {
-            if (userInputCopy[i] === secretNumberCopy[i]) {
+        for (var z = 0; z < secretNumberArr.length; z++) {
+            if (userInputArr[z] === secretNumberArr[z]) {
                 rams++;
-                userInputCopy[i] = '*';
-                secretNumberCopy[i] = '@';
+                userInputArr[z] = '*';
+                secretNumberArr[z] = '@';
             }
         }
 
-        for ( i = 0; i < userInputCopy.length; i++) {
-            for (k = 0; k < secretNumberCopy.length; k++) {
-                if (secretNumberCopy[k] === userInputCopy[i]) {
+        for ( i = 0; i < userInputArr.length; i++) {
+            for (k = 0; k < secretNumberArr.length; k++) {
+                if (secretNumberArr[k] === userInputArr[i]) {
                     sheep++;
-                    userInputCopy[i] = '*';
-                    secretNumberCopy[i] = '@';
+                    userInputArr[i] = '*';
+                    secretNumberArr[i] = '@';
                 }
             }
         }
