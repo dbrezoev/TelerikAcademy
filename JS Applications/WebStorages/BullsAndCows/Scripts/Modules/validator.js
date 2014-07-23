@@ -20,6 +20,12 @@
             if (value[0] === '0') {
                 return false;
             }
+			
+			for(i=0; i < value.length; i++){
+				if(!isNaN(value[i])){
+					return false;
+				}
+			}
 
             //check for duplicated numbers in user input
             var count = {};
