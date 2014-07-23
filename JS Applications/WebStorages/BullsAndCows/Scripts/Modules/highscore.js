@@ -1,6 +1,16 @@
 ﻿define([], function () {
     'use strict'
     var highScore = (function () {
+	
+	String.prototype.htmlEscape = function (){
+	var escapedStr = String(this).replace(/&/g, '&amp;');
+	escapedStr = escapedStr.replace(/</g, '&lt;');
+	escapedStr = escapedStr.replace(/>/g, '&gt;');
+	escapedStr = escapedStr.replace(/"/g, '&quot;');
+	escapedStr = escapedStr.replace(/'/g, "&#39");
+	return escapedStr;
+	}
+
 
         var getUserNameMessage = 'Please provide your nickname.'
 
@@ -9,17 +19,18 @@
             
             rounds = rounds | 0;
             userName = prompt(getUserNameMessage);
-            if (userName === undefined || userName === null) {
+			var escaped = userName.htmlEscape();
+            if (escaped === undefined || escaped === null) {
 
                 //if user doesn't provide his nickname, he's not saved in highscore
                 return;
             }
-            if (!localStorage[userName]) {
-                localStorage.setItem(userName, rounds);
+            if (!localStorage[escaped]) {
+                localStorage.setItem(escaped, rounds);
             }
             else {
-                if (localStorage[userName] > rounds) {
-                    localStorage.setItem(userName, rounds);
+                if (localStorage[escaped] > rounds) {
+                    localStorage.setItem(escaped, rounds);
                 }
             }
         }
