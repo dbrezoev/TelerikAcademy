@@ -1,0 +1,29 @@
+﻿body{
+    background-color:#526c92;
+    text-align:center;  
+}
+#game{
+    text-align:center;
+}
+a{
+    color:black;
+}
+#content{
+    font-size:larger;
+    font-family:'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'DejaVu Sans Condensed', sans-serif;
+    overflow:auto;
+    width:350px;
+    height:380px;
+    position:absolute;
+    left:500px;
+}
+#highscore{
+    position:absolute;
+    left:100px;
+    display:none;
+    text-align:left;
+}
+#play{
+    display:none;
+}
+

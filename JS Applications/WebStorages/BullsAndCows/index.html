@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="Styles/GameStyle.css" rel="stylesheet" />
+    <script src="Scripts/libs/require.js" data-main="Scripts/app"></script>
+</head>
+<body>
+    <h2>Sheep and Rams</h2>
+    <h3>Play with:</h3>
+    <div id="game">
+        <form>
+            <input type="radio" name="user-choice" value="3" /> 3 digits
+            <input type="radio" name="user-choice" value="4" /> 4 digits
+            <input type="radio" name="user-choice" value="5" /> 5 digits
+            <br /><br /><a href="#" id="start">Play</a><br /><br />
+        </form>
+        <form id="play">
+            <input id="user-input" type="text" />
+            <a href="#" id="submit">Submit</a>&nbsp;
+            <a href="#" id="gave-up">Give up</a>
+        </form>
+        <div id="content">
+        </div>
+    </div>
+    <div id="highscore">
+        <h3>Highscore:</h3>
+    </div>
+</body>
+</html>
