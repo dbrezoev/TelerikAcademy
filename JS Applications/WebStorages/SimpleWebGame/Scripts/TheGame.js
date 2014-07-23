@@ -10,13 +10,12 @@
         getUserNameMessage,
         players;
 
-    MAX_DIGITS = 4;
+    MAX_DIGITS = 5;
     sheep = 0;
     rams = 0;
     rounds = 0;
-    secretNumber = generateSecretNumber();  
-console.log(secretNumber);	
-    inputValue;
+    secretNumber = generateSecretNumber();   
+    console.log(secretNumber);	
     getUserNameMessage = 'Please provide your nickname.';
     players = [];
 
@@ -56,6 +55,10 @@ console.log(secretNumber);
         clicked = true;
     });
 
+    function getRandomNumber(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
     function generateSecretNumber() {
         var digits,
             secretNumber,
@@ -67,7 +70,7 @@ console.log(secretNumber);
         i = 0;
 
         while (secretNumber.toString().length !== MAX_DIGITS) {
-            var index = Math.floor(Math.random() * (9 - 0 + 1) + 0);
+            var index = getRandomNumber(0, 9);
             if (digits[index] === 0 && i === 0) {
                 i--;
                 continue;
@@ -142,7 +145,7 @@ console.log(secretNumber);
             }
         }
 
-        for ( i = 0; i < userInputArr.length; i++) {
+        for (i = 0; i < userInputArr.length; i++) {
             for (k = 0; k < secretNumberArr.length; k++) {
                 if (secretNumberArr[k] === userInputArr[i]) {
                     sheep++;
