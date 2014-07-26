@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Task2</title>
+    <script src="Scripts/Libs/jquery-2.1.1.js"></script>
+    <script src="Scripts/Libs/q.js"></script>
+    <script src="Scripts/Modules/REST-API-APP.js"></script>
+    <style>
+        #message {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <label for="tb-name">Name: </label>
+    <input id="tb-name" name="tb-name" type="text" />
+    <br />
+    <label for="tb-grade">Grade: </label>
+    <input id="tb-grade" name="tb-grade" type="number" min='1' max='12' />
+    <br />
+    <label for="tb-id">Delete student with ID: </label>
+    <input id="tb-id" name="tb-id" type="number"/>
+    <br />
+    <button id='btn-add-person'>Add new</button>
+    <button id='btn-remove-person'>Remove</button>
+    <button id='btn-get-persons'>Get persons</button>
+    <div id="message"></div>
+    <div id="container"></div>
+    <script>        
+        var link = 'http://localhost:3000/students';        
+
+        $('#btn-add-person').on('click', function () {
+            
+            manager.add(link, {
+                name: $('#tb-name').val(),
+                grade: $('#tb-grade').val()
+            }).then(function (data) {
+                writeMessage('New person has been added.', 'green', 3000);                
+            }, function (err) {
+                if (err) {                    
+                    writeMessage(err, 'red', 2000);
+                }
+                else {
+                    writeMessage('An error occured', 'red', 2000);
+                }
+            })
+        });
+
+        $('#btn-remove-person').on('click', function () {
+            var id = $('#tb-id').val();
+            console.log(id)
+            var currLink = link + '/' + id;
+            console.log(currLink);
+            manager.remove(currLink)
+
+            .then(function (data) {
+                writeMessage('Student with id ' + id + ' has been removed', 'green', 2000);                
+            }, function (err) {
+                if (err) {
+                    writeMessage(err, 'red', 2000);
+                }
+                else {
+                    writeMessage('An error occured', 'red', 2000);
+                }
+
+            });            
+        });
+
+        $('#btn-get-persons').on('click', function () {
+            manager.get(link)
+            .then(function (data) {
+                
+                $('#container').empty();
+                var persons = (data['students']);
+                if (persons.length === 0) {
+                    writeMessage('No data in DB.', 'red', 2000);                    
+                }
+                var ul = $('<ul>')
+                for (var i = 0; i < persons.length; i++) {
+                    var currentPerson = persons[i];
+                    var li = $('<li>').html('Name: ' + currentPerson.name + '; Grade: ' + currentPerson.grade);
+                    ul.append(li);                    
+                }
+                $('#container').append(ul);
+                
+            }, function (err) {
+                if (err) {
+                    $('#container').html(err).css({ color: 'red' }).show().fadeOut(2000);
+                }
+                else {
+                    $('#container').html('An error occured.').css({ color: 'red' }).show().fadeOut(2000);
+                }
+
+            });
+
+        });
+
+        function writeMessage(msg, color, fadeOut) {
+            $('#message').html(msg).css({ color: color }).show().fadeOut(fadeOut);
+        }
+    </script>
+</body>
+</html>
