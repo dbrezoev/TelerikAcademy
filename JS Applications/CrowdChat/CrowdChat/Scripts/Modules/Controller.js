@@ -82,8 +82,8 @@
                     $('#msg-box').empty();
                     $('#msg-box').html('An Error Occured.');
                 });
-                var div = $('#msg-box').get(0);
-                div.scrollTop = div.scrollHeight;
+                //var div = $('#msg-box').get(0);
+                //div.scrollTop = div.scrollHeight;
             }, INTERVAL);
         }               
 
