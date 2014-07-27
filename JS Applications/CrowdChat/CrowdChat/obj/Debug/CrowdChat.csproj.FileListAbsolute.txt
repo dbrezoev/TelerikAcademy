@@ -1,0 +1,6 @@
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JS Applications\CrowdChat\CrowdChat\bin\CrowdChat.dll.config
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JS Applications\CrowdChat\CrowdChat\bin\CrowdChat.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JS Applications\CrowdChat\CrowdChat\bin\CrowdChat.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JS Applications\CrowdChat\CrowdChat\obj\Debug\CrowdChat.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JS Applications\CrowdChat\CrowdChat\obj\Debug\CrowdChat.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\JS Applications\CrowdChat\CrowdChat\obj\Debug\CrowdChat.csprojResolveAssemblyReference.cache
