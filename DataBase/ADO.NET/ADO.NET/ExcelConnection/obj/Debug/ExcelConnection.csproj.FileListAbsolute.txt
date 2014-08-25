@@ -1,0 +1,6 @@
+D:\TELERIK ACADEMY\DB\Homeworks\ADO.NET\ADO.NET\ExcelConnection\bin\Debug\ExcelConnection.exe.config
+D:\TELERIK ACADEMY\DB\Homeworks\ADO.NET\ADO.NET\ExcelConnection\bin\Debug\ExcelConnection.exe
+D:\TELERIK ACADEMY\DB\Homeworks\ADO.NET\ADO.NET\ExcelConnection\bin\Debug\ExcelConnection.pdb
+D:\TELERIK ACADEMY\DB\Homeworks\ADO.NET\ADO.NET\ExcelConnection\obj\Debug\ExcelConnection.exe
+D:\TELERIK ACADEMY\DB\Homeworks\ADO.NET\ADO.NET\ExcelConnection\obj\Debug\ExcelConnection.pdb
+D:\TELERIK ACADEMY\DB\Homeworks\ADO.NET\ADO.NET\ExcelConnection\obj\Debug\ExcelConnection.csprojResolveAssemblyReference.cache

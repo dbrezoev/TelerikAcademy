@@ -1,0 +1,6 @@
+D:\TELERIK ACADEMY\DB\Homeworks\ADO.NET\ADO.NET\QueriesWithEscaping\bin\Debug\QueriesWithEscaping.exe.config
+D:\TELERIK ACADEMY\DB\Homeworks\ADO.NET\ADO.NET\QueriesWithEscaping\bin\Debug\QueriesWithEscaping.exe
+D:\TELERIK ACADEMY\DB\Homeworks\ADO.NET\ADO.NET\QueriesWithEscaping\bin\Debug\QueriesWithEscaping.pdb
+D:\TELERIK ACADEMY\DB\Homeworks\ADO.NET\ADO.NET\QueriesWithEscaping\obj\Debug\QueriesWithEscaping.exe
+D:\TELERIK ACADEMY\DB\Homeworks\ADO.NET\ADO.NET\QueriesWithEscaping\obj\Debug\QueriesWithEscaping.pdb
+D:\TELERIK ACADEMY\DB\Homeworks\ADO.NET\ADO.NET\QueriesWithEscaping\obj\Debug\QueriesWithEscaping.csprojResolveAssemblyReference.cache

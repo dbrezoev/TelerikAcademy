@@ -1,0 +1,394 @@
+1. ------------------------------------------------------------------------------------------
+SELECT FirstName, Salary
+FROM Employees
+WHERE Salary = 
+	(SELECT MIN(Salary)
+	FROM Employees)
+
+2. ------------------------------------------------------------------------------------------
+SELECT FirstName, Salary
+FROM Employees
+WHERE Salary <= 
+	(SELECT MIN(Salary) FROM Employees) * 1.1
+
+3. ------------------------------------------------------------------------------------------
+SELECT  e.FirstName + ' ' + e.MiddleName + ' ' + e.LastName as [FullName], e.Salary, d.Name
+FROM Employees e
+JOIN Departments d 
+ON e.DepartmentID = d.DepartmentID
+WHERE Salary = 
+	(SELECT MIN(Salary) FROM Employees)
+
+4. ------------------------------------------------------------------------------------------
+SELECT AVG(Salary) as [AVG SALARY]
+FROM Employees e
+WHERE e.DepartmentID = 1
+
+5. ------------------------------------------------------------------------------------------
+SELECT AVG(Salary) as [AVG SALARY]
+FROM Employees e
+JOIN Departments d
+ON d.DepartmentID = e.DepartmentID
+WHERE d.Name = 'Sales'
+
+6. ------------------------------------------------------------------------------------------
+SELECT COUNT(FirstName) as [EmployeesCount] 
+FROM Employees e
+JOIN Departments d
+ON d.DepartmentID = e.DepartmentID
+WHERE d.Name = 'Sales'
+
+7. ------------------------------------------------------------------------------------------
+SELECT COUNT(FirstName) as [Employees Without Manager] 
+FROM Employees e
+WHERE e.ManagerID IS NOT NULL
+
+8. ------------------------------------------------------------------------------------------
+SELECT COUNT(FirstName) as [Employees Without Manager] 
+FROM Employees e
+WHERE e.ManagerID IS NULL
+
+9. ------------------------------------------------------------------------------------------
+SELECT d.Name as [Department Name], AVG(e.Salary) as [AVG SALARY]
+FROM Employees e
+JOIN Departments d
+ON e.DepartmentID = d.DepartmentID
+GROUP BY d.Name
+
+10. ------------------------------------------------------------------------------------------
+SELECT d.Name as [Department], t.Name as [Town], COUNT(e.FirstName) as [Emp Count]
+FROM Employees e
+JOIN Departments d
+ON e.DepartmentID = d.DepartmentID
+	JOIN Addresses a
+	ON e.AddressID = a.AddressID
+		JOIN Towns t
+		ON a.TownID = t.TownID
+GROUP BY d.Name, t.Name
+
+11. ------------------------------------------------------------------------------------------
+SELECT e.FirstName, e.LastName
+FROM Employees e
+JOIN Employees m
+ON e.EmployeeID = m.ManagerID
+GROUP BY e.FirstName, e.LastName
+HAVING COUNT(m.EmployeeID) = 5
+
+12. ------------------------------------------------------------------------------------------
+SELECT e.FirstName, COALESCE(m.FirstName, 'no manager') as [Manager]
+FROM Employees e
+LEFT JOIN Employees m
+ON e.EmployeeID = m.ManagerID
+
+13. ------------------------------------------------------------------------------------------
+SELECT e.FirstName, e. Lastname, LEN(e.Lastname) as [NAME LEN]
+FROM Employees e
+WHERE LEN(e.LastName) = 5
+
+14. ------------------------------------------------------------------------------------------
+DECLARE @currentDate nvarchar(50)
+SELECT @currentDate = FORMAT(GETDATE(),'dd.MM.yyyy hh:mm:ss:ff');
+Print @currentDate
+
+15. ------------------------------------------------------------------------------------------
+CREATE TABLE Users (
+  UserID int IDENTITY,
+  UserName nvarchar(20) NOT NULL,
+  UserPassword nvarchar(100),
+  FullName nvarchar(100) NOT NULL,
+  LastLogin datetime,
+  CONSTRAINT PK_Persons PRIMARY KEY(UserID),
+  CONSTRAINT UC_UserName UNIQUE (UserName),
+  CONSTRAINT CC_PASSWORD CHECK (LEN(UserPassword)>=5)
+)
+GO
+
+16. ------------------------------------------------------------------------------------------
+CREATE VIEW [UsersLoggedToday] AS
+SELECT * FROM Users
+WHERE CAST(LastLogin as date) >= CAST(GETDATE() as date)
+GO
+
+SELECT * FROM UsersLoggedToday
+
+17. ------------------------------------------------------------------------------------------
+
+CREATE TABLE Groups (
+  GroupID int IDENTITY,
+  GroupName nvarchar(50) NOT NULL,
+  CONSTRAINT PK_Users PRIMARY KEY(GroupID),
+  CONSTRAINT UC_GroupName UNIQUE (GroupName)
+)
+GO
+
+18. ------------------------------------------------------------------------------------------
+
+ALTER TABLE Users ADD GroupID int
+GO
+
+SET IDENTITY_INSERT [dbo].[Groups] ON 
+GO
+INSERT [dbo].[Groups] ([GroupID],[GroupName]) VALUES (1,'Administrators')
+INSERT [dbo].[Groups] ([GroupID],[GroupName]) VALUES (2,'Newbies')
+INSERT [dbo].[Groups] ([GroupID],[GroupName]) VALUES (3,'Pro')
+INSERT [dbo].[Groups] ([GroupID],[GroupName]) VALUES (4,'Masters')
+GO
+SET IDENTITY_INSERT [dbo].[Groups] OFF
+GO
+
+UPDATE Users SET GroupID = 1  WHERE UserID = 1 
+UPDATE Users SET GroupID = 3  WHERE UserID = 2 
+UPDATE Users SET GroupID = 2  WHERE UserID = 3 
+UPDATE Users SET GroupID = 1  WHERE UserID = 4 
+UPDATE Users SET GroupID = 4  WHERE UserID = 5 
+GO
+
+ALTER TABLE Users
+ADD CONSTRAINT FK_Users_Groups
+  FOREIGN KEY (GroupID)
+  REFERENCES Groups(GroupID)
+GO
+
+19. ------------------------------------------------------------------------------------------
+//FROM FORUM
+INSERT [dbo].[Groups] ([GroupName]) VALUES ('Super Ninjas')
+INSERT [dbo].[Groups] ([GroupName]) VALUES ('Super Newbs')
+GO
+
+INSERT [dbo].[Users] ([UserName], [UserPassword], [FullName], [LastLogin]) VALUES (N'mincho', N'dfsdfg', N'Mincho Praznikov', CAST(N'2013-08-20 00:00:00.000' AS DateTime))
+GO
+INSERT [dbo].[Users] ([UserName], [UserPassword], [FullName]) VALUES (N'lili', N'sdfwedf', N'Lili Ivanova')
+GO
+
+20. ------------------------------------------------------------------------------------------
+//All other are from the forum
+UPDATE Users SET GroupID = 
+(SELECT GroupID FROM Groups WHERE GroupName ='Super Ninjas')
+WHERE UserName = 'mincho' 
+UPDATE Users SET GroupID = 
+(SELECT GroupID FROM Groups WHERE GroupName ='Super Newbs')
+WHERE UserName = 'lili'
+GO
+
+UPDATE Groups SET GroupName = 'Noobs'  WHERE GroupName = 'Newbs' 
+GO
+
+21. ------------------------------------------------------------------------------------------
+
+DELETE FROM Users 
+WHERE UserName = 'lili'
+GO
+
+DELETE FROM Groups 
+WHERE GroupName = 'Noobs'
+GO
+
+22. ------------------------------------------------------------------------------------------
+
+INSERT INTO [dbo].[Users] (UserName, FullName, UserPassword, LastLogin)
+SELECT LEFT(LOWER(e.FirstName),1) + LOWER(e.LastName) AS UserName,
+e.FirstName + ' ' + e.LastName AS FullName,
+LEFT(LOWER(e.FirstName),1) + LOWER(e.LastName) AS UserPassword,
+NULL -- It's not necessery to explisitly set null in this case, but in case of some other defaullt falue set on for the coulumn it's better 
+FROM Employees e
+WHERE (1 + LEN(e.LastName)) >=5 -- only users that will pass the password constraint
+AND LEFT(LOWER(e.FirstName),1) + LOWER(e.LastName) <> 'ahill' -- fails the unique constraint check
+GO
+
+23. ------------------------------------------------------------------------------------------
+
+UPDATE [dbo].[Users] SET LastLogin = CONVERT(datetime, '10.06.2009',104)
+WHERE UserName = 'mincho'
+GO
+
+UPDATE [dbo].[Users] SET UserPassword = NULL
+WHERE CAST(LastLogin AS date) <= CONVERT(datetime, '10.03.2010',104)
+GO
+
+24. ------------------------------------------------------------------------------------------
+
+DELETE FROM Users
+WHERE UserPassword IS NULL
+GO
+
+25. ------------------------------------------------------------------------------------------
+
+SELECT d.Name, e.JobTitle, AVG(e.Salary) AS AvgSalary FROM Employees e
+INNER JOIN Departments d ON d.DepartmentID = e.DepartmentID
+GROUP BY d.Name,e.JobTitle
+
+26. ------------------------------------------------------------------------------------------
+
+SELECT ms.Name, ms.JobTitle, ms.MinSalary, emp.FirstName + ' ' + emp.LastName as Name FROM 
+(SELECT d.Name, d.DepartmentID, e.JobTitle, MIN(e.Salary) AS MinSalary FROM Employees e
+INNER JOIN Departments d ON d.DepartmentID = e.DepartmentID
+GROUP BY d.Name, d.DepartmentID, e.JobTitle) ms
+INNER JOIN Employees emp ON emp.Salary =  ms.MinSalary AND emp.JobTitle = ms.JobTitle AND emp.DepartmentID = ms.DepartmentID
+
+27. ------------------------------------------------------------------------------------------
+
+SELECT t.Name, COUNT(e.EmployeeID) as EmployeeCount FROM Employees e
+INNER JOIN Addresses a on e.AddressID = a.AddressID
+INNER JOIN Towns t on a.TownID = t.TownID
+GROUP BY t.Name
+HAVING COUNT(e.EmployeeID) =
+(SELECT MAX(c.EmployeeCount) FROM
+(SELECT t.Name, COUNT(e.EmployeeID) as EmployeeCount FROM Employees e
+INNER JOIN Addresses a on e.AddressID = a.AddressID
+INNER JOIN Towns t on a.TownID = t.TownID
+GROUP BY t.Name) c)
+
+28. ------------------------------------------------------------------------------------------
+
+SELECT t.Name, COUNT(DISTINCT(e.ManagerID)) FROM Employees e
+INNER JOIN Employees m ON m.EmployeeID = e.ManagerID
+INNER JOIN Addresses a ON m.AddressID = a.AddressID
+INNER JOIN Towns t ON a.TownID = t.TownID
+GROUP BY t.Name
+
+29. ------------------------------------------------------------------------------------------ 
+
+CREATE TABLE WorkHours
+(
+  WorkHourEntryID int IDENTITY,
+  EntryDate date NOT NULL,
+  Task nvarchar(100) NOT NULL,
+  EntryHours int NOT NULL,
+  EntryComments nvarchar(200),
+  EmployeeID int NOT NULL,
+  CONSTRAINT PK_WorkHourEntryID PRIMARY KEY(WorkHourEntryID),
+  CONSTRAINT CC_Hours CHECK (EntryHours>0 AND EntryHours<=24)
+)
+GO
+
+ALTER TABLE [dbo].[WorkHours]  WITH CHECK ADD  CONSTRAINT [FK_WorkHours_Employees] FOREIGN KEY([EmployeeID])
+REFERENCES [dbo].[Employees] ([EmployeeID])
+GO
+
+-- Work Hours Logs
+
+CREATE TABLE WorkHoursLogs
+(
+  LogID int IDENTITY,
+  WorkHourEntryIDOld int,
+  EntryDateOld date,
+  TaskOld nvarchar(100),
+  EntryHoursOld int,
+  EntryCommentsOld nvarchar(200),
+  EmployeeIDOld int,
+  WorkHourEntryIDNew int,
+  EntryDateNew date,
+  TaskNew nvarchar(100),
+  EntryHoursNew int,
+  EntryCommentsNew nvarchar(200),
+  EmployeeIDNew int,
+  CommandType nvarchar(10),
+  CONSTRAINT PK_LogID PRIMARY KEY(LogID),
+)
+GO
+
+CREATE TRIGGER tr_WorkHoursInsert ON WorkHours FOR INSERT
+AS
+  INSERT INTO WorkHoursLogs (WorkHourEntryIDOld,EntryDateOld,TaskOld,EntryHoursOld,EntryCommentsOld,
+  EmployeeIDOld,WorkHourEntryIDNew,EntryDateNew,TaskNew,EntryHoursNew,EntryCommentsNew,
+  EmployeeIDNew,CommandType)
+  SELECT NULL, NULL, NULL, NULL, NULL, NULL,
+  i.WorkHourEntryID, i.EntryDate, i.Task, i.EntryHours, i.EntryComments, i.EmployeeID,'insert'
+  FROM WorkHours w INNER JOIN inserted i on w.WorkHourEntryID = i.WorkHourEntryID
+GO
+
+CREATE TRIGGER tr_WorkHoursUpdate ON WorkHours FOR UPDATE
+AS
+  INSERT INTO WorkHoursLogs (WorkHourEntryIDOld,EntryDateOld,TaskOld,EntryHoursOld,EntryCommentsOld,
+  EmployeeIDOld,WorkHourEntryIDNew,EntryDateNew,TaskNew,EntryHoursNew,EntryCommentsNew,
+  EmployeeIDNew,CommandType)
+  SELECT d.WorkHourEntryID, d.EntryDate, d.Task, d.EntryHours, d.EntryComments, d.EmployeeID,
+  i.WorkHourEntryID, i.EntryDate, i.Task, i.EntryHours, i.EntryComments, i.EmployeeID,'update'
+  FROM deleted d INNER JOIN inserted i on d.WorkHourEntryID = i.WorkHourEntryID
+GO
+
+CREATE TRIGGER tr_WorkHoursDelete ON WorkHours FOR DELETE
+AS
+  INSERT INTO WorkHoursLogs (WorkHourEntryIDOld,EntryDateOld,TaskOld,EntryHoursOld,EntryCommentsOld,
+  EmployeeIDOld,WorkHourEntryIDNew,EntryDateNew,TaskNew,EntryHoursNew,EntryCommentsNew,
+  EmployeeIDNew,CommandType)
+  SELECT d.WorkHourEntryID, d.EntryDate, d.Task, d.EntryHours, d.EntryComments, d.EmployeeID,
+  NULL, NULL, NULL, NULL, NULL, NULL,'delete'
+  FROM deleted d
+GO
+
+INSERT INTO WorkHours (EntryDate, Task, EntryHours, EntryComments, EmployeeID)
+VALUES (CONVERT(date, '20140712', 112), 'Slacking', 8, 'no comment', 1),
+(CONVERT(date, '20140511', 112), 'Digging', 4, NULL, 3),
+(CONVERT(date, '20140713', 112), 'More Slacking', 4, 'today i had to work :(', 1),
+(CONVERT(date, '20140611', 112), 'Working', 12, 'more work', 2),
+(CONVERT(date, '20140530', 112), 'Meeting', 5, NULL , 4)
+GO
+
+UPDATE WorkHours
+SET EntryHours = 8, Task = 'Very important work', EntryComments = 'so busy, much work, wow'
+WHERE EmployeeID=1 AND EntryDate = CONVERT(date, '20140713', 112)
+GO
+
+DELETE FROM WorkHours
+WHERE EmployeeID = 4
+
+30. ------------------------------------------------------------------------------------------
+
+BEGIN TRAN 
+ALTER TABLE Departments DROP [FK_Departments_Employees]
+DELETE FROM Employees 
+WHERE DepartmentID = (SELECT DepartmentID FROM Departments WHERE Name = 'Sales')
+DELETE FROM Departments 
+WHERE Name = 'Sales'
+ROLLBACK TRAN
+GO
+
+31. ------------------------------------------------------------------------------------------
+
+BEGIN TRAN 
+DROP TABLE EmployeesProjects
+ROLLBACK TRAN
+GO
+
+32. ------------------------------------------------------------------------------------------
+
+BEGIN TRAN
+SELECT * INTO #TempTable FROM EmployeesProjects
+DROP TABLE EmployeesProjects
+COMMIT
+
+CREATE TABLE [dbo].[EmployeesProjects](
+	[EmployeeID] [int] NOT NULL,
+	[ProjectID] [int] NOT NULL,
+ CONSTRAINT [PK_EmployeesProjects] PRIMARY KEY CLUSTERED 
+(
+	[EmployeeID] ASC,
+	[ProjectID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[EmployeesProjects]  WITH CHECK ADD  CONSTRAINT [FK_EmployeesProjects_Employees] FOREIGN KEY([EmployeeID])
+REFERENCES [dbo].[Employees] ([EmployeeID])
+GO
+
+ALTER TABLE [dbo].[EmployeesProjects] CHECK CONSTRAINT [FK_EmployeesProjects_Employees]
+GO
+
+ALTER TABLE [dbo].[EmployeesProjects]  WITH CHECK ADD  CONSTRAINT [FK_EmployeesProjects_Projects] FOREIGN KEY([ProjectID])
+REFERENCES [dbo].[Projects] ([ProjectID])
+GO
+
+ALTER TABLE [dbo].[EmployeesProjects] CHECK CONSTRAINT [FK_EmployeesProjects_Projects]
+GO
+
+--Add to EmployeesProjects from backup
+
+INSERT INTO EmployeesProjects
+SELECT * FROM #TempTable
+GO
+
+
+

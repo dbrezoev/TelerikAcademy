@@ -1,0 +1,7 @@
+D:\TELERIK ACADEMY\DB\Homeworks\ADO.NET\ADO.NET\MySqlRetrieve\bin\Debug\MySqlRetrieve.exe.config
+D:\TELERIK ACADEMY\DB\Homeworks\ADO.NET\ADO.NET\MySqlRetrieve\bin\Debug\MySqlRetrieve.exe
+D:\TELERIK ACADEMY\DB\Homeworks\ADO.NET\ADO.NET\MySqlRetrieve\bin\Debug\MySqlRetrieve.pdb
+D:\TELERIK ACADEMY\DB\Homeworks\ADO.NET\ADO.NET\MySqlRetrieve\obj\Debug\MySqlRetrieve.csprojResolveAssemblyReference.cache
+D:\TELERIK ACADEMY\DB\Homeworks\ADO.NET\ADO.NET\MySqlRetrieve\obj\Debug\MySqlRetrieve.exe
+D:\TELERIK ACADEMY\DB\Homeworks\ADO.NET\ADO.NET\MySqlRetrieve\obj\Debug\MySqlRetrieve.pdb
+D:\TELERIK ACADEMY\DB\Homeworks\ADO.NET\ADO.NET\MySqlRetrieve\bin\Debug\MySql.Data.dll

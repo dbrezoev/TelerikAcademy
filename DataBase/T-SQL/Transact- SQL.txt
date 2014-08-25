@@ -1,0 +1,138 @@
+1. ------------------------------------------------------------------------------
+
+CREATE TABLE Persons (
+  PersonID int PRIMARY KEY IDENTITY,
+  FirstName nvarchar(50) NOT NULL,
+  LastName nvarchar(50) NOT NULL,
+  SSN nvarchar(50) NOT NULL,  
+)
+GO
+
+CREATE TABLE Accounts (
+  AccountsID int PRIMARY KEY IDENTITY,
+  PersonID int FOREIGN KEY REFERENCES Persons(PersonID),
+  Balance int
+)
+GO
+
+INSERT INTO Persons
+VALUES
+('Pesho', 'Peshov', '12345'),
+('Gosho', 'Goshov', '56789'),
+('Gesho', 'Geshov', '12357')
+GO
+
+CREATE PROCEDURE usp_GetAllNames
+AS
+SELECT FirstName + ' ' + LastName as [Fullname]
+FROM Persons
+GO
+
+EXEC usp_GetAllNames
+
+INSERT INTO Accounts
+VALUES
+(1, 100),
+(2, 48),
+(3, 16)
+GO
+
+2. ----------------------------------------------------------------------------
+
+CREATE PROCEDURE usp_Persons_Balance @moneyInAccount int
+AS 
+SELECT p.FirstName 
+FROM Persons p
+JOIN Accounts a
+ON p.PersonID = a.PersonID
+WHERE a.Balance > @moneyInAccount
+
+EXEC usp_Persons_Balance 17
+
+3. ----------------------------------------------------------------------------
+
+CREATE FUNCTION usf_CalcInterestRate (@SUM FLOAT, @interestRate FLOAT, @numberOfMonths INT)
+RETURNS FLOAT
+AS
+BEGIN
+        DECLARE @newSum FLOAT
+        SET @newSum = @SUM + @SUM * @interestRate * @numberOfMonths
+        RETURN @newSum
+END
+
+
+SELECT dbo.usf_CalcInterestRate(150, 0.1, 5)
+
+4. ----------------------------------------------------------------------------
+
+CREATE PROCEDURE dbo.usp_Person_Money_Growing_F(@AccountId INT, @InterestRate FLOAT)
+AS
+        DECLARE @AccBalance FLOAT, @RESULT FLOAT
+        SELECT @AccBalance = a.balance
+        FROM Accounts a
+        WHERE  a.Id = @AccountId
+        SELECT dbo.usf_CalcInterestRate(@AccBalance,@InterestRate,1)
+GO
+ 
+EXECUTE usp_Person_Money_Growing_F 1,1
+
+5. --------------------------------------------------------------------------------
+
+CREATE PROCEDURE dbo_usp_Withdraw_Some_Money(@AccountId INT, @money FLOAT)
+AS
+        DECLARE @rest FLOAT
+        SELECT @rest= a.Balance - @money
+        FROM Accounts a
+        WHERE a.Id  = @AccountId
+       
+        UPDATE Accounts
+        SET Balance = @rest
+        WHERE Accounts.Id = @AccountId
+ 
+GO
+ 
+CREATE PROCEDURE dbo_usp_Deposit_Some_Money(@AccountId INT, @money FLOAT)
+AS
+        DECLARE @rest FLOAT
+        SELECT @rest= a.Balance + @money
+        FROM Accounts a
+        WHERE a.Id  = @AccountId
+       
+        UPDATE Accounts
+        SET Balance = @rest
+        WHERE Accounts.Id = @AccountId
+ 
+GO
+ 
+EXECUTE dbo_usp_Withdraw_Some_Money 1,10
+EXECUTE dbo_usp_Deposit_Some_Money 1,20
+SELECT *
+FROM Accounts
+
+6. --------------------------------------------------------------
+
+CREATE TABLE Logs(
+LogsID int PRIMARY KEY IDENTITY,
+AccountID int FOREIGN KEY REFERENCES Accounts(AccountsID),
+OldSum int,
+NewSum int
+)
+GO
+
+CREATE TRIGGER tr_InsertValue ON Accounts FOR UPDATE
+AS
+INSERT INTO Logs
+VALUES 
+(1, 15, 150),
+(2, 16, 165)
+GO
+
+UPDATE Accounts SET Balance = 101
+WHERE AccountsID = 1
+
+7. ------------------------------------------------------------------
+
+
+
+
+

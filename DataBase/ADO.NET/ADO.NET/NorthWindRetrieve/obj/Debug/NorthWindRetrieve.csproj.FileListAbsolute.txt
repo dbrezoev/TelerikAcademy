@@ -1,0 +1,6 @@
+D:\TELERIK ACADEMY\DB\Homeworks\ADO.NET\ADO.NET\NorthWindRetrieve\bin\Debug\NorthWindRetrieve.exe.config
+D:\TELERIK ACADEMY\DB\Homeworks\ADO.NET\ADO.NET\NorthWindRetrieve\bin\Debug\NorthWindRetrieve.exe
+D:\TELERIK ACADEMY\DB\Homeworks\ADO.NET\ADO.NET\NorthWindRetrieve\bin\Debug\NorthWindRetrieve.pdb
+D:\TELERIK ACADEMY\DB\Homeworks\ADO.NET\ADO.NET\NorthWindRetrieve\obj\Debug\NorthWindRetrieve.csprojResolveAssemblyReference.cache
+D:\TELERIK ACADEMY\DB\Homeworks\ADO.NET\ADO.NET\NorthWindRetrieve\obj\Debug\NorthWindRetrieve.exe
+D:\TELERIK ACADEMY\DB\Homeworks\ADO.NET\ADO.NET\NorthWindRetrieve\obj\Debug\NorthWindRetrieve.pdb

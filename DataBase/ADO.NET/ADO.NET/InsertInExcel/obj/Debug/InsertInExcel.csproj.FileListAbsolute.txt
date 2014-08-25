@@ -1,0 +1,5 @@
+D:\TELERIK ACADEMY\DB\Homeworks\ADO.NET\ADO.NET\InsertInExcel\bin\Debug\InsertInExcel.exe.config
+D:\TELERIK ACADEMY\DB\Homeworks\ADO.NET\ADO.NET\InsertInExcel\bin\Debug\InsertInExcel.exe
+D:\TELERIK ACADEMY\DB\Homeworks\ADO.NET\ADO.NET\InsertInExcel\bin\Debug\InsertInExcel.pdb
+D:\TELERIK ACADEMY\DB\Homeworks\ADO.NET\ADO.NET\InsertInExcel\obj\Debug\InsertInExcel.exe
+D:\TELERIK ACADEMY\DB\Homeworks\ADO.NET\ADO.NET\InsertInExcel\obj\Debug\InsertInExcel.pdb

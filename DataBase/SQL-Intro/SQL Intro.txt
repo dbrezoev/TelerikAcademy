@@ -1,0 +1,83 @@
+1. SQL - език за заявки към релационна база данни. 
+DML - Набора от операциите Select, Insert, Update, Delete
+DDL - Набора от операциите Create, Drop, Alter, Grant, Revoke
+
+2. T-SQL is created by Microsoft, it is improved SQL
+
+3. Done
+
+4. SELECT * FROM TelerikAcademy.dbo.Departments
+
+5. SELECT Name FROM TelerikAcademy.dbo.Departments
+
+6. SELECT Salary FROM TelerikAcademy.dbo.Employees
+
+7. SELECT FirstName + ' ' + MiddleName + ' ' + LastName as [FullName] FROM Employees
+
+8. SELECT FirstName + '.' + 'LastName' + '@Telerik.com' as [Full Email Addresses] FROM Employees
+
+9. SELECT DISTINCT Salary FROM Employees
+
+10. SELECT * FROM Employees
+WHERE JobTitle = 'Sales Representative'
+
+11. SELECT * FROM Employees
+WHERE Firstname LIKE 'SA%'
+
+12. SELECT * FROM Employees
+WHERE LastName LIKE '%EI%'
+
+13. SELECT * FROM Employees
+WHERE Salary BETWEEN 20000 AND 30000
+
+14. SELECT FirstName FROM Employees
+WHERE Salary IN(25000, 14000, 12500, 23600)
+
+15. SELECT FirstName + ' ' + LastName as [Bosses] FROM Employees
+WHERE ManagerID IS NULL
+
+16. SELECT FirstName, Salary FROM Employees
+WHERE Salary > 50000
+ORDER BY Salary DESC
+
+17. SELECT TOP 5 Salary, Firstname, Lastname 
+FROM Employees e
+ORDER BY e.Salary DESC 
+
+18. SELECT e.FirstName, a.AddressText
+FROM Employees e JOIN Addresses a
+ON e.AddressID = a.AddressID
+
+19. SELECT e.FirstName, e.LastName, 
+a.AddressText AS [Employee Adresses]
+FROM Employees e, Addresses a
+WHERE e.AddressID = a.AddressID
+
+20. SELECT e.FirstName [Employee Name], m.FirstName [Manager Name]
+FROM Employees e JOIN Employees m
+ON e.ManagerID = m.EmployeeID
+	
+21. SELECT e.FirstName as [Employee Name], m.FirstName as [Manager Name], a.AddressText
+FROM Employees e JOIN Employees m
+ON e.ManagerID = m.EmployeeID
+JOIN Addresses a
+ON e.AddressID = a.AddressID
+
+22. SELECT Name as [Department Name] FROM Departments
+UNION
+SELECT Name as [Town Name] FROM Towns
+
+23. SELECT e.LastName AS [Employee], m.LastName AS [Manager]
+FROM Employees e RIGHT OUTER JOIN Employees m 
+ON e.EmployeeID = m.ManagerID
+
+SELECT e.LastName AS [Employee], m.LastName AS [Manager]
+FROM Employees e LEFT OUTER JOIN Employees m 
+ON e.ManagerID = m.EmployeeID
+
+24. 
+SELECT e.FirstName, d.Name as [Department]
+FROM Employees e JOIN Departments d
+ON e.DepartmentID = d.DepartmentID
+AND d.Name IN('Sales', 'Finance')
+AND e.HireDate BETWEEN 1995 AND 2000
