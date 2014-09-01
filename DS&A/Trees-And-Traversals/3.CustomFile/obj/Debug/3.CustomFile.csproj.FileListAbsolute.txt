@@ -1,0 +1,6 @@
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\DS&A\Trees-And-Traversals\3.CustomFile\bin\Debug\3.CustomFile.exe.config
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\DS&A\Trees-And-Traversals\3.CustomFile\bin\Debug\3.CustomFile.exe
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\DS&A\Trees-And-Traversals\3.CustomFile\bin\Debug\3.CustomFile.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\DS&A\Trees-And-Traversals\3.CustomFile\obj\Debug\3.CustomFile.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\DS&A\Trees-And-Traversals\3.CustomFile\obj\Debug\3.CustomFile.exe
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\DS&A\Trees-And-Traversals\3.CustomFile\obj\Debug\3.CustomFile.pdb
