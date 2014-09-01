@@ -1,0 +1,5 @@
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\DS&A\Linear-Data-Structures\14.LabyrinthSteps\bin\Debug\14.LabyrinthSteps.exe.config
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\DS&A\Linear-Data-Structures\14.LabyrinthSteps\bin\Debug\14.LabyrinthSteps.exe
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\DS&A\Linear-Data-Structures\14.LabyrinthSteps\bin\Debug\14.LabyrinthSteps.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\DS&A\Linear-Data-Structures\14.LabyrinthSteps\obj\Debug\14.LabyrinthSteps.exe
+C:\Users\User\Documents\Visual Studio 2012\Projects\GITHUB_SVN\trunk\DS&A\Linear-Data-Structures\14.LabyrinthSteps\obj\Debug\14.LabyrinthSteps.pdb
