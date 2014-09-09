@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<dir name="D:\Photos\OLX">
+	<file>D:\Photos\OLX\IMG_0517.JPG</file>
+	<file>D:\Photos\OLX\IMG_0518.JPG</file>
+	<file>D:\Photos\OLX\IMG_0521.JPG</file>
+	<file>D:\Photos\OLX\IMG_0522.JPG</file>
+	<file>D:\Photos\OLX\IMG_0523.JPG</file>
+	<file>D:\Photos\OLX\IMG_0524.JPG</file>
+	<dir name="D:\Photos\OLX\CHELSEA">
+		<file>D:\Photos\OLX\CHELSEA\IMG_0519.JPG</file>
+		<file>D:\Photos\OLX\CHELSEA\IMG_0520.JPG</file>
+		<file>D:\Photos\OLX\CHELSEA\IMG_0525.JPG</file>
+		<file>D:\Photos\OLX\CHELSEA\IMG_0526.JPG</file>
+		<dir name="D:\Photos\OLX\CHELSEA\CHAMPIONS" />
+	</dir>
+	<dir name="D:\Photos\OLX\New folder">
+		<file>D:\Photos\OLX\New folder\IMG_0516.JPG</file>
+	</dir>
+</dir>

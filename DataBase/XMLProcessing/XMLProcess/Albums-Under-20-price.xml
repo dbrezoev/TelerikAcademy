@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<catalogue>
+  <album>
+    <name>Got to be there</name>
+    <artist>Michael Jackson</artist>
+    <year>1980</year>
+    <producer>Motown</producer>
+    <price>10</price>
+    <song>
+      <title>Song1</title>
+      <duration>3,54</duration>
+    </song>
+    <song>
+      <title>Song2</title>
+      <duration>3,3</duration>
+    </song>
+    <song>
+      <title>Song3</title>
+      <duration>2,55</duration>
+    </song>
+  </album>
+</catalogue>
