@@ -1,2 +1,2 @@
-SVN
+Telerik Academy Homeworks and projects
 ===
